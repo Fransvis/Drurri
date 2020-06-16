@@ -8,6 +8,18 @@ app.get("/", function(req, res){
     res.render("landing");
 });
 
+app.get("/pricing", function(req, res){
+    res.render("pricing");
+});
+
+app.get("/register", function(req, res){
+    res.render("signup");
+});
+
+app.get("/about", function(req, res){
+    res.render("about");
+});
+
 app.listen("3000", function(){
     console.log("WorkbitApp running");
 });
