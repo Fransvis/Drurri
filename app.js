@@ -20,6 +20,14 @@ app.get("/about", function(req, res){
     res.render("about");
 });
 
+app.get("/services", function(req, res){
+    res.render("services");
+});
+
+app.get("/photography", function(req, res){
+    res.render("photography");
+});
+
 app.listen("3000", function(){
     console.log("WorkbitApp running");
 });
