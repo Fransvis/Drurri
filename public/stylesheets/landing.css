@@ -13,7 +13,7 @@ body {
 
   #navbar {
     background: #000;
-    opacity: 80%;
+    opacity: 100%;
     width: 100%;
     height: 20px;
     padding: 35px 45px;
@@ -123,7 +123,7 @@ section {
 
   .intro{
     max-width: 1140px;
-    height: 95vh;
+    height: 80vh;
   }
 
 
@@ -146,12 +146,12 @@ section {
 
   .color-top {
     background: #fff;
-    height: 65vh;
+    height: 95vh;
   }
 
   .color-top img{
-    height: 70%;
-    width: 40%;
+    height: 100%;
+    width: 100%;
     float: right;
   }
 
@@ -161,13 +161,6 @@ section {
       margin-top: 2%;
   }
 
-  .who1{
-    margin-top: 4%;
-  }
-
-  .who2{
-    margin-top: 8%;
-  }
 
   footer {
     height: 20vh;
@@ -223,128 +216,4 @@ section {
     background: #B2967D;
     color: #E7D8C9;
   }
-
-
-
-
-
-  /* Pricing Guide */
-
-  .card{
-    position: relative;
-    max-width: 300px;
-    height: auto;
-    background: linear-gradient(-45deg,#fe0847,#feae3f);
-    border-radius: 15px;
-    margin: 0 auto;
-    padding: 20px 0;
-    -webkit-box-shadow: 0 10px 15px rgba(0,0,0,.1) ;
-            box-shadow: 0 10px 15px rgba(0,0,0,.1) ;
-  -webkit-transition: .5s;
-  transition: .5s;
-  margin-top: 6%;
-  }
-
-  .card:hover{
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-  }
-
-  .col-sm-4:nth-child(1) .card ,
-  .col-sm-4:nth-child(1) .card .title .fa{
-    background: linear-gradient(-45deg,#f403d1,#64b5f6);
-  }
-
-  .col-sm-4:nth-child(2) .card,
-  .col-sm-4:nth-child(2) .card .title .fa{
-    background: linear-gradient(-45deg,#ffec61,#f321d7);
-  }
-
-  .col-sm-4:nth-child(3) .card,
-  .col-sm-4:nth-child(3) .card .title .fa{
-    background: linear-gradient(-45deg,#24ff72,#9a4eff);
-  }
-
-  .card::before{
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40%;
-    background: rgba(255, 255, 255, .1);
-  z-index: 1;
-  -webkit-transform: skewY(-5deg) scale(1.5);
-          transform: skewY(-5deg) scale(1.5);
-  }
-
-  .title .fa{
-    color:#fff;
-    font-size: 60px;
-    width: 75px;
-    height: 75px;
-    border-radius:  60%;
-    text-align: center;
-    line-height: 81px;
-    -webkit-box-shadow: 0 10px 10px rgba(0,0,0,.1) ;
-            box-shadow: 0 10px 10px rgba(0,0,0,.1) ;
-  }
-
-  .title h2 {
-    position: relative;
-    margin: 20px  0 0;
-    padding: 0;
-    color: #fff;
-    font-size: 28px;
-   z-index: 2;
-  }
-
-  .price,.option{
-    position: relative;
-    z-index: 2;
-  }
-
-  .price h4 {
-    margin: 0;
-    padding: 0 0 ;
-    color: #fff;
-    font-size: 60px;
-    }
-
-    .option ul {
-      margin: 0;
-      padding: 0;
-    }
-
-    .option ul li {
-      margin: 0 0 0 0;
-      padding: 0;
-      list-style: none;
-      color: #fff;
-      font-size: 12px;
-      }
-
-
-  .card a {
-    position: relative;
-    z-index: 2;
-    background: #fff;
-    color : black;
-    width: 150px;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 40px;
-    display: block;
-    text-align: center;
-    margin: 20px auto 0 ;
-    font-size: 16px;
-    cursor: pointer;
-    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
-            box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
-  }
-
-  .card a:hover{
-    text-decoration: none;
-}
-
 
