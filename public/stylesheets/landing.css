@@ -11,6 +11,8 @@ body {
     text-decoration: none;
   }
 
+  /* NAVBAR */
+
   #navbar {
     background: #000;
     opacity: 100%;
@@ -31,7 +33,9 @@ body {
     font-size: 0.7em;
     padding-right: 10%;
     text-transform: uppercase;
+    text-decoration: none;
   }
+
 
   .bottom {
     position: absolute;
@@ -44,6 +48,8 @@ body {
     position: fixed;
     top: 0;
   }
+
+  /* First Section  */
 
   .landing--container {
     position: relative;
@@ -116,6 +122,8 @@ body {
     position: absolute;
   }
 
+  /* Second Section  */
+
 section {
     width: 100%;
     height: 65vh;
@@ -146,7 +154,7 @@ section {
 
   .color-top {
     background: #fff;
-    height: 95vh;
+    height: 65vh;
   }
 
   .color-top img{
@@ -160,6 +168,56 @@ section {
       font-family: Roboto;
       margin-top: 2%;
   }
+
+#view-more-services{
+  text-align: center;
+  margin-top: 4%;
+  color: #151022;
+}
+
+  /* Third Section  */
+
+  .section-3{
+    width: 18%;
+    margin-left: 8%;
+    margin-right: 6%;
+    padding-top: 6%;
+    display:inline-block;
+    color: #151022
+  }
+
+  .section-3 i{
+    margin-left: 43%;
+    font-size: 194%;
+  }
+
+  .section-3 h3{
+    text-align: center;
+  }
+
+
+  /* .section-3 h3{
+    transform-origin: left;
+    transform: scaleX(1);
+    transition: 0.5s;
+  } */
+
+  /* .section-3 h3:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: red;
+    transform-origin: right;
+    transition: 3s;
+  } */
+
+
+
+
+  /* FOOTER */
 
 
   footer {
