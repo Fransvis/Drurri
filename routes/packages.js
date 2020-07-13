@@ -40,4 +40,8 @@ router.get('/freelance', function(req, res){
   res.render('./packages/freelance');
 });
 
+router.get('/freelance/profile', (req, res) => {
+  res.render('./packages/profile');
+});
+
 module.exports = router;

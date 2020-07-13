@@ -177,6 +177,10 @@ section {
 
   /* Third Section  */
 
+  .visible{
+    display: none;
+  }
+
   .section-3{
     width: 18%;
     margin-left: 8%;

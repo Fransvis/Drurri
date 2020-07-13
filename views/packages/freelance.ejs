@@ -1,6 +1,41 @@
 <%- include ('../partials/header')  %>
 
+<!-- <link rel="stylesheet" href="/stylesheets/main.css"> -->
+<!-- <script src="/stylesheets/main.js" defer></script> -->
+
+<div class="freelancer">
+
+<button id='modalBtn' class='btn btn-dark button'>Sign Up!</button>
 
 
+<div id='simpleModal' class='modal'>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Register as a Freelancer</h2>
+      <h6 class="closeBtn">&times;</h6>
+    </div>
+    <div class="modal-body">
+      <input class='first-name' type="text" >
+      <label class='firstName'>First Name</label>
+    </div>
+    <div class="modal-body">
+      <input class='last-name' type="text" >
+      <label class='lastName'>Last Name</label>
+    </div>
+    <div class="modal-body">
+      <input class='email' type="text" >
+      <label class='e-mail'>Email</label>
+    </div>
+    <div class="modal-body">
+      <input class='password' type="text" >
+      <label class='pass-word'>Password</label>
+    </div>
+    <div class="modal-footer">
+      <button>Sign Up!</button>
+    </div>
+  </div>
+</div>
+
+</div>
 
 <%- include ('../partials/footer')  %>
