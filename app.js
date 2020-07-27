@@ -13,19 +13,17 @@ mongoose.connect('mongodb://localhost/workBit_app', {
   useUnifiedTopology: true
 });
 
+// ===================
+// Landing Page 
+// ===================
 
 app.get("/", function(req, res){
     res.render("landing");
 });
 
-
-// RegisterPage
-
-app.get("/register", function(req, res){
-    res.render("signup");
-});
-
+// ==============
 // About Page
+// ==============
 
 app.get("/about", function(req, res){
     res.render("about");

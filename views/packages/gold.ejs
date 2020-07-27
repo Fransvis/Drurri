@@ -1,65 +1,26 @@
 <%- include ('../partials/header') %>
 
 <div class='pride-register'>
-  <div class='container'>
-    <img class='img-fluid' src='https://images.unsplash.com/photo-1514580426463-fd77dc4d0672?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'>
-    <div class='img-overlay'><p>Gold</p></div>
-    <form>
-      <div class='first-form'>
-        <div class='business-name'>
-          <h4>Business name</h4>
-            <input placeholder='Your business name'>
-        </div>
-        <div class='business-type'>
-        <h4>Industry</h4>
-          <input placeholder='Industry'>
-        </div>
-      </div>
-      <div class='first-form'>
-        <div class='business-name'>
-          <h4>Email</h4>
-            <input placeholder='Email'>
-        </div>
-        <div class='business-type'>
-          <h4>Contact</h4>
-          <input placeholder='Contact'>
-        </div>
-      </div>
-      <div class='first-form'>
-        <div class='business-name'>
-          <h4>Business Address</h4>
-            <input placeholder='Address'>
-        </div>
-        <div class='business-type'>
-          <h4>More Info</h4>
-          <input placeholder='More Info'>
-        </div>
-      </div>
-      <div class='payment-method'>
-        <h3>Payment Method</h3>
-          <div class='radio'>
-            <input class='checkbox' type='radio'> 
-            <p>Visa</p>
-            <input id='card-owner' placeholder='name on card'>
-          </div>
-          <div class='radio'>
-            <input class='radio' type='radio'> 
-            <p>MasterCard</p>
-            <input id='card-number' placeholder='card number'>
-          </div>
-          <div class='radio'>
-            <input class='radio' type='radio'> 
-            <p>Paypal</p>
-            <input id='expiry-date' placeholder='expiry-date'>
-          </div>
-          <div class='radio'>
-            <input class='radio' type='radio'> 
-            <p>Snapscan</p>
-            <input id='security-number' placeholder='cvv'>
-          </div>
-      </div>
-    </form>
-  </div>
 </div>
+  <div class='prideRegisterContent'>
+    <div class='prideHeader'>
+      <h3>Sign Up for Gold package</h3>
+    </div>
+    <div class='prideInputs'>
+      <input class='prideInput' type="text" placeholder='Business Name'>
+      <input class='prideInput' type="text" placeholder='Industry'>
+    </div>
+    <div class='prideInputs'>
+      <input class='prideInput' type="text" placeholder='Business Address'>
+      <input class='prideInput' type="text" placeholder='Contact'>
+    </div>
+    <div class='prideInputs'>
+      <input class='prideInput' type="text" placeholder='Email'>
+      <input class='prideInput' type="password" placeholder='Password'>
+    </div>
+    <div class='prideInputs'>
+      <button class='btn btn-light btn-sm' id='prideSignUpButton'>Sign Up!</button>
+    </div>
+  </div>
 
 <%- include ('../partials/footer') %>

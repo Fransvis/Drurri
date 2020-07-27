@@ -41,3 +41,12 @@ router.get('/freelance', function(req, res){
 });
 
 module.exports = router;
+
+
+// =====================
+// Personal Package
+// =====================
+
+router.get('/personal', (req, res) => {
+  res.render('./packages/personal');
+});

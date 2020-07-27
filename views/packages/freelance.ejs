@@ -1,40 +1,25 @@
 <%- include ('../partials/header')  %>
 
-<!-- <link rel="stylesheet" href="/stylesheets/main.css"> -->
-<!-- <script src="/stylesheets/main.js" defer></script> -->
+<div class='freelancerSignUp'>
 
-<div class="freelancer">
-
-<button id='modalBtn' class='btn btn-dark button'>Sign Up!</button>
-
-
-<div id='simpleModal' class='modal'>
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2>Register as a Freelancer</h2>
-      <h6 class="closeBtn">&times;</h6>
-    </div>
-    <div class="modal-body">
-      <input class='first-name' name='firstName' type="text" >
-      <label class='firstName'>First Name</label>
-    </div>
-    <div class="modal-body">
-      <input class='last-name' name='lastName' type="text" >
-      <label class='lastName'>Last Name</label>
-    </div>
-    <div class="modal-body">
-      <input class='email' name='freelancer-email' type="text" >
-      <label class='e-mail'>Email</label>
-    </div>
-    <div class="modal-body">
-      <input class='password' type='password' name='freelancer-password' type="text" >
-      <label class='pass-word'>Password</label>
-    </div>
-    <div class="modal-footer">
-      <a href='/freelancer/id'><button>Sign Up!</button></a>
-    </div>
+  <div class='freelancerSignUpContent'>
+    <h3 id='freelancerSignUpHeader'>Sign Up as a Freelancer</h3>
+      <div class='freelancerInputs'>
+        <input class='freelancerInput' type='text' placeholder="First Name">
+        <input class='freelancerInput' type='text' placeholder="Last Name">
+      </div>
+      <div class='freelancerInputs'>
+        <input class='freelancerInput' type='text' placeholder="Email">
+        <input class='freelancerInput' type='password' placeholder="Password">
+      </div>
+      <div class='freelancerInputs'>
+        <a href='/freelancer/id'> 
+          <button class='btn btn-light btn-sm' id='freelancerSignUpButton'>Sign Up!</button>
+        </a>
+      </div>
   </div>
-</div>
+
+
 
 </div>
 

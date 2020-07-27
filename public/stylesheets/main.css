@@ -1,3 +1,8 @@
+body {
+  background: #000;
+}
+
+
 /* Navbar */
 
 #navbar {
@@ -129,6 +134,7 @@ background: #000;
 
 .business{
   margin-top: 7%;
+  /* background: #000; */
 }
   
   .general-container {
@@ -145,7 +151,7 @@ background: #000;
   
   .content {
     background: var(--white)
-      url('http://wallpapercrafter.com/desktop/227738-a-single-orange-lego-piece_infinite-possibilities.jpg')
+      url('https://p1.pxfuel.com/preview/767/1006/567/star-wars-science-fiction-storm-trooper-space-helm-fighter.jpg')
       100% / cover no-repeat;
     border-radius: 3rem;
     cursor: pointer;
@@ -178,15 +184,15 @@ background: #000;
   }
 
   .content:nth-of-type(2) {
-    background-image: url('https://www.vhv.rs/dpng/d/333-3338190_transparent-background-lego-blocks-hd-png-download.png');
+    background-image: url('https://wallup.net/wp-content/uploads/2019/07/24/307176-star-wars-stormtroopers-black-background-748x468.jpg');
   }
   
   .content:nth-of-type(3) {
-    background-image: url('https://www.pngfind.com/pngs/m/679-6798531_transparent-lego-block-png-lego-blocks-transparent-background.png');
+    background-image: url('https://c.wallhere.com/photos/a4/8c/mic_lego_star_wars_stormtrooper_humor_singing_busting-1085894.jpg!d');
   }
   
   .content:nth-of-type(4) {
-    background-image: url('https://pngimage.net/wp-content/uploads/2018/06/legos-png-5.png');
+    background-image: ('/public/stylesheets/imgs/StormTrooper.png');
   }
   
  
@@ -262,299 +268,169 @@ background: #000;
 
   /* register forms */
 
-  .pride-register .container{
-    display: flex;
-    height: 550px;
-    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-    0 12.5px 10px rgba(0, 0, 0, 0.06),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-    0 100px 80px rgba(0, 0, 0, 0.12);
-    margin-top: 3%;
-    padding: 0;
-    background: #000;
+  .pride-register{
+    background: url(https://cdn.pixabay.com/photo/2018/08/23/17/01/batman-3626211__340.jpg);
+    background-size: inherit;
+    background-repeat: no-repeat;
+    height: 25em;
+    margin-left: 10%;
+    margin-top: 15%;
+    width: 27%;
   }
 
-  .pride-register .img-fluid{
-    object-fit: contain;
-    width: 38%;
-    margin-top: 9%;
+  .prideHeader{
+    color: #fff;
+    text-align: center;
+    margin-left: 29%;
+    margin-top: -35%;
   }
 
-  .pride-register h4{
-    color: #B2967D;
-    margin-left: 4%;
-  }
-
-  .pride-register input{
+  .prideInputs{
+    text-align: center;
+    margin-left: 23%;
     margin-top: 4%;
-    display: block;
-    margin-left: 4%;
   }
 
-  .first-form{
-    display: inline-flex;
+  .prideInput{
+    background: #000;
+    border: none;
+    color: red;
+    border-bottom: 1px solid red;
+    margin-left: 8%;
   }
 
-  .business-name {
-    display: block;
-    margin-left: 4%;
-    margin-top: 6%;
+  #prideSignUpButton{
+    margin-left: 8%;
   }
 
-  .business-type{
-    display: block;
-    margin-left: 30%;
-    margin-top: 6%;
-  }
 
-  .business-email{
-    display: block ruby;
-    margin-left: 4%;
-    margin-top: 6%;
-  }
-  
-  .payment-method h3{
-    color: #fff;
-    margin-left: 3%;
+
+  /* freelancer SignUpPage */
+
+  .freelancerSignUp{
+    background: url(https://steamuserimages-a.akamaihd.net/ugc/498028597174109429/682A125E7068573AA178B126A7CCD1C60A2088C5/);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 33em;
+    margin-left: -10%;
     margin-top: 5%;
-    margin-bottom: -1%;
   }
 
-  .payment-method .radio{
-    display: block ruby;
-    margin-bottom: -4%;
+  .freelancerSignUpContent{
+    padding-top: 7%;
   }
 
-  .payment-method .radio p{
+  #freelancerSignUpHeader{
     color: #fff;
+    text-align: center;
+    margin-left: 19em;
+  }
+
+  .freelancerInputs{
+    text-align: center;
+    margin-left: 34%;
+    margin-top: 2%;
+  }
+
+  .freelancerInput{
+    background: #000;
+    border: none;
+    color: red;
+    border-bottom: 1px solid red;
     margin-left: 2%;
   }
 
-  #card-owner{
-    margin-left: 33%;
-    margin-top: 0%;
-  }
+  #freelancerSignUpButton{
 
-  #card-number{
-    margin-left: 26%;
-  }
-
-  #expiry-date{
-    margin-left: 31%;
-  }
-  
-  #security-number{
-    margin-left: 28%;
-  }
-
-  .pride-register .img-overlay p{
-    margin-bottom: 1rem;
-    color: white;
-    font-size: 2em;
-    margin-left: -8em;
-    margin-top: 1em;
-  }
-
-  /* freelancer page */
-
-
-  .modal{
-    /* display: block; */
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background: rgba(0,0,0,0.5);
-  }
-
-   .modal-content{
-    background-color: #000;
-    opacity: 80%;
-    border: 1px solid aliceblue;
-    margin: 20% auto;
-    padding: 20px;
-    width: 31%;
-    height: 80%;
-    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
-    animation-name: modalopen;
-    animation-duration: 1s;
-  }
-
-  .modal-header{
-    display: block ruby;
-    color: aliceblue;
-  }
-
-  /* Freelancer sign up first name  */
-
-  .first-name{
-   border: none;
-   background: transparent;
-   border-bottom: 1px solid #9e9e9e;
-   height: 3em;
-   width: 100%;
-   color: aliceblue;
-   margin-top: 3%;
-  }
-
-  .firstName{
-    color: aliceblue;
-    position: absolute;
-    top: 2.5em;
-    left: 1.5em;
-    font-size: 1rem;
-    cursor: text;
-    transition: 0.2s ease-out;
-  }
-
-  .signUpTransform{
-    color: #26a69a;
-    position: absolute;
-    left: 2.5em;
-    top: 1.5em;
-    font-size: 0.8em;
-  }
-
-  /* Last name sign up for freelancers */
-
-  .last-name{
-    border: none;
-    background: transparent;
-    border-bottom: 1px solid #9e9e9e;
-    height: 3em;
-    width: 100%;
-    color: aliceblue;
-    margin-top: 3%;
-   }
- 
-   .lastName{
-     color: aliceblue;
-     position: absolute;
-     top: 2.5em;
-     left: 1.5em;
-     font-size: 1rem;
-     cursor: text;
-     transition: 0.2s ease-out;
-   }
-
-   .signUpTransform{
-    color: #26a69a;
-    position: absolute;
-    left: 2.5em;
-    top: 1.5em;
-    font-size: 0.8em;
-  }
-
-  /* Freelancer signup Email  */
-
-  .email{
-    border: none;
-    background: transparent;
-    border-bottom: 1px solid #9e9e9e;
-    height: 3em;
-    width: 100%;
-    color: aliceblue;
-    margin-top: 3%;
-   }
- 
-   .e-mail{
-     color: aliceblue;
-     position: absolute;
-     top: 2.5em;
-     left: 1.5em;
-     font-size: 1rem;
-     cursor: text;
-     transition: 0.2s ease-out;
-   }
-
-   .signUpTransform{
-    color: #26a69a;
-    position: absolute;
-    left: 2.5em;
-    top: 1.5em;
-    font-size: 0.8em;
-  }
-
-  /* Freelancer password Input change  */
-
-  .password{
-    border: none;
-    background: transparent;
-    border-bottom: 1px solid #9e9e9e;
-    height: 3em;
-    width: 100%;
-    color: aliceblue;
-    margin-top: 3%;
-   }
- 
-   .pass-word{
-     color: aliceblue;
-     position: absolute;
-     top: 2.5em;
-     left: 1.5em;
-     font-size: 1rem;
-     cursor: text;
-     transition: 0.2s ease-out;
-   }
-
-   .signUpTransform{
-    color: #26a69a;
-    position: absolute;
-    left: 2.5em;
-    top: 1.5em;
-    font-size: 0.8em;
-  }
- 
- 
-
-
-  .freelancer h6{
-    color: aliceblue;
-  }
-
-  .modal-footer{
-    margin: auto;
-  }
-
- .closeBtn{
-    color: #ccc;
-    margin-left: 4%;
-    font-size: 25px;
-  }
-
-  .closeBtn:hover,.closeBtn:focus{
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  @keyframes modalopen{
-    from{opacity: 0}
-    to{opacity: 1}
   }
 
 
-  .freelancer {
-    background-image: url("https://cdn.pixabay.com/photo/2017/08/10/06/24/batteries-2619017_960_720.jpg");
-    height: 48em;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-top: -10%;
-    /* filter: brightness(50%) */
+
+
+
+
+
+
+
+    /* Create Profile page  */
+
+
+
+    .createProfile {
+      background: url(https://cdn.pixabay.com/photo/2016/04/21/16/38/stormtrooper-1343877_960_720.jpg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 38em;
     }
 
-    #modalBtn{
-      margin-top: 50%;
-      margin-left: 46%;
+    /* .welcomeModal{
+      display: none;
+    } */
+
+
+    .welcomeModal-content{
+      /* display: none; */
+      background: url(https://images.unsplash.com/photo-1472457847783-3d10540b03d7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
+      background-repeat: no-repeat;
+      height: 28em;
+      width: 49%;
+      /* opacity: 88%; */
+      border: 1px solid aliceblue;
+      margin-left: 21em;
+      margin-top: 7%;
+      padding: 20px;
+      background-size: contain;
+      /* box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2); */
+      /* animation-name: modalopen; */
+      animation-duration: 1s;
+    }
+
+    .welcomeModal-header{
+      text-align: center;
+    }
+
+    .welcomeModal-body{
+      text-align: center;
+      margin-top: 8em;
+      filter: brightness(2%);
+    }
+
+    #create-profile-button{
+      margin-left: 40%;
+    }
+
+    #createProfileContent{
+      display: none;
+      /* background: url(https://cdn.pixabay.com/photo/2016/04/21/16/38/stormtrooper-1343877_960_720.jpg) */
+    }
+
+
+
+
+    #createProfileTitle{
+      color: aliceblue;
+      font-size: 3em;
+      text-align: end;
+      margin-right: 2em;
+      margin-top: 3%;
+    }
+
+    .createProfileInputs{
+      text-align: end;
+      margin-top: 2em;
+    }
+
+    .createProfileInput{
+      margin-right: 107px;
+      border: none;
       background: #000;
-      color: #fff;
-      border: 1px solid #fff;
+      border-bottom: 1px solid red;
+      color: red;
     }
+    
+
+
+
 
 
     /* profile page  */
@@ -582,6 +458,7 @@ background: #000;
       z-index: 1;
       display: grid;
       align-content: center;
+      background: #fff;
     }
 
     .user-icon{
@@ -657,6 +534,40 @@ background: #000;
     }
 
 
+  
+
+    .personalSignUp{
+      background: url(https://cdn.pixabay.com/photo/2017/08/10/06/24/batteries-2619017_960_720.jpg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 33em;
+      margin-left: -1%;
+      margin-top: 5%;
+    }
+
+    .personalSignUpContent{
+      padding-top: 7%;
+    }
+
+    #personalSignUpHeader{
+      color: #fff;
+      text-align: center;
+      margin-left: 19em;
+    }
+
+    .personalInputs{
+      text-align: center;
+      margin-left: 37%;
+      margin-top: 2%;
+    }
+
+    .personalInput{
+      background: #000;
+      border: none;
+      color: red;
+      border-bottom: 1px solid red;
+      margin-left: 2%;
+    }
 
 
 
@@ -674,6 +585,10 @@ background: #000;
   
  
   /* Services Page */
+
+  .services{
+    background: #fff;
+  }
 
   .services .photography-img img{
     max-width: 110%;
@@ -703,7 +618,7 @@ background: #000;
 /* Photography portfolio */
 
 .photography{
-  background: #000;
+  background: #fff;
   height: auto;
 }
 
@@ -724,7 +639,7 @@ margin-right: 0;
   position: relative;
   width: 300px;
   height: 300px;
-  background: #fff;
+  background: #000;
   margin: 5% auto;
   border-radius: 4px;
   box-shadow:0 2px 10px rgba(0,0,0,.2);
@@ -738,7 +653,7 @@ margin-right: 0;
   width: 100%;
   height: 100%;
   border-radius: 4px;
-  background: #fff;
+  background: #000;
   transition: 0.5s;
   z-index: 0;
 }
