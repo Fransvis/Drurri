@@ -18,6 +18,10 @@ router.get('/business/pride', function(req, res){
   res.render('./packages/pride');
 });
 
+router.post('/business/pride', (req, res) => {
+  res.send('Signing Up for Pride')
+});
+
 router.get('/business/gold', function(req, res){
   res.render('./packages/gold');
 });
@@ -40,7 +44,7 @@ router.get('/freelance', function(req, res){
   res.render('./packages/freelance');
 });
 
-module.exports = router;
+
 
 
 // =====================
@@ -50,3 +54,7 @@ module.exports = router;
 router.get('/personal', (req, res) => {
   res.render('./packages/personal');
 });
+
+
+
+module.exports = router;

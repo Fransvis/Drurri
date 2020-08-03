@@ -1,17 +1,37 @@
-var express         = require("express"),
-    app             = express(),
-    mongoose        = require("mongoose");
-    packageRoutes   = require('./routes/packages'),
-    serviceRoutes   = require('./routes/services'),
-    freelancerRoutes = require('./routes/freelancer')
+var express          = require("express"),
+    app              = express(),
+    mongoose         = require("mongoose"),
+    bodyParser       = require('body-parser'),
+    passport         = require('passport'),
+    LocalStrategy    = require('passport-local'),
+    packageRoutes    = require('./routes/packages'),
+    serviceRoutes    = require('./routes/services'),
+    freelancerRoutes = require('./routes/freelancer'),
+    businessUser     = require('./models/businessUser.js')
 
 
-app.set("view engine", "ejs");
-app.use(express.static(__dirname + "/public"));
+mongoose.set('useUnifiedTopology', true);
+mongoose.set('useFindAndModify', false);
 mongoose.connect('mongodb://localhost/workBit_app', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
+app.use(bodyParser.urlencoded({extended: true}));
+app.set("view engine", "ejs");
+app.use(express.static(__dirname + "/public"));
+
+// ========================
+// PASSPORT CONFIGURATION
+// ========================
+
+app.use(require('express-session')({
+    secret: 'one one one',
+    resave: false,
+    saveUninitialized: false
+}))
+
+
+
 
 // ===================
 // Landing Page 
