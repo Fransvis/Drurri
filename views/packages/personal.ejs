@@ -1,24 +1,29 @@
 <%- include ('../partials/header') %>
 
 <div class='personalSignUp'>
-
-  <form action="/services">
+<!-- 
+  <form action="/packages/personal" method="post">
     <div class='personalSignUpContent'>
       <h3 id='personalSignUpHeader'>Need help with a Personal Project?</h3>
         <div class='personalInputs'>
-          <input class='personalInput' type='text' placeholder="First Name">
-          <input class='personalInput' type='text' placeholder="Last Name">
+          <input class='personalInput' type='text' name='personalName' placeholder="First Name">
+          <input class='personalInput' type='text' name='personalLastName' placeholder="Last Name">
         </div>
         <div class='personalInputs'>
-          <input class='personalInput' type='text' placeholder="Email">
-          <input class='personalInput' type='password' placeholder="Password">
+          <input class='personalInput' type='text' name='username' placeholder="Email">
+          <input class='personalInput' type='password' name='password' placeholder="Password">
         </div>
         <div class='personalInputs'>
           <button class='btn btn-sm btn-light'>Sign Up!</button>
         </div>
      </div>
-  </form>
+  </form> -->
 
+  <form action="/packages/personal" method='post'>
+    <input type="text" name='username' placeholder="username">
+    <input type="password" name='password' placeholder="password">
+    <button>Sign up</button>
+  </form>
 
 
 </div>
