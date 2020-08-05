@@ -1,6 +1,6 @@
 var express          = require("express"),
     app              = express(),
-    mongoose         = require("mongoose"),
+    // mongoose         = require("mongoose"),
     bodyParser       = require('body-parser'),
     passport         = require('passport'),
     LocalStrategy    = require('passport-local'),
@@ -11,12 +11,12 @@ var express          = require("express"),
 
 
 app.use(bodyParser.urlencoded({extended: true}));
-mongoose.set('useUnifiedTopology', true);
-mongoose.set('useFindAndModify', false);
-mongoose.connect('mongodb://localhost/workBit_app', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+// mongoose.set('useUnifiedTopology', true);
+// mongoose.set('useFindAndModify', false);
+// mongoose.connect('mongodb://localhost/workBit_app', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true
+// });
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 

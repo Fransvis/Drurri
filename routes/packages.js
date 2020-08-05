@@ -61,17 +61,16 @@ router.get('/personal', (req, res) => {
 });
 
 router.post('/personal', (req, res) => {
-  res.send("Signing Up");
-  // var newUser = new User({username: req.body.username}); 
-  // User.register(newUser, req.body.password, function(err, user){
-  //   if(err){
-  //     console.log(err);
-  //     return res.render('./packages/personal');
-  //   }
-  //   passport.authenticate('local')(req, res, function(){
-  //     res.redirect('/services')
-  //   })
-  // });
+  var newUser = new User({username: req.body.username}); 
+  User.register(newUser, req.body.password, function(err, user){
+    if(err){
+      console.log(err);
+      return res.render('./packages/personal');
+    }
+    passport.authenticate('local')(req, res, function(){
+      res.redirect('/services')
+    })
+  });
 });
 
 
