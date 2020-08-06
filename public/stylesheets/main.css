@@ -193,7 +193,7 @@ background: #000;
   }
   
   .content:nth-of-type(4) {
-    background-image: ('/public/stylesheets/imgs/StormTrooper.png');
+    background-image: url('https://cdn.pixabay.com/photo/2016/03/26/22/11/star-wars-1281554_960_720.jpg');
   }
   
  
@@ -742,33 +742,53 @@ margin-top: 5px;
   margin-top: -18%;
 }
 
-.about-intro2{
+.about-intro1{
   margin-top: -25%;
 }
 
-.about-intro3{
+.about-intro2{
   margin-top: 8%;
 }
 
 
 
-.about .objectives-img4{
-  margin-left: -16%;
+
+.about-intro4 h1{
+  margin-left: 31%;
+  margin-top: -17%;
+  color: #B2967D;
 }
 
-.objectives-img3{
-  margin-left: -12%;
+.objectives-img{
+  margin-left: 4%;
+  margin-top: 29%;
+  height: 619px;
 }
 
-.objectives1-img{
+.objectives-img1{
   margin-top: 10%;
   /* margin-left: 5%; */
 }
 
+.objectives-img2{
+  margin-left: -12%;
+}
+
+.about .objectives-img3{
+  margin-left: -16%;
+}
+
+
+
+
 .objectives h1{
-  color: #fff;
-  margin-top: 8%;
+  color: #B2967D;
+  margin-top: 33%;
   margin-left: 8%;
+}
+
+.objectives1 h1{
+  color: #B2967D;
 }
 
 .objectives p{
