@@ -739,24 +739,41 @@ margin-top: 5px;
 }
 
 .about-intro{
-  margin-top: -18%;
+  margin-top: -14%;
 }
 
-.about-intro1{
-  margin-top: -25%;
+.about-intro1 h1{
+  margin-left: 15%;
 }
 
-.about-intro2{
-  margin-top: 8%;
-}
-
-
-
-
-.about-intro4 h1{
-  margin-left: 31%;
-  margin-top: -17%;
+.about-intro2 h1{
   color: #B2967D;
+  margin-left: 8%;
+}
+
+.about-intro2 .row{
+  margin-top: 6%;
+}
+
+.about-intro3 .row{
+  margin-top: 5%;
+}
+
+
+.about-intro3 h1{
+  margin-left: 30%;
+  margin-top: 13%;
+  color: #B2967D;
+}
+
+.about-intro3 p{
+  color: #B2967D;
+  text-align: center;
+  margin-top: 5%;
+}
+
+.about-intro4 .row{
+  margin-top: 7%;
 }
 
 .objectives-img{
@@ -767,18 +784,15 @@ margin-top: 5px;
 
 .objectives-img1{
   margin-top: 10%;
-  /* margin-left: 5%; */
 }
 
 .objectives-img2{
-  margin-left: -12%;
+  margin-left: 6%;
 }
 
 .about .objectives-img3{
-  margin-left: -16%;
+  margin-left: -12%;
 }
-
-
 
 
 .objectives h1{
@@ -791,20 +805,17 @@ margin-top: 5px;
   color: #B2967D;
 }
 
-.objectives p{
-  color: #fff;
-  text-transform: uppercase;
-  margin: 8%;
-  margin-top: 13%;
+.about-intro4 .services{
+  background: #000;
 }
 
-
 .services h1{
-  color: #fff;
+  color: #B2967D;
+  margin-top: 5%;
 }
 
 .services p{
-  color: #fff;
+  color: #B2967D;
   margin-left: 2%;
   margin-top: 3%;
   display: inline-block;
