@@ -11,14 +11,14 @@ var express          = require("express"),
 
 
 app.use(bodyParser.urlencoded({extended: true}));
-// mongoose.set('useUnifiedTopology', true);
-// mongoose.set('useFindAndModify', false);
-// mongoose.connect('mongodb://localhost/workBit_app', {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true
-// });
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
+mongoose.set('useUnifiedTopology', true);
+mongoose.set('useFindAndModify', false);
+mongoose.connect('mongodb://localhost:27017', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 // ========================
 // PASSPORT CONFIGURATION
