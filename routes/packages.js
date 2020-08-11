@@ -1,5 +1,5 @@
-const User = require('../models/user');
-const passport = require('passport');
+const User         = require('../models/user');
+const passport     = require('passport');
 
 var express = require('express'),
     router  = express.Router();
@@ -68,7 +68,7 @@ router.post('/personal', (req, res) => {
       return res.render('./packages/personal');
     }
     passport.authenticate('local')(req, res, function(){
-      res.redirect('/services')
+      res.redirect('/services');
     })
   });
 });

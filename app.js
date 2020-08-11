@@ -7,7 +7,7 @@ var express          = require("express"),
     packageRoutes    = require('./routes/packages'),
     serviceRoutes    = require('./routes/services'),
     freelancerRoutes = require('./routes/freelancer'),
-    User             = require('./models/user')
+    User             = require('./models/user');
 
 
 app.use(bodyParser.urlencoded({extended: true}));
