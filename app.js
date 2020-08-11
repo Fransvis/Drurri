@@ -1,6 +1,6 @@
 var express          = require("express"),
     app              = express(),
-    // mongoose         = require("mongoose"),
+    mongoose         = require("mongoose"),
     bodyParser       = require('body-parser'),
     passport         = require('passport'),
     LocalStrategy    = require('passport-local'),
@@ -15,7 +15,7 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 mongoose.set('useUnifiedTopology', true);
 mongoose.set('useFindAndModify', false);
-mongoose.connect('mongodb://localhost:27017', {
+mongoose.connect('mongodb://localhost:27017/drurri_app', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
