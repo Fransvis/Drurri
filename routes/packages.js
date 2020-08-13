@@ -1,5 +1,6 @@
 const PersonalUser        = require('../models/user');
 const freelanceUser       = require('../models/user');
+const bodyParser       = require('body-parser');
 const passport     = require('passport');
 
 var express = require('express'),
@@ -62,9 +63,9 @@ router.get('/personal', (req, res) => {
 });
 
 router.post('/personal', (req, res) => {
-  var firstName = req.body.personalFirstName;
-  var lastName  = req.body.personalLastName;
-  var userName  = req.body.personalUserName;
+  const firstName = req.body.personalFirstName;
+  const lastName  = req.body.personalLastName;
+  const userName  = req.body.username;
 
   var newPersonalUser = new PersonalUser(
     {
@@ -77,13 +78,13 @@ router.post('/personal', (req, res) => {
     if(err){
       console.log(err);
       return res.render('./packages/personal');
-    } else{
-      passport.authenticate('local')(req, res, function() {
-        res.redirect('/services');
-      });
-    }
+    } 
+    passport.authenticate('local')(req, res, function() {
+      res.redirect('/services')
+    });
   });
 });
+
 
 
 
