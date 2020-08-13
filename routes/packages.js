@@ -1,4 +1,5 @@
-const User         = require('../models/user');
+const PersonalUser        = require('../models/user');
+const freelanceUser       = require('../models/user');
 const passport     = require('passport');
 
 var express = require('express'),
@@ -61,15 +62,26 @@ router.get('/personal', (req, res) => {
 });
 
 router.post('/personal', (req, res) => {
-  var newUser = new User({username: req.body.username}); 
-  User.register(newUser, req.body.password, function(err, user){
+  var firstName = req.body.personalFirstName;
+  var lastName  = req.body.personalLastName;
+  var userName  = req.body.personalUserName;
+
+  var newPersonalUser = new PersonalUser(
+    {
+    firstName: firstName, 
+    lastName: lastName,
+    username: userName,
+  }); 
+
+  PersonalUser.register(newPersonalUser, req.body.password, function(err, user){
     if(err){
       console.log(err);
       return res.render('./packages/personal');
+    } else{
+      passport.authenticate('local')(req, res, function() {
+        res.redirect('/services');
+      });
     }
-    passport.authenticate('local')(req, res, function(){
-      res.redirect('/services');
-    })
   });
 });
 
