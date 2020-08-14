@@ -7,7 +7,8 @@ var express          = require("express"),
     packageRoutes    = require('./routes/packages'),
     serviceRoutes    = require('./routes/services'),
     freelancerRoutes = require('./routes/freelancer'),
-    User             = require('./models/user');
+    User             = require('./models/user'),
+    FreelanceUser    = require('./models/freelanceUser')
 
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -34,9 +35,13 @@ app.use(require('express-session')({
 app.use(passport.initialize());
 app.use(passport.session());
 // passport.use(new LocalStrategy(User.authenticate()));
-passport.use(User.createStrategy());
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+passport.use(User.createStrategy(), FreelanceUser.createStrategy());
+passport.serializeUser(User.serializeUser(), FreelanceUser.serializeUser());
+passport.deserializeUser(User.deserializeUser(), FreelanceUser.deserializeUser());
+
+// passport.use(FreelanceUser.createStrategy());
+// passport.serializeUser(FreelanceUser.serializeUser());
+// passport.deserializeUser(FreelanceUser.deserializeUser());
 
 
 

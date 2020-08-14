@@ -1,5 +1,5 @@
 const PersonalUser        = require('../models/user');
-// const FreelanceUser       = require('../models/user');
+const FreelanceUser       = require('../models/freelanceUser');
 const bodyParser       = require('body-parser');
 const passport     = require('passport');
 
@@ -51,29 +51,30 @@ router.get('/freelance', function(req, res){
   res.render('./packages/freelance');
 });
 
-// router.post('/freelance', (req, res) => {
-//   var firstName = req.body.freelancerFirstName;
-//   var lastName  = req.body.freelancerLastName;
-//   var userName  = req.body.username;
+router.post('/freelance', (req, res) => {
+  const firstName = req.body.freelancerFirstName;
+  const lastName  = req.body.freelancerLastName;
+  const username  = req.body.username;
 
-//   var newFreelanceUser = new FreelanceUser(
-//     {
-//       firstName: firstName,
-//       lastName: lastName,
-//       userName: userName
-//     }
-//   );
+  var newFreelanceUser = new FreelanceUser(
+    {
+      firstName: firstName,
+      lastName: lastName,
+      username: username
+    }
+  )
 
-//   FreelanceUser.register(newFreelanceUser, req.body.password, function(err, newlyCreatedFreelanceUSer) {
-//     if(err){
-//       console.log(err);
-//       res.render('./packages/freelancer')
-//     }
-//     passport.authenticate('local')(req, res, function() {
-//       res.redirect('/freelancer/id');
-//     })
-//   })
-// })
+  FreelanceUser.register(newFreelanceUser, req.body.password, function(err, newlyCreatedFreealanceUser){
+    if(err){
+      console.log(err);
+      res.render('./packages/freelance');
+    }
+    passport.authenticate('local')(req, res, function(){
+      console.log(firstName);
+      res.redirect('/freelancer/id')
+    })
+  })
+  });
 
 
 
