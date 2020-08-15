@@ -1,5 +1,5 @@
-const PersonalUser        = require('../models/user');
-const FreelanceUser       = require('../models/freelanceUser');
+// const PersonalUser        = require('../models/user');
+const FreelanceUser       = require('../models/user');
 const bodyParser       = require('body-parser');
 const passport     = require('passport');
 
@@ -87,30 +87,30 @@ router.get('/personal', (req, res) => {
   res.render('./packages/personal');
 });
 
-router.post('/personal', (req, res) => {
-  const firstName = req.body.personalFirstName;
-  const lastName  = req.body.personalLastName;
-  const userName  = req.body.username;
+// router.post('/personal', (req, res) => {
+//   const firstName = req.body.personalFirstName;
+//   const lastName  = req.body.personalLastName;
+//   const userName  = req.body.username;
 
-  var newPersonalUser = new PersonalUser(
-    {
-    firstName: firstName, 
-    lastName: lastName,
-    username: userName,
-  }
-  ); 
+//   var newPersonalUser = new PersonalUser(
+//     {
+//     firstName: firstName, 
+//     lastName: lastName,
+//     username: userName,
+//   }
+//   ); 
 
-  PersonalUser.register(newPersonalUser, req.body.password, function(err, newlyCreatedPersonalUser){
-    if(err){
-      console.log(err);
-      return res.render('./packages/personal');
-    } 
-    passport.authenticate('local')(req, res, function() {
-      console.log(firstName)
-      res.redirect('/services')
-    });
-  });
-});
+//   PersonalUser.register(newPersonalUser, req.body.password, function(err, newlyCreatedPersonalUser){
+//     if(err){
+//       console.log(err);
+//       return res.render('./packages/personal');
+//     } 
+//     passport.authenticate('local')(req, res, function() {
+//       console.log(firstName)
+//       res.redirect('/services')
+//     });
+//   });
+// });
 
 
 
