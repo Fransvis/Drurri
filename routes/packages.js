@@ -1,5 +1,6 @@
 const PersonalUser        = require('../models/user');
 const BusinessUser        = require('../models/businessUser');
+const FreelanceUser       = require('../models/freelanceUser');
 const bodyParser       = require('body-parser');
 const passport     = require('passport');
 
@@ -76,6 +77,30 @@ router.get('/freelance', function(req, res){
   res.render('./packages/freelance');
 });
 
+router.post('/freelance', (req, res) => {
+  const freelancerName    = req.body.freelancerFirstName;
+  const freelancerSurname = req.body.freelancerLastName;
+  const username          = req.body.username;
+
+  var newFreelanceUser = new FreelanceUser(
+    {
+      freelancerName: freelancerName,
+      freelancerSurname: freelancerSurname,
+      username: username
+    }
+  )
+
+  FreelanceUser.register(newFreelanceUser, req.body.password, function(err, newlyCreatedFreelanceUser){
+    if(err){
+      console.log(err);
+      res.render('./packages/freelance');
+    }
+    passport.authenticate('local')(req, res, function() {
+      console.log(freelancerName)
+      res.redirect('/freelancer/id');
+    })
+  })
+})
 
 
 

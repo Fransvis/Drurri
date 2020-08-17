@@ -35,20 +35,15 @@ app.use(require('express-session')({
 
 app.use(passport.initialize());
 app.use(passport.session());
-// passport.use(new LocalStrategy(User.authenticate()));
-passport.use(User.createStrategy());
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
 
-// passport.use(new LocalStrategy(FreelanceUser.authenticate()));
 
-passport.use(FreelanceUser.createStrategy());
-passport.serializeUser(FreelanceUser.serializeUser());
-passport.deserializeUser(FreelanceUser.deserializeUser());
+passport.use(BusinessUser.createStrategy(), FreelanceUser.createStrategy(), User.createStrategy());
+passport.serializeUser(BusinessUser.serializeUser(), FreelanceUser.serializeUser(), User.serializeUser());
+passport.deserializeUser(BusinessUser.deserializeUser(), FreelanceUser.deserializeUser(), User.deserializeUser());
 
-passport.use(BusinessUser.createStrategy());
-passport.serializeUser(BusinessUser.serializeUser());
-passport.deserializeUser(BusinessUser.deserializeUser());
+
+
+
 
 
 

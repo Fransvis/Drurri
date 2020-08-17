@@ -4,8 +4,8 @@ var mongoose              = require('mongoose'),
 
     var freelanceUserSchema = new Schema(
       {
-        firstName: String,
-        lastName: String,
+        freelancerName: String,
+        freelancerSurname: String,
         username: String,
         password: String
       }
