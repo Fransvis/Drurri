@@ -1,5 +1,5 @@
-// const PersonalUser        = require('../models/user');
-const FreelanceUser       = require('../models/user');
+const PersonalUser        = require('../models/user');
+const BusinessUser        = require('../models/businessUser');
 const bodyParser       = require('body-parser');
 const passport     = require('passport');
 
@@ -26,7 +26,32 @@ router.get('/business/pride', function(req, res){
 
 
 router.post('/business/pride', (req, res) => {
-  res.send('Signing Up for Pride')
+  const businessName = req.body.businessName;
+  const businessIndustry = req.body.businessIndustry;
+  const businessAddress = req.body.businessAddress;
+  const businessContact = req.body.businessContact;
+  const username        = req.body.username;
+  
+  var newBusinessUser = new BusinessUser(
+    {
+      businessName: businessName,
+      businessIndustry: businessIndustry,
+      businessAddress: businessAddress,
+      businessContact: businessContact,
+      username: username
+    }
+  )
+
+  BusinessUser.register(newBusinessUser, req.body.password, function(err, newlyCreatedBusinessUser){
+    if(err){
+      console.log(err);
+      res.render('/packages/pride')
+    }
+    passport.authenticate('local')(req, res, function(){
+      console.log(businessName)
+      res.redirect('/')
+    })
+  });
 });
 
 router.get('/business/gold', function(req, res){
@@ -51,30 +76,6 @@ router.get('/freelance', function(req, res){
   res.render('./packages/freelance');
 });
 
-router.post('/freelance', (req, res) => {
-  const firstName = req.body.freelancerFirstName;
-  const lastName  = req.body.freelancerLastName;
-  const username  = req.body.username;
-
-  var newFreelanceUser = new FreelanceUser(
-    {
-      firstName: firstName,
-      lastName: lastName,
-      username: username
-    }
-  )
-
-  FreelanceUser.register(newFreelanceUser, req.body.password, function(err, newlyCreatedFreealanceUser){
-    if(err){
-      console.log(err);
-      res.render('./packages/freelance');
-    }
-    passport.authenticate('local')(req, res, function(){
-      console.log(firstName);
-      res.redirect('/freelancer/id')
-    })
-  })
-  });
 
 
 
@@ -87,30 +88,30 @@ router.get('/personal', (req, res) => {
   res.render('./packages/personal');
 });
 
-// router.post('/personal', (req, res) => {
-//   const firstName = req.body.personalFirstName;
-//   const lastName  = req.body.personalLastName;
-//   const userName  = req.body.username;
+router.post('/personal', (req, res) => {
+  const firstName = req.body.personalFirstName;
+  const lastName  = req.body.personalLastName;
+  const userName  = req.body.username;
 
-//   var newPersonalUser = new PersonalUser(
-//     {
-//     firstName: firstName, 
-//     lastName: lastName,
-//     username: userName,
-//   }
-//   ); 
+  var newPersonalUser = new PersonalUser(
+    {
+    firstName: firstName, 
+    lastName: lastName,
+    username: userName,
+  }
+  ); 
 
-//   PersonalUser.register(newPersonalUser, req.body.password, function(err, newlyCreatedPersonalUser){
-//     if(err){
-//       console.log(err);
-//       return res.render('./packages/personal');
-//     } 
-//     passport.authenticate('local')(req, res, function() {
-//       console.log(firstName)
-//       res.redirect('/services')
-//     });
-//   });
-// });
+  PersonalUser.register(newPersonalUser, req.body.password, function(err, newlyCreatedPersonalUser){
+    if(err){
+      console.log(err);
+      return res.render('./packages/personal');
+    } 
+    passport.authenticate('local')(req, res, function() {
+      console.log(firstName)
+      res.redirect('/services')
+    });
+  });
+});
 
 
 

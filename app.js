@@ -7,8 +7,9 @@ var express          = require("express"),
     packageRoutes    = require('./routes/packages'),
     serviceRoutes    = require('./routes/services'),
     freelancerRoutes = require('./routes/freelancer'),
-    User             = require('./models/user')
-    // FreelanceUser    = require('./models/freelanceUser')
+    User             = require('./models/user'),
+    FreelanceUser    = require('./models/freelanceUser'),
+    BusinessUser     = require('./models/businessUser')
 
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -39,10 +40,15 @@ passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-// passport.use(FreelanceUser.createStrategy());
-// passport.serializeUser(FreelanceUser.serializeUser());
-// passport.deserializeUser(FreelanceUser.deserializeUser());
+// passport.use(new LocalStrategy(FreelanceUser.authenticate()));
 
+passport.use(FreelanceUser.createStrategy());
+passport.serializeUser(FreelanceUser.serializeUser());
+passport.deserializeUser(FreelanceUser.deserializeUser());
+
+passport.use(BusinessUser.createStrategy());
+passport.serializeUser(BusinessUser.serializeUser());
+passport.deserializeUser(BusinessUser.deserializeUser());
 
 
 
