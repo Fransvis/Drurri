@@ -2,25 +2,28 @@
 
 <div class='pride-register'>
 </div>
+
+<form action='/packages/business/gold' method='post'>
   <div class='prideRegisterContent'>
     <div class='prideHeader'>
       <h3>Sign Up for Gold package</h3>
     </div>
     <div class='prideInputs'>
-      <input class='prideInput' type="text" placeholder='Business Name'>
-      <input class='prideInput' type="text" placeholder='Industry'>
+      <input class='prideInput' type="text" name='businessName' placeholder='Business Name'>
+      <input class='prideInput' type="text" name='businessIndustry' placeholder='Industry'>
     </div>
     <div class='prideInputs'>
-      <input class='prideInput' type="text" placeholder='Business Address'>
-      <input class='prideInput' type="text" placeholder='Contact'>
+      <input class='prideInput' type="text" name='businessAddress' placeholder='Business Address'>
+      <input class='prideInput' type="text" name='businessContact' placeholder='Contact'>
     </div>
     <div class='prideInputs'>
-      <input class='prideInput' type="text" placeholder='Email'>
-      <input class='prideInput' type="password" placeholder='Password'>
+      <input class='prideInput' type="text" name='username' placeholder='Email'>
+      <input class='prideInput' type="password" name='password' placeholder='Password'>
     </div>
     <div class='prideInputs'>
       <button class='btn btn-light btn-sm' id='prideSignUpButton'>Sign Up!</button>
     </div>
   </div>
+</form>
 
 <%- include ('../partials/footer') %>

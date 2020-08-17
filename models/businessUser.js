@@ -4,12 +4,29 @@ var mongoose              = require('mongoose'),
 
     var businessUserSchema = new Schema(
       {
+        username: String,
+        password: String,
+
+        pride: {
         businessName: String,
         businessIndustry: String,
         businessAddress: String,
-        businessContact: Number,
-        username: String,
-        password: String
+        businessContact: Number
+        },
+
+        gold: {
+          businessName: String,
+          businessIndustry: String,
+          businessAddress: String,
+          businessContact: Number
+        },
+        
+        platinum: {
+          businessName: String,
+          businessIndustry: String,
+          businessAddress: String,
+          businessContact: Number
+        }
       }
     )
 

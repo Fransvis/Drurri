@@ -395,8 +395,13 @@ background: #000;
       filter: brightness(2%);
     }
 
+    .modal-footer{
+      display: block;
+      margin-left: 25%;
+    }
+
     #create-profile-button{
-      margin-left: 40%;
+      margin-left: 20%;
     }
 
     #createProfileContent{

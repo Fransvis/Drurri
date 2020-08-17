@@ -35,21 +35,27 @@ router.post('/business/pride', (req, res) => {
   
   var newBusinessUser = new BusinessUser(
     {
+      username: username,
+      pride: {
       businessName: businessName,
       businessIndustry: businessIndustry,
       businessAddress: businessAddress,
       businessContact: businessContact,
-      username: username
+      }
     }
   )
 
   BusinessUser.register(newBusinessUser, req.body.password, function(err, newlyCreatedBusinessUser){
     if(err){
       console.log(err);
-      res.render('/packages/pride')
+      res.render('./packages/pride')
     }
     passport.authenticate('local')(req, res, function(){
-      console.log(businessName)
+      console.log(businessName);
+      console.log(businessIndustry);
+      console.log(businessContact);
+      console.log(businessAddress);
+      console.log(username);
       res.redirect('/')
     })
   });
@@ -57,6 +63,42 @@ router.post('/business/pride', (req, res) => {
 
 router.get('/business/gold', function(req, res){
   res.render('./packages/gold');
+});
+
+router.post('/business/gold', (req, res) => {
+  const businessName = req.body.businessName;
+  const businessIndustry = req.body.businessIndustry;
+  const businessAddress = req.body.businessAddress;
+  const businessContact = req.body.businessContact;
+  const username        = req.body.username;
+
+   
+  var newBusinessUser = new BusinessUser(
+    {
+      username: username,
+      gold: {
+      businessName: businessName,
+      businessIndustry: businessIndustry,
+      businessAddress: businessAddress,
+      businessContact: businessContact,
+      }
+    }
+  );
+  
+  BusinessUser.register(newBusinessUser, req.body.password, function(err, newlyCreatedBusinessUser){
+    if(err){
+      console.log(err);
+      res.render('./packages/pride')
+    }
+    passport.authenticate('local')(req, res, function(){
+      console.log(businessName);
+      console.log(businessIndustry);
+      console.log(businessContact);
+      console.log(businessAddress);
+      console.log(username);
+      res.redirect('/')
+    })
+  });
 });
 
 router.get('/business/platinum', function(req, res){
