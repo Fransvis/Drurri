@@ -1,13 +1,14 @@
-var express = require('express'),
-    router  = express.Router();
+var express       = require('express'),
+    FreelanceUser = require('../models/freelanceUser'),
+    router        = express.Router();
 
 
-    router.get('/id', (req, res) => {
-      res.render('./freelancer/createProfile');
-    })
+    router.get('/:id/createprofile', (req, res) => {
+        res.render('./freelancer/createProfile')
+      })
     
     
-    router.get('/id/profile', (req, res) => {
+    router.get('/:id/profile', (req, res) => {
       res.render('./freelancer/profile');
     });
     

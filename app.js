@@ -63,6 +63,10 @@ app.get("/about", function(req, res){
     res.render("about");
 });
 
+app.get('/login', (req, res) => {
+    res.render('sign-in');
+})
+
 
 app.use('/packages', packageRoutes);
 app.use('/services', serviceRoutes);
@@ -70,5 +74,5 @@ app.use('/freelancer', freelancerRoutes);
 
 app.listen("3000", function(){
     console.log("WorkbitApp running");
-});
+}); 
 

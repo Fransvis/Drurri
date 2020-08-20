@@ -139,9 +139,11 @@ router.post('/freelance', (req, res) => {
     }
     passport.authenticate('local')(req, res, function() {
       console.log(freelancerName)
-      res.redirect('/freelancer/id');
     })
   })
+
+  
+  res.redirect('/freelancer/:id/createprofile');
 })
 
 

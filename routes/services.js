@@ -6,6 +6,9 @@ router.get("/", function(req, res){
 });
 
 router.get("/photography", function(req, res){
+  var photograpphers = [
+    {name: Peter Labus}
+  ]
   res.render("photography");
 });
 
