@@ -6,8 +6,21 @@
 
     <div class="box">
 
+      <% photographers.forEach(function(photographer){ %>
+         <a href='/freelancer/id/profile'>
+            <div class="card">
+              <div class="imgBx">
+                  <img src="<%= photographer.image %>" alt="images">
+              </div>
+              <div class="details">
+                  <h2><%= photographer.name %><br><span><%= photographer.location %></span></h2>
+                  <p>Speciality: <%= photographer.industry %></p>
+              </div>
+            </div>
+            </a>
+      <% }); %>
 
-      <a href='/freelancer/id/profile'>
+      <!-- <a href='/freelancer/id/profile'>
       <div class="card">
         <div class="imgBx">
             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="images">
@@ -17,9 +30,9 @@
             <p>Speciality: Weddings</p>
         </div>
       </div>
-      </a>
+      </a> -->
 
-      <a href='#'>
+      <!-- <a href='#'>
       <div class="card">
         <div class="imgBx">
            <img src="https://images.unsplash.com/photo-1534455700361-eca9c3dbc981?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="images">
@@ -29,8 +42,8 @@
            <p>Speciality: Wildlife</p>
          </div>
       </div>
-      </a>
-    
+      </a> -->
+<!--     
       <a href='#'>
        <div class="card">
          <div class="imgBx">
@@ -41,9 +54,9 @@
             <p>Speciality: Sports</p>
           </div>
        </div>
-      </a>
+      </a> -->
 
-       <a href='#'>
+       <!-- <a href='#'>
        <div class="card">
          <div class="imgBx">
             <img src="https://images.unsplash.com/photo-1512813498716-3e640fed3f39?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="images">
@@ -53,9 +66,9 @@
             <p>Speciality: Business</p>
           </div>
        </div>
-      </a>
+      </a> -->
 
-       <a href='#'>
+       <!-- <a href='#'>
        <div class="card">
          <div class="imgBx">
             <img src="https://images.unsplash.com/photo-1493863641943-9b68992a8d07?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="images">
@@ -65,9 +78,9 @@
             <p>Speciality: action/adventure</p>
           </div>
        </div>
-      </a>
+      </a> -->
 
-       <a href='#'>
+       <!-- <a href='#'>
        <div class="card">
          <div class="imgBx">
             <img src="https://images.unsplash.com/photo-1473433657392-e7e31b785bc2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="images">
@@ -77,9 +90,9 @@
             <p>Speciality: Weddings</p>
           </div>
        </div>
-      </a>
+      </a> -->
 
-       <a href='#'>
+       <!-- <a href='#'>
        <div class="card">
          <div class="imgBx">
             <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="images">
@@ -89,8 +102,8 @@
             <p>Speciality: Architecture</p>
           </div>
        </div>
-      </a>
-
+      </a> -->
+<!-- 
        <a href='#'>
        <div class="card">
          <div class="imgBx">
@@ -101,9 +114,9 @@
             <p>Speciality: Fashion</p>
           </div>
        </div>
-      </a>
+      </a> -->
 
-       <a href='#'>
+       <!-- <a href='#'>
        <div class="card">
          <div class="imgBx">
             <img src="https://images.unsplash.com/photo-1565260524775-7e9b536fba2f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="images">
@@ -113,7 +126,7 @@
             <p>Speciality: Travel</p>
           </div>
        </div>
-      </a>
+      </a> -->
  
   </div>
 

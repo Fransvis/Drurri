@@ -4,11 +4,12 @@
 
 <div class='createProfile'>
 
+
   <div id='welcomeModal'>
     <div class="welcomeModal-content">
       <div class="welcomeModal-body">
         <h1>Welcome to the Family!</h1>
-        <h6>Let's get started on your profile <%= freelanceuser.name %> </h6>
+        <h6>Let's get started on your profile</h6>
       </div>
         <div class='modal-footer'>
            <button id='create-profile-button'>Create Profile</button>
@@ -16,6 +17,9 @@
     </div>
   </div>
 
+
+
+  <form action='/freelancer/:id/profile' method='post'>
   <div id='createProfileContent'>
     <h3 id='createProfileTitle'>Tell us a bit about yourself</h3>
     <div class='createProfileInputs'>
@@ -23,6 +27,9 @@
       <input class='createProfileInput' type='text' placeholder='Location'>
     </div>
   </div>
+</form>
+
+
 
 </div>
 

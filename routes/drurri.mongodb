@@ -6,7 +6,5 @@
 // Select the database to use.
 use('drurri_app');
 
-db.freelanceusers.find()
-
-freelanceusers.id()
+db.freelanceusers.find({freelancerName: 'Mark'})
 
