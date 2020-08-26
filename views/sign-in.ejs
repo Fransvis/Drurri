@@ -1,7 +1,22 @@
 <%- include ('partials/header') %>
 
-<form style='margin-top: 5%;' action='/login' method='POST'>
-  <input placeholder="username">
-  <input placeholder="password">
-</form>
+<div class='signIn'>
+
+
+<form action="" method="post">
+  <div class='signInContent'>
+    <h3 id='signInHeader'>Sign Into Your Account</h3>
+      <div class='signInInputs'>
+        <input class='signInInput' type='text' name='freelancerFirstName' placeholder="First Name">
+        <input class='signInInput' type='text' name='freelancerLastName' placeholder="Last Name">
+      </div>
+      </form>
+      <div class='signInInputs'>
+         <a href=''></a> <button class='btn btn-light btn-sm' id='freelancerSignUpButton'>Sign In!</button>
+          </a>
+      </div>
+  </div>
+
+</div>
+
 <%- include ('partials/footer') %>

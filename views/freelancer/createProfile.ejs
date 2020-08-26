@@ -19,15 +19,25 @@
 
 
 
-  <form action='/freelancer/:id/profile' method='post'>
+  <form action='/freelancer/:id/createprofile' method='post'>
   <div id='createProfileContent'>
     <h3 id='createProfileTitle'>Tell us a bit about yourself</h3>
     <div class='createProfileInputs'>
-      <input class='createProfileInput' type='text' placeholder='Job Description'>
+      <input class='createProfileInput' type='text' name='job' placeholder='Job Description'>
+      <input class='createProfileInput' type='text' name='location' placeholder='Location'>
+    </div>
+    <div class='createProfileInputs'>
+      <input class='createProfileInput' type='text' placeholder='Website link'>
+      <input class='createProfileInput' type='text' placeholder='Instagram link'>
+    </div>
+    <div class='createProfileInputs'>
+      <textarea class='createProfileInput' id='createProfileAboutYou' type='text' placeholder='About you'></textarea>
       <input class='createProfileInput' type='text' placeholder='Location'>
     </div>
+    <a href='/freelancer/:id/profile'><button>Sign Up!</button></a>
   </div>
 </form>
+
 
 
 

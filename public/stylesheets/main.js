@@ -13,9 +13,16 @@ window.onscroll = function() {
       navbar.classList.remove("sticky");
     }
   }
+
 }
 
+
+
+
+// Modal Logic 
+
 const section = document.querySelector('.color-top');
+
 
 
 
@@ -33,9 +40,6 @@ function shutItDown() {
 createProfileModalButton.addEventListener('click', shutItDown);
 
 
-// Modal sign up Freelancer 
-
-// get modal element 
 
 
 
@@ -44,10 +48,8 @@ createProfileModalButton.addEventListener('click', shutItDown);
 
 
 
-// function clickOutside(e){
-//   if(e.target == modal)
-//   modal.style.display = 'none';
-// }
+
+
 
 
 

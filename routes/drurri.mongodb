@@ -6,5 +6,12 @@
 // Select the database to use.
 use('drurri_app');
 
-db.freelanceusers.find({freelancerName: 'Mark'})
+db.freelanceusers.find({freelancerName: "Anton"});
+// db.freelanceusers.location = "Sa"
+// db.freelanceusers.insert({
+//   location: "South Africa",
+//   jobDescription: "Photographer"
+// })
+
+// db.freelanceusers.find()
 

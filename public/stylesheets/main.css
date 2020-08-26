@@ -189,7 +189,7 @@ background: #000;
   }
   
   .content:nth-of-type(3) {
-    background-image: url('https://c.wallhere.com/photos/a4/8c/mic_lego_star_wars_stormtrooper_humor_singing_busting-1085894.jpg!d');
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQIczqKGx0HdgE4DwWOIMgvWePZHxFiRF2wHw&usqp=CAU');
   }
   
   .content:nth-of-type(4) {
@@ -431,6 +431,10 @@ background: #000;
       background: #000;
       border-bottom: 1px solid red;
       color: red;
+    }
+
+    #createProfileAboutYou{
+      height: 100px;
     }
     
 
@@ -776,9 +780,24 @@ margin-top: 5px;
   margin-top: 5%;
 }
 
+.about-intro5 p{
+  color: #B2967D;
+  text-align: center;
+  margin-top: 5%;
+}
+
+.about-intro5 h1{
+  margin-left: 30%;
+  margin-top: 13%;
+  color: #B2967D;
+}
+
+
 .about-intro4 .row{
   margin-top: 7%;
 }
+
+
 
 .objectives-img{
   margin-left: 4%;
@@ -796,6 +815,10 @@ margin-top: 5px;
 
 .about .objectives-img3{
   margin-left: -12%;
+}
+
+.about .objectives-img5{
+  margin-left: 2%;
 }
 
 
@@ -826,4 +849,36 @@ margin-top: 5px;
 }
 
 
+
+/* SignIn Page  */
+
+.signIn {
+  background-image: url('https://www.aardvark3ddesign.co.uk/wp-content/uploads/2019/03/StromtrooperWIP_02b.jpg');
+  background-repeat: no-repeat;
+  height: 40em;
+}
+
+.signInContent{
+  padding-top: 16%;
+}
+
+#signInHeader{
+  color: #fff;
+  text-align: center;
+  margin-left: 17em;
+}
+
+.signInInputs{
+  text-align: center;
+  margin-left: 34%;
+  margin-top: 2%;
+}
+
+.signInInput{
+  background: #000;
+  border: none;
+  color: red;
+  border-bottom: 1px solid red;
+  margin-left: 2%;
+}
 

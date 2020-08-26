@@ -8,7 +8,7 @@ var mongoose              = require('mongoose'),
         freelancerSurname: String,
         username: String,
         password: String,
-        industry: String,
+        jobTitle: String,
         location: String
       }
     )
