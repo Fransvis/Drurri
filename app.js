@@ -4,6 +4,7 @@ var express          = require("express"),
     bodyParser       = require('body-parser'),
     passport         = require('passport'),
     LocalStrategy    = require('passport-local'),
+    passportLocalMongoose = require('passport-local-mongoose'),
     packageRoutes    = require('./routes/packages'),
     serviceRoutes    = require('./routes/services'),
     freelancerRoutes = require('./routes/freelancer'),
@@ -23,12 +24,21 @@ mongoose.connect('mongodb://localhost:27017/drurri_app', {
 });
 mongoose.set('useCreateIndex', true);
 
+// ============================================
+// pass currentUserInfo through to each template
+// =============================================
+
+app.use(function(req, res, next){
+    res.locals.currentUser = req.user;
+    next();
+});
+
 // ========================
 // PASSPORT CONFIGURATION
 // ========================
 
 app.use(require('express-session')({
-    secret: 'one one one',
+    secret: 'This is my secret',
     resave: false,
     saveUninitialized: false
 }));
@@ -36,14 +46,10 @@ app.use(require('express-session')({
 app.use(passport.initialize());
 app.use(passport.session());
 
-
-passport.use(BusinessUser.createStrategy(), FreelanceUser.createStrategy(), User.createStrategy());
-passport.serializeUser(BusinessUser.serializeUser(), FreelanceUser.serializeUser(), User.serializeUser());
-passport.deserializeUser(BusinessUser.deserializeUser(), FreelanceUser.deserializeUser(), User.deserializeUser());
-
-
-
-
+passport.use(new LocalStrategy(FreelanceUser.authenticate()));
+passport.use(FreelanceUser.createStrategy());
+passport.serializeUser(FreelanceUser.serializeUser());
+passport.deserializeUser(FreelanceUser.deserializeUser());
 
 
 
@@ -52,7 +58,7 @@ passport.deserializeUser(BusinessUser.deserializeUser(), FreelanceUser.deseriali
 // ===================
 
 app.get("/", function(req, res){
-    res.render("landing");
+    res.render("landing", {currentUser: req.user});
 });
 
 // ==============
@@ -60,12 +66,41 @@ app.get("/", function(req, res){
 // ==============
 
 app.get("/about", function(req, res){
-    res.render("about");
+    res.render("about", {currentUser: req.user});
 });
+
+// Login form
 
 app.get('/login', (req, res) => {
     res.render('sign-in');
 })
+
+// app.post('/login', middleware, callback)
+app.post('/login', passport.authenticate('local', 
+        {
+            successRedirect: '/',
+            failureRedirect: '/login'
+    }
+    ));
+
+app.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect('/')
+});
+
+app.get('/secret', isLoggedIn, (req, res) => {
+    res.render('secret');
+});
+
+// middleware
+
+function isLoggedIn(req, res, next){
+    if(req.isAuthenticated()){
+        return next();
+    }
+    res.redirect("/login");
+}
+
 
 
 app.use('/packages', packageRoutes);

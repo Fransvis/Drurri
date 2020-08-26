@@ -2,7 +2,7 @@ var express = require('express'),
     router  = express.Router()
 
 router.get("/", function(req, res){
-  res.render("services");
+  res.render("services", {currentUser: req.user});
 });
 
 router.get("/photography", function(req, res){
@@ -26,7 +26,7 @@ router.get("/photography", function(req, res){
       industry: "Business"
     }
   ]
-  res.render("photography", {photographers: photographers});
+  res.render("photography", {photographers: photographers, currentUser: req.user});
 });
 
 router.get('/graphic-design', (req, res) => {

@@ -3,13 +3,18 @@ const bodyParser    = require('body-parser');
 const passport      = require('passport');
 const FreelanceUser = require('../models/freelanceUser');
 var router          = express.Router();
-var freelancers     = [0]
+
+// function isLoggedIn(req, res, next){
+//   if(req.isAuthenticated()){
+//       return next();
+//   }
+//   res.redirect('/login')
+// }
 
 // Freelance sign up handle logic
 
 router.get("/", function(req, res){
-  // console.log(freelancers)
-  res.render("./packages/freelance");
+  res.render("./packages/freelance", {currentUser: req.user});
 });
 
 
@@ -35,42 +40,27 @@ router.get("/", function(req, res){
           }
           passport.authenticate('local')(req, res, function() {
             console.log(freelancerName);
-            freelancers.push(newFreelanceUser);
-            freelancers.shift();
-            res.redirect('/freelancer/:id/createprofile');
           });
         });
+        res.redirect('/freelancer/:id/createprofile');
       });
 
       // freelance create profile logic
 
     router.get('/:id/createprofile', (req, res) => {
-      console.log(freelancers)
       res.render('./freelancer/createProfile');
       });
 
       router.post('/:id/createprofile', (req, res) => {
-        // const jobTitle = req.body.job;
-        // const location = req.body.location;
-
-          // freelancers[0].jobTitle = jobTitle;
-          // freelancers[0].location = location;
-          
-         var currentFreelancer =  FreelanceUser.find({freelancerName: freelancers[0].freelancerName});
-         console.log(currentFreelancer);
-         
         res.redirect('/freelancer/:id/profile')
         // post information from form to user and redirect to profile page
       });
     
     
     router.get('/:id/profile', (req, res) => {
-      console.log(freelancers[0].freelancerName)
-
-      console.log(freelancers)
       // find user info and display it
       // console.log(freelancers)
-      res.render('./freelancer/profile');
+      res.render('./freelancer/profile', {currentUser: req.user});
     });
     
 

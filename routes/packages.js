@@ -9,7 +9,7 @@ var express = require('express'),
 
 
 router.get('/', function(req, res){
-  res.render('./packages/packages');
+  res.render('./packages/packages',);
 });
 
 // ===============================
@@ -51,14 +51,14 @@ router.post('/business/pride', (req, res) => {
       res.render('./packages/pride')
     }
     passport.authenticate('local')(req, res, function(){
-      console.log(businessName);
-      console.log(businessIndustry);
-      console.log(businessContact);
-      console.log(businessAddress);
-      console.log(username);
-      res.redirect('/')
     })
   });
+  console.log(businessName);
+  console.log(businessIndustry);
+  console.log(businessContact);
+  console.log(businessAddress);
+  console.log(username);
+  res.redirect('/')
 });
 
 router.get('/business/gold', function(req, res){
@@ -91,14 +91,14 @@ router.post('/business/gold', (req, res) => {
       res.render('./packages/pride')
     }
     passport.authenticate('local')(req, res, function(){
-      console.log(businessName);
-      console.log(businessIndustry);
-      console.log(businessContact);
-      console.log(businessAddress);
-      console.log(username);
-      res.redirect('/')
+      // console.log(businessName);
+      // console.log(businessIndustry);
+      // console.log(businessContact);
+      // console.log(businessAddress);
+      // console.log(username);
     })
   });
+  res.redirect('/')
 });
 
 router.get('/business/platinum', function(req, res){
@@ -144,9 +144,9 @@ router.post('/personal', (req, res) => {
     } 
     passport.authenticate('local')(req, res, function() {
       console.log(firstName)
-      res.redirect('/services')
     });
   });
+  res.redirect('/services')
 });
 
 
