@@ -4,12 +4,12 @@ const passport      = require('passport');
 const FreelanceUser = require('../models/freelanceUser');
 var router          = express.Router();
 
-// function isLoggedIn(req, res, next){
-//   if(req.isAuthenticated()){
-//       return next();
-//   }
-//   res.redirect('/login')
-// }
+function isLoggedIn(req, res, next){
+  if(req.isAuthenticated()){
+      return next();
+  }
+  res.redirect('/login')
+}
 
 // Freelance sign up handle logic
 
@@ -42,24 +42,39 @@ router.get("/", function(req, res){
             console.log(freelancerName);
           });
         });
-        res.redirect('/freelancer/:id/createprofile');
+        res.redirect('/');
       });
 
       // freelance create profile logic
 
     router.get('/:id/createprofile', (req, res) => {
-      res.render('./freelancer/createProfile');
-      });
+      var currentUser = req.user;
+      res.render('./freelancer/createProfile', {currentUser: req.user})
+    });
 
       router.post('/:id/createprofile', (req, res) => {
-        res.redirect('/freelancer/:id/profile')
-        // post information from form to user and redirect to profile page
-      });
+        var currentUser = req.user;
+        const job = req.body.job;
+        const location = req.body.location;
+
+        FreelanceUser.findOneAndUpdate({_id: currentUser.id}, 
+          {
+            jobTitle: job, 
+            location: location
+          }, function(err, updatedFreelancer){
+          if(err){
+            console.log(err);
+          } else {
+            res.redirect('/freelancer/:id/profile');
+          }
+        });
+        });
+
     
     
     router.get('/:id/profile', (req, res) => {
-      // find user info and display it
-      // console.log(freelancers)
+      var currentUser = req.user;
+      console.log(currentUser);
       res.render('./freelancer/profile', {currentUser: req.user});
     });
     

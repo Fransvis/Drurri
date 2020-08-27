@@ -89,7 +89,7 @@ app.get('/logout', (req, res) => {
 });
 
 app.get('/secret', isLoggedIn, (req, res) => {
-    res.render('secret');
+    res.render('secret', {currentUser: req.user});
 });
 
 // middleware
