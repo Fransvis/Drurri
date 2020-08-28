@@ -7,14 +7,13 @@
 
 	<div class="card">
 		<div class="card-body">
-			<img class='user-icon' src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80'>
-			<h3 class='profile-card-title'>Peter Labuschagne</h3>
-			<h6 class="profile-card-job-description">Wedding Photography</h6>
-			<h6 class="profile-card-residence">	<i class="fas fa-map-marker-alt"></i> Cape Town, South-Africa</h6>
-			<p class='profile-card-bio'>Hello, my name is Peter and I am a young wedding photographer based in Cape Town, South Africa. 
-				I am very passionate about capturing beautiful moments that will last not only in memory, but in reality. </p>
-				<a href="https://patatap.com/" class="profile-card-website">patatap.com</a>
-			<a href="https://www.instagram.com/peterlabuschagne/?hl=en" class="profile-card-insta">Instagram</a>
+			<img class='user-icon' src='<%= freelancer.picture %>'>
+			<h3 class='profile-card-title'><%= freelancer.freelancerName %><%= freelancer.freelancerSurname %></h3>
+			<h6 class="profile-card-job-description"><%= freelancer.jobTitle %></h6>
+			<h6 class="profile-card-residence">	<i class="fas fa-map-marker-alt"></i><%= freelancer.location %></h6>
+			<p class='profile-card-bio'><%= freelancer.about %> </p>
+				<a href="<%= freelancer.website %>" class="profile-card-website"><%= freelancer.website %></a>
+			<a href="<%= freelancer.instagram %>" class="profile-card-insta"><%= freelancer.freelancerName %><%= freelancer.freelancerSurname %></a>
 		</div>
 	</div>
 

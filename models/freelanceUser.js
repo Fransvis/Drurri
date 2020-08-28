@@ -12,7 +12,8 @@ var mongoose              = require('mongoose'),
         location: String,
         about: String,
         website: String,
-        instagram: String
+        instagram: String,
+        picture: String
       }
     )
 

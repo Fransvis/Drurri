@@ -6,15 +6,15 @@
 
     <div class="box">
 
-      <% photographers.forEach(function(photographer){ %>
-         <a href='/freelancer/id/profile'>
+      <% freelancers.forEach(function(photographer){ %>
+         <a href='/freelancer/<%= photographer._id %>/profile'>
             <div class="card">
               <div class="imgBx">
-                  <img src="<%= photographer.image %>" alt="images">
+                  <img src="<%= photographer.picture %>" alt="images">
               </div>
               <div class="details">
-                  <h2><%= photographer.name %><br><span><%= photographer.location %></span></h2>
-                  <p>Speciality: <%= photographer.industry %></p>
+                  <h2><%= photographer.freelancerName %> <%= photographer.freelancerSurname %><br><span><%= photographer.location %></span></h2>
+                  <p>Speciality: <%= photographer.jobTitle %></p>
               </div>
             </div>
             </a>

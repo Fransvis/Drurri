@@ -84,7 +84,8 @@ router.get("/", function(req, res){
         const location = req.body.location;
         const about = req.body.about;
         const website = req.body.website;
-        const instagram = req.body.istagram;
+        const instagram = req.body.instagram;
+        const picture = req.body.picture;
 
         FreelanceUser.findOneAndUpdate({_id: currentUser.id}, 
           {
@@ -92,7 +93,8 @@ router.get("/", function(req, res){
             location: location,
             about: about,
             website: website,
-            instagram: instagram
+            instagram: instagram,
+            picture: picture
           }, function(err, updatedFreelancer){
           if(err){
             console.log(err);
@@ -107,7 +109,14 @@ router.get("/", function(req, res){
     router.get('/:id/profile', (req, res) => {
       var currentUser = req.user;
       console.log(currentUser);
-      res.render('./freelancer/profile', {currentUser: req.user});
+
+      FreelanceUser.findById(req.params.id, (err, foundFreelancer) => {
+        if(err){
+          console.log(err);
+        } else {
+          res.render('./freelancer/profile', {freelancer: foundFreelancer, currentUser: req.user});
+        }
+      })
     });
     
 
