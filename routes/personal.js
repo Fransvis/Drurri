@@ -5,10 +5,10 @@ var express        = require('express'),
     bodyParser     = require('body-parser'),
     router         = express.Router()
 
-    passport.use(new LocalStrategy(PersonalUser.authenticate()));
-    passport.use(PersonalUser.createStrategy());
-    passport.serializeUser(PersonalUser.serializeUser());
-    passport.deserializeUser(PersonalUser.deserializeUser());
+    // passport.use('personal', new LocalStrategy('personalLocal', PersonalUser.authenticate()));
+    // passport.use(PersonalUser.createStrategy());
+    // passport.serializeUser(PersonalUser.serializeUser());
+    // passport.deserializeUser(PersonalUser.deserializeUser());
 
 // =====================
 // Personal Package
@@ -36,7 +36,7 @@ var express        = require('express'),
           console.log(err);
           return res.render('./packages/personal');
         } 
-        passport.authenticate('local')(req, res, function() {
+        passport.authenticate('personalLocal')(req, res, function() {
           console.log(firstName)
         });
       });

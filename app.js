@@ -11,8 +11,8 @@ var express               = require("express"),
     freelancerRoutes      = require('./routes/freelancer'),
     personalRoutes        = require('./routes/personal'),
 
-    PersonalUser          = require('./models/user'),
     FreelanceUser         = require('./models/freelanceUser'),
+    PersonalUser          = require('./models/user'),
     BusinessUser          = require('./models/businessUser')
 
 
@@ -55,7 +55,16 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-// passport.use on respective route pages
+passport.use('freelancer', new LocalStrategy('freelancerLocal', FreelanceUser.authenticate()));
+// passport.use(new LocalStrategy('personalLocal', PersonalUser.authenticate()));
+// passport.use(new LocalStrategy('businessLocal', BusinessUser.authenticate()));
+
+passport.use(FreelanceUser.createStrategy());
+// passport.use(PersonalUser.createStrategy());
+// passport.use(BusinessUser.createStrategy());
+
+passport.serializeUser(FreelanceUser.serializeUser());
+passport.deserializeUser(FreelanceUser.deserializeUser());
 
 
 // ===================
@@ -96,7 +105,7 @@ app.get('/login', (req, res) => {
 // ==============
 
 // app.post('/login', middleware, callback)
-app.post('/login', passport.authenticate('local', 
+app.post('/login', passport.authenticate('freelancer', 
         {
             successRedirect: '/',
             failureRedirect: '/login'
@@ -132,9 +141,8 @@ function isLoggedIn(req, res, next){
 }
 
 
-
-app.use('/business', businessRoutes);
 app.use('/freelancer', freelancerRoutes);
+app.use('/business', businessRoutes);
 app.use('/personal', personalRoutes)
 app.use('/services', serviceRoutes);
 

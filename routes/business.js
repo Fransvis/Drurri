@@ -8,13 +8,18 @@ var express        = require('express'),
 var express = require('express'),
     router  = express.Router();
 
+    // passport.use('business', new LocalStrategy('businessLocal', BusinessUser.authenticate()));
+    // passport.use(BusinessUser.createStrategy());
+    // passport.serializeUser(BusinessUser.serializeUser());
+    // passport.deserializeUser(BusinessUser.deserializeUser());
 
 
 
-passport.use(new LocalStrategy( BusinessUser.authenticate()));
-passport.use( BusinessUser.createStrategy());
-passport.serializeUser( BusinessUser.serializeUser());
-passport.deserializeUser( BusinessUser.deserializeUser());
+
+// passport.use(new LocalStrategy( BusinessUser.authenticate()));
+// passport.use( BusinessUser.createStrategy());
+// passport.serializeUser( BusinessUser.serializeUser());
+// passport.deserializeUser( BusinessUser.deserializeUser());
 
 // ===============================
 // Business Packages

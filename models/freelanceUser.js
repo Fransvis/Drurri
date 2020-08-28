@@ -9,7 +9,10 @@ var mongoose              = require('mongoose'),
         username: String,
         password: String,
         jobTitle: String,
-        location: String
+        location: String,
+        about: String,
+        website: String,
+        instagram: String
       }
     )
 

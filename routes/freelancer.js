@@ -1,15 +1,11 @@
-const express       = require('express');
-var router          = express.Router();
-const LocalStrategy = require('passport-local');
-const bodyParser    = require('body-parser');
-const passport      = require('passport');
-const FreelanceUser = require('../models/freelanceUser');
+var express       = require('express'),
+    router        = express.Router(),
+    LocalStrategy = require('passport-local'),
+    bodyParser    = require('body-parser'),
+    passport      = require('passport'),
+    FreelanceUser = require('../models/freelanceUser');
 
 
-passport.use(new LocalStrategy(FreelanceUser.authenticate()));
-passport.use(FreelanceUser.createStrategy());
-passport.serializeUser(FreelanceUser.serializeUser());
-passport.deserializeUser(FreelanceUser.deserializeUser());
 
 function isLoggedIn(req, res, next){
   if(req.isAuthenticated()){
@@ -35,10 +31,10 @@ router.get("/", function(req, res){
           {
             freelancerName: freelancerName,
             freelancerSurname: freelancerSurname,
-            username: username,
+            username: username
             // password: password,
-            jobTitle: "default",
-            location: "default"
+            // jobTitle: "default",
+            // location: "default"
           }
         )
 
@@ -54,14 +50,14 @@ router.get("/", function(req, res){
         //       return res.redirect('/freelancer/:id/createprofile')
         //     })
         //   }
-        // })
+        // });
       
         FreelanceUser.register(newFreelanceUser, req.body.password, function(err, newlyCreatedFreelanceUser){
           if(err){
             console.log(err);
             res.render('./packages/freelance');
           }
-          passport.authenticate('local')(req, res, function() {
+          passport.authenticate('freelancerLocal')(req, res, function() {
             console.log(freelancerName);
           });
           req.login(newFreelanceUser, (err) => {
@@ -86,11 +82,17 @@ router.get("/", function(req, res){
         var currentUser = req.user;
         const job = req.body.job;
         const location = req.body.location;
+        const about = req.body.about;
+        const website = req.body.website;
+        const instagram = req.body.istagram;
 
         FreelanceUser.findOneAndUpdate({_id: currentUser.id}, 
           {
             jobTitle: job, 
-            location: location
+            location: location,
+            about: about,
+            website: website,
+            instagram: instagram
           }, function(err, updatedFreelancer){
           if(err){
             console.log(err);
