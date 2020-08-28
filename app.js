@@ -46,10 +46,10 @@ app.use(require('express-session')({
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.use(new LocalStrategy(FreelanceUser.authenticate()));
-passport.use(FreelanceUser.createStrategy());
-passport.serializeUser(FreelanceUser.serializeUser());
-passport.deserializeUser(FreelanceUser.deserializeUser());
+// passport.use(new LocalStrategy(FreelanceUser.authenticate()));
+// passport.use(FreelanceUser.createStrategy());
+// passport.serializeUser(FreelanceUser.serializeUser());
+// passport.deserializeUser(FreelanceUser.deserializeUser());
 
 
 

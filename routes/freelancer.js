@@ -1,8 +1,15 @@
+
+const LocalStrategy = require('passport-local');
 const express       = require('express');
 const bodyParser    = require('body-parser');
 const passport      = require('passport');
 const FreelanceUser = require('../models/freelanceUser');
 var router          = express.Router();
+
+passport.use(new LocalStrategy(FreelanceUser.authenticate()));
+passport.use(FreelanceUser.createStrategy());
+passport.serializeUser(FreelanceUser.serializeUser());
+passport.deserializeUser(FreelanceUser.deserializeUser());
 
 function isLoggedIn(req, res, next){
   if(req.isAuthenticated()){
