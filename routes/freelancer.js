@@ -22,16 +22,32 @@ router.get("/", function(req, res){
         const freelancerName    = req.body.freelancerFirstName;
         const freelancerSurname = req.body.freelancerLastName;
         const username          = req.body.username;
+        // const password          = req.body.password;
       
         var newFreelanceUser = new FreelanceUser(
           {
             freelancerName: freelancerName,
             freelancerSurname: freelancerSurname,
             username: username,
+            // password: password,
             jobTitle: "default",
             location: "default"
           }
         )
+
+        // newFreelanceUser.save(req.body.password, function(err){
+        //   if(err){
+        //     console.log(err);
+        //   } else {
+        //     console.log('frelanceuser: ' + newFreelanceUser.username  + ' saved.');
+        //     req.login(newFreelanceUser, function(err){
+        //       if(err){
+        //         console.log(err);
+        //       }
+        //       return res.redirect('/freelancer/:id/createprofile')
+        //     })
+        //   }
+        // })
       
         FreelanceUser.register(newFreelanceUser, req.body.password, function(err, newlyCreatedFreelanceUser){
           if(err){
@@ -41,8 +57,15 @@ router.get("/", function(req, res){
           passport.authenticate('local')(req, res, function() {
             console.log(freelancerName);
           });
+          req.login(newFreelanceUser, (err) => {
+            if(err){
+              console.log(err);
+            } else {
+              return res.redirect('freelancer/:id/createprofile')
+            }
+          });
         });
-        res.redirect('/');
+        // res.redirect('/login');
       });
 
       // freelance create profile logic
