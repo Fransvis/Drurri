@@ -1,10 +1,10 @@
-
-const LocalStrategy = require('passport-local');
 const express       = require('express');
+var router          = express.Router();
+const LocalStrategy = require('passport-local');
 const bodyParser    = require('body-parser');
 const passport      = require('passport');
 const FreelanceUser = require('../models/freelanceUser');
-var router          = express.Router();
+
 
 passport.use(new LocalStrategy(FreelanceUser.authenticate()));
 passport.use(FreelanceUser.createStrategy());
@@ -72,13 +72,13 @@ router.get("/", function(req, res){
             }
           });
         });
-        // res.redirect('/login');
       });
 
       // freelance create profile logic
 
     router.get('/:id/createprofile', (req, res) => {
       var currentUser = req.user;
+      console.log(currentUser)
       res.render('./freelancer/createProfile', {currentUser: req.user})
     });
 
