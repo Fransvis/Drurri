@@ -1,17 +1,24 @@
-var express          = require("express"),
-    app              = express(),
-    mongoose         = require("mongoose"),
-    bodyParser       = require('body-parser'),
-    passport         = require('passport'),
-    LocalStrategy    = require('passport-local'),
+var express               = require("express"),
+    app                   = express(),
+    mongoose              = require("mongoose"),
+    bodyParser            = require('body-parser'),
+    passport              = require('passport'),
+    LocalStrategy         = require('passport-local'),
     passportLocalMongoose = require('passport-local-mongoose'),
-    packageRoutes    = require('./routes/packages'),
-    serviceRoutes    = require('./routes/services'),
-    freelancerRoutes = require('./routes/freelancer'),
-    User             = require('./models/user'),
-    FreelanceUser    = require('./models/freelanceUser'),
-    BusinessUser     = require('./models/businessUser')
 
+    businessRoutes        = require('./routes/business'),
+    serviceRoutes         = require('./routes/services'),
+    freelancerRoutes      = require('./routes/freelancer'),
+    personalRoutes        = require('./routes/personal'),
+
+    PersonalUser          = require('./models/user'),
+    FreelanceUser         = require('./models/freelanceUser'),
+    BusinessUser          = require('./models/businessUser')
+
+
+// =========================================
+// set view engine, mongoose connection
+// ========================================
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
@@ -23,6 +30,7 @@ mongoose.connect('mongodb://localhost:27017/drurri_app', {
   useUnifiedTopology: true
 });
 mongoose.set('useCreateIndex', true);
+
 
 // ============================================
 // pass currentUserInfo through to each template
@@ -46,11 +54,7 @@ app.use(require('express-session')({
 app.use(passport.initialize());
 app.use(passport.session());
 
-// passport.use(new LocalStrategy(FreelanceUser.authenticate()));
-// passport.use(FreelanceUser.createStrategy());
-// passport.serializeUser(FreelanceUser.serializeUser());
-// passport.deserializeUser(FreelanceUser.deserializeUser());
-
+// passport.use on respective route pages
 
 
 // ===================
@@ -69,11 +73,26 @@ app.get("/about", function(req, res){
     res.render("about", {currentUser: req.user});
 });
 
-// Login form
+
+// ==============
+// Packages Page
+// ==============
+
+app.get('/packages', function(req, res){
+    res.render('./packages/packages',);
+  });
+
+// ==============
+// Login Form
+// ==============
 
 app.get('/login', (req, res) => {
     res.render('sign-in');
 })
+
+// ==============
+// Login Logic
+// ==============
 
 // app.post('/login', middleware, callback)
 app.post('/login', passport.authenticate('local', 
@@ -83,16 +102,26 @@ app.post('/login', passport.authenticate('local',
     }
     ));
 
+// ==============
+// Logout Route
+// ==============
+
 app.get('/logout', (req, res) => {
     req.logout();
     res.redirect('/')
 });
 
+// ==============
+// Secret Page(testing login)
+// ==============
+
 app.get('/secret', isLoggedIn, (req, res) => {
     res.render('secret', {currentUser: req.user});
 });
 
+// ==============
 // middleware
+// ==============
 
 function isLoggedIn(req, res, next){
     if(req.isAuthenticated()){
@@ -103,9 +132,10 @@ function isLoggedIn(req, res, next){
 
 
 
-app.use('/packages', packageRoutes);
-app.use('/services', serviceRoutes);
+app.use('/business', businessRoutes);
 app.use('/freelancer', freelancerRoutes);
+app.use('/personal', personalRoutes)
+app.use('/services', serviceRoutes);
 
 app.listen("3000", function(){
     console.log("WorkbitApp running");

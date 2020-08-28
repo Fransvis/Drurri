@@ -1,32 +1,36 @@
-const PersonalUser        = require('../models/user');
-const BusinessUser        = require('../models/businessUser');
-const FreelanceUser       = require('../models/freelanceUser');
-const bodyParser       = require('body-parser');
-const passport     = require('passport');
+var express        = require('express'),
+    LocalStrategy  = require('passport-local'),
+    BusinessUser   = require('../models/businessUser'),
+    passport       = require('passport'),
+    bodyParser     = require('body-parser'),
+    router         = express.Router()
 
 var express = require('express'),
     router  = express.Router();
 
 
-router.get('/', function(req, res){
-  res.render('./packages/packages',);
-});
+
+
+passport.use(new LocalStrategy( BusinessUser.authenticate()));
+passport.use( BusinessUser.createStrategy());
+passport.serializeUser( BusinessUser.serializeUser());
+passport.deserializeUser( BusinessUser.deserializeUser());
 
 // ===============================
 // Business Packages
 // ===============================
 
-router.get('/business', function(req, res){
+router.get('/', function(req, res){
   res.render('./packages/business');
 });
 
 
-router.get('/business/pride', function(req, res){
+router.get('/pride', function(req, res){
   res.render('./packages/pride');
 });
 
 
-router.post('/business/pride', (req, res) => {
+router.post('/pride', (req, res) => {
   const businessName = req.body.businessName;
   const businessIndustry = req.body.businessIndustry;
   const businessAddress = req.body.businessAddress;
@@ -61,11 +65,11 @@ router.post('/business/pride', (req, res) => {
   res.redirect('/')
 });
 
-router.get('/business/gold', function(req, res){
+router.get('/gold', function(req, res){
   res.render('./packages/gold');
 });
 
-router.post('/business/gold', (req, res) => {
+router.post('/gold', (req, res) => {
   const businessName = req.body.businessName;
   const businessIndustry = req.body.businessIndustry;
   const businessAddress = req.body.businessAddress;
@@ -101,54 +105,13 @@ router.post('/business/gold', (req, res) => {
   res.redirect('/')
 });
 
-router.get('/business/platinum', function(req, res){
+router.get('/platinum', function(req, res){
   res.render('./packages/platinum');
 });
 
-router.get('/business/retainer', function(req, res){
+router.get('/retainer', function(req, res){
   res.render('./packages/retainer');
 });
-
-
-
-
-
-
-
-
-// =====================
-// Personal Package
-// =====================
-
-router.get('/personal', (req, res) => {
-  res.render('./packages/personal');
-});
-
-router.post('/personal', (req, res) => {
-  const firstName = req.body.personalFirstName;
-  const lastName  = req.body.personalLastName;
-  const userName  = req.body.username;
-
-  var newPersonalUser = new PersonalUser(
-    {
-    firstName: firstName, 
-    lastName: lastName,
-    username: userName,
-  }
-  ); 
-
-  PersonalUser.register(newPersonalUser, req.body.password, function(err, newlyCreatedPersonalUser){
-    if(err){
-      console.log(err);
-      return res.render('./packages/personal');
-    } 
-    passport.authenticate('local')(req, res, function() {
-      console.log(firstName)
-    });
-  });
-  res.redirect('/services')
-});
-
 
 
 
