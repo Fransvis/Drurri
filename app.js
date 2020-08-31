@@ -56,15 +56,48 @@ app.use(passport.session());
 
 
 passport.use('freelancer', new LocalStrategy('freelancerLocal', FreelanceUser.authenticate()));
-// passport.use(new LocalStrategy('personalLocal', PersonalUser.authenticate()));
-// passport.use(new LocalStrategy('businessLocal', BusinessUser.authenticate()));
+passport.use('personal', new LocalStrategy('personalLocal', PersonalUser.authenticate()));
+passport.use('business', new LocalStrategy('businessLocal', BusinessUser.authenticate()));
 
 passport.use(FreelanceUser.createStrategy());
-// passport.use(PersonalUser.createStrategy());
-// passport.use(BusinessUser.createStrategy());
+passport.use(PersonalUser.createStrategy());
+passport.use(BusinessUser.createStrategy());
 
-passport.serializeUser(FreelanceUser.serializeUser());
-passport.deserializeUser(FreelanceUser.deserializeUser());
+
+
+passport.serializeUser(function(user, done){
+    done(null, user.id)
+});
+
+// 
+
+passport.deserializeUser(function(id, done){
+    FreelanceUser.findById(id, (err, user) => {
+        if(err){
+            done(err);
+        } else if(user){
+            done(null, user);
+        } else {
+            BusinessUser.findById(id, (err, user) => {
+                if(err){
+                    done(err);
+                } else {
+                    done(null, user)
+                }
+            })
+        } 
+    })
+})
+
+// passport.serializeUser(BusinessUser.serializeUser());
+// passport.deserializeUser(BusinessUser.deserializeUser());
+
+
+// passport.serializeUser(PersonalUser.serializeUser());
+// passport.deserializeUser(PersonalUser.deserializeUser());
+
+
+
 
 
 // ===================
@@ -105,12 +138,12 @@ app.get('/login', (req, res) => {
 // ==============
 
 // app.post('/login', middleware, callback)
-app.post('/login', passport.authenticate('freelancer', 
-        {
-            successRedirect: '/',
-            failureRedirect: '/login'
-    }
-    ));
+app.post('/login', passport.authenticate(['freelancer', 'business', 'personal'], 
+            {
+               successRedirect: '/',
+               failureRedirect: '/login'
+            })
+         );
 
 // ==============
 // Logout Route
@@ -149,4 +182,3 @@ app.use('/services', serviceRoutes);
 app.listen("3000", function(){
     console.log("WorkbitApp running");
 }); 
-

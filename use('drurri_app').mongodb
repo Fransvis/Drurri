@@ -1,2 +1,3 @@
 use('drurri_app')
 
+db.freelanceusers.findOne();

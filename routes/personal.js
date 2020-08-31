@@ -5,6 +5,7 @@ var express        = require('express'),
     bodyParser     = require('body-parser'),
     router         = express.Router()
 
+
     // passport.use('personal', new LocalStrategy('personalLocal', PersonalUser.authenticate()));
     // passport.use(PersonalUser.createStrategy());
     // passport.serializeUser(PersonalUser.serializeUser());

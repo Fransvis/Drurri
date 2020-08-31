@@ -8,6 +8,7 @@ var express        = require('express'),
 var express = require('express'),
     router  = express.Router();
 
+   
     // passport.use('business', new LocalStrategy('businessLocal', BusinessUser.authenticate()));
     // passport.use(BusinessUser.createStrategy());
     // passport.serializeUser(BusinessUser.serializeUser());

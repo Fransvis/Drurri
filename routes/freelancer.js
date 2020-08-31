@@ -7,6 +7,8 @@ var express       = require('express'),
 
 
 
+
+
 function isLoggedIn(req, res, next){
   if(req.isAuthenticated()){
       return next();
@@ -79,27 +81,29 @@ router.get("/", function(req, res){
     });
 
       router.post('/:id/createprofile', (req, res) => {
+
         var currentUser = req.user;
-        const job = req.body.job;
+        const industry = req.body.industry;
         const location = req.body.location;
         const about = req.body.about;
         const website = req.body.website;
-        const instagram = req.body.instagram;
+        const specialty = req.body.specialty;
         const picture = req.body.picture;
 
         FreelanceUser.findOneAndUpdate({_id: currentUser.id}, 
           {
-            jobTitle: job, 
+            industry: industry, 
             location: location,
             about: about,
             website: website,
-            instagram: instagram,
+            specialty: specialty,
             picture: picture
           }, function(err, updatedFreelancer){
           if(err){
             console.log(err);
           } else {
-            res.redirect('/freelancer/:id/profile');
+            // res.render('./freelancer/profile', {freelancer: currentUser});
+            res.redirect('/');
           }
         });
         });
