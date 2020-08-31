@@ -55,46 +55,52 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-passport.use('freelancer', new LocalStrategy('freelancerLocal', FreelanceUser.authenticate()));
-passport.use('personal', new LocalStrategy('personalLocal', PersonalUser.authenticate()));
-passport.use('business', new LocalStrategy('businessLocal', BusinessUser.authenticate()));
+passport.use('freelancer', new LocalStrategy(FreelanceUser.authenticate()));
+passport.use('personal', new LocalStrategy(PersonalUser.authenticate()));
+passport.use('business', new LocalStrategy(BusinessUser.authenticate()));
 
 passport.use(FreelanceUser.createStrategy());
 passport.use(PersonalUser.createStrategy());
 passport.use(BusinessUser.createStrategy());
 
 
+passport.serializeUser(function(user, done) { 
+    done(null, user);
+  });
+  
+  passport.deserializeUser(function(user, done) {
+    if(user!=null)
+      done(null,user);
+  });
 
-passport.serializeUser(function(user, done){
-    done(null, user.id)
-});
+
 
 // 
 
-passport.deserializeUser(function(id, done){
-    FreelanceUser.findById(id, (err, user) => {
-        if(err){
-            done(err);
-        } else if(user){
-            done(null, user);
-        } else {
-            BusinessUser.findById(id, (err, user) => {
-                if(err){
-                    done(err);
-                } else {
-                    done(null, user)
-                }
-            })
-        } 
-    })
-})
-
-// passport.serializeUser(BusinessUser.serializeUser());
-// passport.deserializeUser(BusinessUser.deserializeUser());
+// passport.deserializeUser(function(id, done){
+//     FreelanceUser.findById(id, (err, user) => {
+//         if(err){
+//             done(err);
+//         } else if(user){
+//             done(null, user);
+//         } else {
+//             BusinessUser.findById(id, (err, user) => {
+//                 if(err){
+//                     done(err);
+//                 } else  {
+//                     done(null, user)
+//                 } 
+//             }) 
+//         } 
+//     })
+// }) 
 
 
-// passport.serializeUser(PersonalUser.serializeUser());
-// passport.deserializeUser(PersonalUser.deserializeUser());
+
+
+
+passport.serializeUser(PersonalUser.serializeUser());
+passport.deserializeUser(PersonalUser.deserializeUser());
 
 
 
@@ -141,7 +147,7 @@ app.get('/login', (req, res) => {
 app.post('/login', passport.authenticate(['freelancer', 'business', 'personal'], 
             {
                successRedirect: '/',
-               failureRedirect: '/login'
+               failureRedirect: '/login',
             })
          );
 
