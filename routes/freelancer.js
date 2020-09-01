@@ -1,5 +1,6 @@
 var express       = require('express'),
     router        = express.Router(),
+    passportLocalMongoose = require('passport-local-mongoose'),
     LocalStrategy = require('passport-local'),
     bodyParser    = require('body-parser'),
     passport      = require('passport'),
@@ -70,7 +71,19 @@ router.post('/:id/createprofile', (req, res) => {
         const specialty = req.body.specialty;
         const picture = req.body.picture;
 
-        FreelanceUser.findOneAndUpdate({_id: currentUser.id}, 
+        // FreelanceUser.findOneAndUpdate({_id: currentUser._id}, 
+        //   {
+        //     industry: industry,
+        //     location: location
+        //   }, function(err, updatedFreelancer){
+        //     if(err){
+        //       console.log(err)
+        //     } else {
+        //       res.redirect('/')
+        //     }
+        //   })
+
+        FreelanceUser.findOneAndUpdate({_id: currentUser._id}, 
           {
             industry: industry, 
             location: location,
@@ -82,11 +95,11 @@ router.post('/:id/createprofile', (req, res) => {
           if(err){
             console.log(err);
           } else {
-            // res.render('./freelancer/profile', {freelancer: currentUser});
             res.redirect('/');
           }
         });
-        });
+
+    });
 
     
     
