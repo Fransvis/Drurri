@@ -7,7 +7,7 @@ router.get("/", function(req, res){
 });
 
 router.get("/photography", function(req, res){
-  FreelanceUser.find({industry: 'photographer'}, (err, freelancers) => {
+  FreelanceUser.find({industry: 'Photographer'}, (err, freelancers) => {
     if(err){
       console.log(err);
     } else {

@@ -172,32 +172,7 @@ app.get('/secret', isLoggedIn, (req, res) => {
     res.render('secret', {currentUser: req.user});
 });
 
-// app.post('/secret', (req, res) => {
 
-//     var currentUser = req.user;
-//     const industry = req.body.industry;
-//     const location = req.body.location;
-//     const about = req.body.about;
-//     const website = req.body.website;
-//     const specialty = req.body.specialty;
-//     const picture = req.body.picture;
-
-//     FreelanceUser.findOneAndUpdate({_id: currentUser.id}, 
-//       {
-//         industry: industry, 
-//         location: location,
-//         about: about,
-//         website: website,
-//         specialty: specialty,
-//         picture: picture
-//       }, function(err, updatedFreelancer){
-//       if(err){
-//         console.log(err);
-//       } else {
-//         res.redirect('/');
-//       }
-//     });
-//     });
 
 // ==============
 // middleware

@@ -189,7 +189,7 @@ background: #000;
   }
   
   .content:nth-of-type(3) {
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQIczqKGx0HdgE4DwWOIMgvWePZHxFiRF2wHw&usqp=CAU');
+    background-image: url('https://wallpapercave.com/wp/wp1882970.jpg');
   }
   
   .content:nth-of-type(4) {
@@ -363,9 +363,16 @@ background: #000;
       height: 38em;
     }
 
-    /* .welcomeModal{
-      display: none;
-    } */
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      text-indent: 1px;
+      text-overflow: '';
+  }
+
+  #profession-select {
+    margin-right: 28px;
+  }
 
 
     .welcomeModal-content{
@@ -846,6 +853,12 @@ margin-top: 5px;
   margin-left: 2%;
   margin-top: 3%;
   display: inline-block;
+}
+
+.contactUs {
+  color: #B2967D;
+  margin-top: -21%;
+  margin-left: 7%;
 }
 
 

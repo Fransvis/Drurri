@@ -23,7 +23,14 @@
   <div id='createProfileContent'>
     <h3 id='createProfileTitle'>Tell us a bit about yourself</h3>
     <div class='createProfileInputs'>
-      <input class='createProfileInput' type='text' name='industry' placeholder='Job industry'>
+      <!-- <input class='createProfileInput' type='text' name='industry' placeholder='Job industry'> -->
+      <select class='createProfileInput' name="industry" id="industry">
+      <option id='profession-select' value="">What is your profession</option>
+      <option value="Photographer">Photographer</option>
+      <option value="Graphic Designer">Graphic Designer</option>
+      <option value="Content Creator">Content Creator</option>
+      <option value="Web Designer">Web Designer</option>
+  </select>
       <input class='createProfileInput' type='text' name='location' placeholder='Location'>
     </div>
     <div class='createProfileInputs'>

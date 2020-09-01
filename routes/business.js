@@ -158,6 +158,10 @@ router.get('/retainer', function(req, res){
   res.render('./packages/retainer');
 });
 
+router.get('/:id/profile', (req, res) => {
+  res.send('This will be the profile page for businesses')
+})
+
 
 
 module.exports = router;
