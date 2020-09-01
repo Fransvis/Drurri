@@ -64,14 +64,16 @@ passport.use(PersonalUser.createStrategy());
 passport.use(BusinessUser.createStrategy());
 
 
-passport.serializeUser(function(user, done) { 
-    done(null, user);
-  });
+// passport.serializeUser(function(user, done) { 
+//     done(null, user);
+//   });
   
-  passport.deserializeUser(function(user, done) {
-    if(user!=null)
-      done(null,user);
-  });
+//   passport.deserializeUser(function(user, done) {
+//     if(user!=null)
+//       done(null,user);
+//   });
+
+passport.serializeUser(FreelanceUser.)
 
 
 
