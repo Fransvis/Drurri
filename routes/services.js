@@ -16,14 +16,34 @@ router.get("/photography", function(req, res){
   })
 });
 
-// router.get('/graphic-design', (req, res) => {
-//   FreelanceUser.find({industry: 'graphic designer'}, (err, graphicDesigner) => {
-//     if(err){
-//       console.log(err);
-//     } else {
-//       res.render("graphicDesign", {freelancers: graphicDesigner, currentUser: req.user});
-//     }
-//   })
-// });
+router.get('/graphic-design', (req, res) => {
+  FreelanceUser.find({industry: 'graphic designer'}, (err, freelancers) => {
+    if(err){
+      console.log(err);
+    } else {
+      res.render("graphicDesign", {freelancers: freelancers, currentUser: req.user});
+    }
+  })
+});
+
+router.get('/contentCreation', (req, res) => {
+  FreelanceUser.find({industry: 'content creator'}, (err, freelancers) => {
+    if(err){
+      console.log(err);
+    } else {
+      res.render("contentCreation", {freelancers: freelancers, currentUser: req.user});
+    }
+  })
+});
+
+router.get('/webDesign', (req, res) => {
+  FreelanceUser.find({industry: 'web designer'}, (err, freelancers) => {
+    if(err){
+      console.log(err);
+    } else {
+      res.render("webDesign", {freelancers: freelancers, currentUser: req.user});
+    }
+  })
+});
 
 module.exports = router;

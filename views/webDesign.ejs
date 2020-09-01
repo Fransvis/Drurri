@@ -1,0 +1,26 @@
+<%- include ("partials/header") %>
+
+<div class="photography">
+  <div class="row">
+
+
+    <div class="box">
+
+      <% freelancers.forEach(function(webDesigner){ %>
+         <a href='/freelancer/<%= webDesigner._id %>/profile'>
+            <div class="card">
+              <div class="imgBx">
+                  <img src="<%= webDesigner.picture %>" alt="images">
+              </div>
+              <div class="details">
+                  <h2><%= webDesigner.freelancerName %> <%= webDesigner.freelancerSurname %><br><span><%= webDesigner.location %></span></h2>
+                  <p>Speciality: <%= webDesigner.specialty %></p>
+              </div>
+            </div>
+            </a>
+      <% }); %>
+      </div>
+  </div>
+</div>
+
+<%- include ("partials/footer") %>
