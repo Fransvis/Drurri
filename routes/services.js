@@ -16,8 +16,14 @@ router.get("/photography", function(req, res){
   })
 });
 
-router.get('/graphic-design', (req, res) => {
-  res.render('graphicDesign');
-});
+// router.get('/graphic-design', (req, res) => {
+//   FreelanceUser.find({industry: 'graphic designer'}, (err, graphicDesigner) => {
+//     if(err){
+//       console.log(err);
+//     } else {
+//       res.render("graphicDesign", {freelancers: graphicDesigner, currentUser: req.user});
+//     }
+//   })
+// });
 
 module.exports = router;

@@ -37,11 +37,17 @@ var express        = require('express'),
           console.log(err);
           return res.render('./packages/personal');
         } 
-        passport.authenticate('personalLocal')(req, res, function() {
+        passport.authenticate('personal')(req, res, function() {
           console.log(firstName)
         });
+        req.login(newPersonalUser, (err) => {
+          if(err){
+            console.log(err);
+          } else {
+            return res.redirect('/services')
+          }
+        });
       });
-      res.redirect('/services')
     });
 
     module.exports = router;

@@ -6,9 +6,6 @@ var express       = require('express'),
     FreelanceUser = require('../models/freelanceUser');
 
 
-
-
-
 function isLoggedIn(req, res, next){
   if(req.isAuthenticated()){
       return next();
@@ -34,25 +31,8 @@ router.get("/", function(req, res){
             freelancerName: freelancerName,
             freelancerSurname: freelancerSurname,
             username: username
-            // password: password,
-            // jobTitle: "default",
-            // location: "default"
           }
         )
-
-        // newFreelanceUser.save(req.body.password, function(err){
-        //   if(err){
-        //     console.log(err);
-        //   } else {
-        //     console.log('frelanceuser: ' + newFreelanceUser.username  + ' saved.');
-        //     req.login(newFreelanceUser, function(err){
-        //       if(err){
-        //         console.log(err);
-        //       }
-        //       return res.redirect('/freelancer/:id/createprofile')
-        //     })
-        //   }
-        // });
       
         FreelanceUser.register(newFreelanceUser, req.body.password, function(err, newlyCreatedFreelanceUser){
           if(err){
@@ -74,13 +54,13 @@ router.get("/", function(req, res){
 
       // freelance create profile logic
 
-    router.get('/:id/createprofile', (req, res) => {
-      var currentUser = req.user;
-      console.log(currentUser)
-      res.render('./freelancer/createProfile', {currentUser: req.user})
-    });
+router.get('/:id/createprofile', (req, res) => {
+    var currentUser = req.user;
+    console.log(currentUser)
+    res.render('./freelancer/createProfile', {currentUser: req.user})
+  });
 
-      router.post('/:id/createprofile', (req, res) => {
+router.post('/:id/createprofile', (req, res) => {
 
         var currentUser = req.user;
         const industry = req.body.industry;

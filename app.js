@@ -55,8 +55,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-passport.use('freelancer', new LocalStrategy(FreelanceUser.authenticate()));
-passport.use('personal', new LocalStrategy(PersonalUser.authenticate()));
+passport.use('freelancer', new LocalStrategy('freelancerLocal', FreelanceUser.authenticate()));
+passport.use('personal', new LocalStrategy('personalLocal', PersonalUser.authenticate()));
 passport.use('business', new LocalStrategy(BusinessUser.authenticate()));
 
 passport.use(FreelanceUser.createStrategy());
