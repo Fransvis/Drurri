@@ -189,11 +189,11 @@ background: #000;
   }
   
   .content:nth-of-type(3) {
-    background-image: url('https://wallpapercave.com/wp/wp1882970.jpg');
+    background-image: url('/stylesheets/imgs/stormtrooperguitar.jpg');
   }
   
   .content:nth-of-type(4) {
-    background-image: url('https://cdn.pixabay.com/photo/2016/03/26/22/11/star-wars-1281554_960_720.jpg');
+    background-image: url('/stylesheets/imgs/gold.JPG');
   }
   
  
@@ -846,11 +846,12 @@ margin-top: 5px;
 .services h1{
   color: #B2967D;
   margin-top: 5%;
+  margin-left: 8%;
 }
 
 .services p{
   color: #B2967D;
-  margin-left: 2%;
+  margin-left: 7%;
   margin-top: 3%;
   display: inline-block;
 }
@@ -858,7 +859,14 @@ margin-top: 5px;
 .contactUs {
   color: #B2967D;
   margin-top: -21%;
-  margin-left: 7%;
+  margin-left: 1%;
+}
+
+.contact{
+  display: inline-block;
+  text-align: center;
+  margin-left: -10%;
+  margin-top: 6%;
 }
 
 
