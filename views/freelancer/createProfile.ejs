@@ -19,7 +19,7 @@
 
 
 
-  <form action='/freelancer/:id/createprofile' method='post'>
+  <form action='/freelancer/:id/createprofile' enctype="multipart/form-data" method='post'>
   <div id='createProfileContent'>
     <h3 id='createProfileTitle'>Tell us a bit about yourself</h3>
     <div class='createProfileInputs'>
@@ -31,17 +31,28 @@
       <option value="Content Creator">Content Creator</option>
       <option value="Web Designer">Web Designer</option>
   </select>
-      <input class='createProfileInput' type='text' name='location' placeholder='Location'>
+      <input class='createProfileInput' type='text' name='location' placeholder='Where are you based?'>
     </div>
+
     <div class='createProfileInputs'>
-      <input class='createProfileInput' type='text' name='website' placeholder='Website link'>
-      <input class='createProfileInput' type='text' name='specialty' placeholder='specialty'>
+      <input class='createProfileInput' type='text' name='specialty' placeholder='What is your specialty?'>
+      <input class='createProfileInput' id='profilePic' type='text' name='picture' placeholder='Add a profile picture'>
     </div>
+
     <div class='createProfileInputs'>
-      <textarea class='createProfileInput' id='createProfileAboutYou' type='text' name='about' placeholder='About you'></textarea>
-      <input class='createProfileInput' type='text' name='picture' placeholder='picture'>
+      <input class='createProfileInput' type='text' name='link1' placeholder='personal website/linkedIn'>
+      <input class='createProfileInput' type='text' name='link2' placeholder='instagram/facebook'>
     </div>
-    <a href='/'><button>Sign Up!</button></a>
+
+    <div class='createProfileInputs'>
+      <textarea class='createProfileInput' id='createProfileAboutYou' type='text' name='about' placeholder='Tell us about you'></textarea>
+      <textarea class='createProfileInput' id='createProfileTools' type='text' name='tools' placeholder='What are some of the tools that you use?'></textarea>
+    </div>
+
+    <div class='freelancerExtraInputs'>
+    <a href='/'><button class='btn btn-light btn-sm'>Sign Up!</button></a>
+  </div>
+
   </div>
 </form>
 

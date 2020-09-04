@@ -12,8 +12,10 @@
 			<h6 class="profile-card-job-description"><%= freelancer.specialty %> <%= freelancer.industry %></h6>
 			<h6 class="profile-card-residence">	<i class="fas fa-map-marker-alt"></i><%= freelancer.location %></h6>
 			<p class='profile-card-bio'><%= freelancer.about %> </p>
-				<a href="<%= freelancer.website %>" class="profile-card-website"><%= freelancer.website %></a>
-			<a href="<%= freelancer.instagram %>" class="profile-card-insta"><%= freelancer.freelancerName %><%= freelancer.freelancerSurname %></a>
+				<a href="<%= freelancer.link1 %>" class="profile-card-website"><%= freelancer.freelancerName %><%= freelancer.freelancerSurname %>.com</a>
+			<a href="<%= freelancer.link2 %>" class="profile-card-insta"><%= freelancer.freelancerName %><%= freelancer.freelancerSurname %></a>
+			<p> ---------------------------------------</p>
+			<pre class='toolsUsed'><%= freelancer.tools %></pre>
 		</div>
 	</div>
 

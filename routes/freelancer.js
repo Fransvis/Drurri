@@ -67,9 +67,11 @@ router.post('/:id/createprofile', (req, res) => {
         const industry = req.body.industry;
         const location = req.body.location;
         const about = req.body.about;
-        const website = req.body.website;
+        const link1 = req.body.link1;
         const specialty = req.body.specialty;
         const picture = req.body.picture;
+        const link2 = req.body.link2;
+        const tools = req.body.tools;
 
         // FreelanceUser.findOneAndUpdate({_id: currentUser._id}, 
         //   {
@@ -88,9 +90,11 @@ router.post('/:id/createprofile', (req, res) => {
             industry: industry, 
             location: location,
             about: about,
-            website: website,
             specialty: specialty,
-            picture: picture
+            picture: picture,
+            link1: link1,
+            link2: link2,
+            tools: tools
           }, function(err, updatedFreelancer){
           if(err){
             console.log(err);

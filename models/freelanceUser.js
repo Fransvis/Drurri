@@ -11,9 +11,14 @@ var mongoose              = require('mongoose'),
         industry: String,
         location: String,
         about: String,
-        website: String,
         specialty: String,
-        picture: String
+        tools: String,
+        picture: String,
+        link1: String,
+        link2: String,
+        projects: {
+          title: String,
+        }
       }
     )
 

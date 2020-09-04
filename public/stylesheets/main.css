@@ -444,6 +444,25 @@ background: #000;
       height: 100px;
     }
     
+    #createProfileTools{
+      height: 100px;
+    }
+
+
+    .freelancerExtraInputs button{
+      margin-left: 70%;
+      margin-top: 2%;
+    }
+
+    #profilePic{
+      width: 15%;
+    }
+
+    .toolsUsed{
+      text-align: center;
+    }
+
+    
 
 
 

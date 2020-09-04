@@ -17,7 +17,7 @@ router.get("/photography", function(req, res){
 });
 
 router.get('/graphic-design', (req, res) => {
-  FreelanceUser.find({industry: 'graphic designer'}, (err, freelancers) => {
+  FreelanceUser.find({industry: 'Graphic Designer'}, (err, freelancers) => {
     if(err){
       console.log(err);
     } else {
@@ -27,7 +27,7 @@ router.get('/graphic-design', (req, res) => {
 });
 
 router.get('/contentCreation', (req, res) => {
-  FreelanceUser.find({industry: 'content creator'}, (err, freelancers) => {
+  FreelanceUser.find({industry: 'Content Creator'}, (err, freelancers) => {
     if(err){
       console.log(err);
     } else {
