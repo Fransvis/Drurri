@@ -122,7 +122,28 @@ router.post('/:id/createprofile', (req, res) => {
 
         
     router.get('/:id/profile/project', (req, res) => {
-      res.render('addProject');
+      res.render('./freelancer/addProject');
+    });
+
+            
+    router.post('/:id/profile/project', (req, res) => {
+      var currentUser = req.user;
+      var projectTitle = req.body.projectTitle;
+      var projectDateAdded = req.body.projectDateAdded;
+
+      FreelanceUser.findOneAndUpdate({_id: currentUser._id}, 
+        {
+          projects: {
+            title: projectTitle,
+            date: projectDateAdded
+          }
+        }, function(err, updatedFreelancer){
+        if(err){
+          console.log(err);
+        } else {
+          res.redirect('/');
+        }
+      });
     });
     
 

@@ -18,6 +18,7 @@ var mongoose              = require('mongoose'),
         link2: String,
         projects: {
           title: String,
+          date: String
         }
       }
     )
