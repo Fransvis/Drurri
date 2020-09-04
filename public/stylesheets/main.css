@@ -558,15 +558,39 @@ background: #000;
     .projects .text{
       position: absolute;
       margin-top: -16%;
-      margin-left: 4%;
+      margin-left: -2%;
       color: aliceblue;   
       opacity: 0;
     }
 
-    .col-lg-6:hover p{
+   .projectCaption{
+      color: red;
+    }
+
+    .col-lg-6:hover .text{
       opacity: 70%;
       background: #000;
+      width: 27rem;
+      height: 4rem;
     }
+
+    .col-lg-6:hover .projectCaption{
+      color: aliceblue;
+      text-align: left;
+      /* margin-left: 5%; */
+      text-align: center;
+      font-size: 16px;
+    }
+
+    .col-lg-6:hover .projectDateAdded{
+      color: aliceblue;
+      text-align: left;
+      /* margin-left: 5%; */
+      text-align: center;
+      font-size: 12px;
+      margin-top: -3%;
+    }
+
 
 
   

@@ -119,6 +119,11 @@ router.post('/:id/createprofile', (req, res) => {
         }
       })
     });
+
+        
+    router.get('/:id/profile/project', (req, res) => {
+      res.render('addProject');
+    });
     
 
 
