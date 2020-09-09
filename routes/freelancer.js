@@ -110,6 +110,24 @@ router.post('/:id/createprofile', (req, res) => {
     router.get('/:id/profile', (req, res) => {
       var currentUser = req.user;
       console.log(currentUser);
+      var projects = [
+        {
+          title: 'Hello world',
+          date: '12 November 2020'
+        },
+        {
+          title: 'Goodbye world',
+          date: '15 September 2020'
+        },
+        {
+          title: 'So far so good',
+          date: '10 May 2016'
+        },
+        {
+          title: 'Style works',
+          date: '14 April 2018'
+        }
+      ]
 
       FreelanceUser.findById(req.params.id, (err, foundFreelancer) => {
         if(err){
@@ -125,25 +143,28 @@ router.post('/:id/createprofile', (req, res) => {
       res.render('./freelancer/addProject');
     });
 
-            
     router.post('/:id/profile/project', (req, res) => {
       var currentUser = req.user;
       var projectTitle = req.body.projectTitle;
       var projectDateAdded = req.body.projectDateAdded;
+      var projects = {
+        projects:{
+          title: projectTitle,
+          date: projectDateAdded
+        }
+      }
 
       FreelanceUser.findOneAndUpdate({_id: currentUser._id}, 
-        {
-          projects: {
-            title: projectTitle,
-            date: projectDateAdded
-          }
-        }, function(err, updatedFreelancer){
+        projects,
+         (err, updatedFreelancer) => {
         if(err){
           console.log(err);
         } else {
-          res.redirect('/');
+          projectsArr.push(projects)
+          res.render('./services', {projects: updatedFreelancer});
         }
       });
+      console.log(projects)
     });
     
 

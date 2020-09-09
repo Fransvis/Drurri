@@ -22,15 +22,19 @@
 	<div class='projects'>
 		<h5>Projects</h5>
 		<div class='row'>
-			<div class='col-lg-6'>
-				<a href='#'><img class='img-fluid' src='https://images.unsplash.com/photo-1546550879-3b71f2427ae0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'>
+
+			<% projects.forEach(function(project){ %>
+				<div class='col-lg-6'>
+				<a href='/'><img class='img-fluid' src='https://images.unsplash.com/photo-1546550879-3b71f2427ae0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'>
 					<div class='text'>
-						<p class='projectCaption'><%= freelancer.projects.title %></p>
-						<p class='projectDateAdded'><%= freelancer.projects.date %></p>
+						<p class='projectCaption'><%= project.title %></p>
+						<p class='projectDateAdded'><%= project.date %></p>
 					</div>
 				</a>
 			</div>
-			<div class='col-lg-6'> 
+				<% }); %>
+
+			<!-- <div class='col-lg-6'> 
 				<a href='#'><img class='img-fluid' src='https://images.unsplash.com/photo-1595007456829-a2894b728e58?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'>
 					<div class='text'>
 						<p class='projectCaption'>Beautiful Cape Town</p>
@@ -80,7 +84,7 @@
 						<p class='projectCaption'>Beautiful Cape Town</p>
 						<p class='projectDateAdded'>4 September 2020</p>
 					</div>
-			</div>
+			</div> -->
 			<a href='/freelancer/<%= freelancer._id %>/profile/project'>
 				<Button>Add Project!</Button>
 			</a>

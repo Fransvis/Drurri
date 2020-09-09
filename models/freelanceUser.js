@@ -16,10 +16,12 @@ var mongoose              = require('mongoose'),
         picture: String,
         link1: String,
         link2: String,
-        projects: {
-          title: String,
-          date: String
+        projects: [
+          {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: 'Projects'
         }
+      ]
       }
     )
 
