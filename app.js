@@ -13,7 +13,8 @@ var express               = require("express"),
 
     FreelanceUser         = require('./models/freelanceUser'),
     PersonalUser          = require('./models/user'),
-    BusinessUser          = require('./models/businessUser')
+    BusinessUser          = require('./models/businessUser'),
+    Projects              = require('./models/projects')
 
 
 // =========================================

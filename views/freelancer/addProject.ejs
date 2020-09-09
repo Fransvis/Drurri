@@ -1,9 +1,9 @@
 <%- include ('../partials/header') %>
 
-<form action="/freelancer/:id/profile/project" method='POST'>
+<form action="/freelancer/<%= freelancer._id %>/profile/project" method='POST'>
   <div class='addProjectInputForm'>
-    <input type="text" name='projectTitle' placeholder='Project Title'>
-    <input type="text" name='projectDateAdded' placeholder='Date Added'>
+    <input type="text" name='project[title]' placeholder='Project Title'>
+    <input type="text" name='project[date]' placeholder='Date Added'>
     <button>Submit!</button>
   </div>
 </form>

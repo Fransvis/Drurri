@@ -1,10 +1,13 @@
+const e = require('express');
+
 var express       = require('express'),
     router        = express.Router(),
     passportLocalMongoose = require('passport-local-mongoose'),
     LocalStrategy = require('passport-local'),
     bodyParser    = require('body-parser'),
     passport      = require('passport'),
-    FreelanceUser = require('../models/freelanceUser');
+    FreelanceUser = require('../models/freelanceUser'),
+    Project       = require('../models/projects')
 
 
 function isLoggedIn(req, res, next){
@@ -14,7 +17,13 @@ function isLoggedIn(req, res, next){
   res.redirect('/login')
 }
 
+// ================================
 // Freelance sign up handle logic
+// ================================
+
+// ==============
+// Sign up page
+// ==============
 
 router.get("/", function(req, res){
   res.render("./packages/freelance", {currentUser: req.user});
@@ -22,8 +31,8 @@ router.get("/", function(req, res){
 
 
     router.post('/', (req, res) => {
-        const freelancerName    = req.body.freelancerFirstName;
-        const freelancerSurname = req.body.freelancerLastName;
+        const freelancerName    = req.body.Name;
+        const freelancerSurname = req.body.Surname;
         const username          = req.body.username;
         // const password          = req.body.password;
       
@@ -53,7 +62,9 @@ router.get("/", function(req, res){
         });
       });
 
-      // freelance create profile logic
+// ================================
+// add additional information
+// ================================
 
 router.get('/:id/createprofile', (req, res) => {
     var currentUser = req.user;
@@ -105,29 +116,14 @@ router.post('/:id/createprofile', (req, res) => {
 
     });
 
+// ======================
+// Display User profile 
+// ======================
     
     
     router.get('/:id/profile', (req, res) => {
       var currentUser = req.user;
       console.log(currentUser);
-      var projects = [
-        {
-          title: 'Hello world',
-          date: '12 November 2020'
-        },
-        {
-          title: 'Goodbye world',
-          date: '15 September 2020'
-        },
-        {
-          title: 'So far so good',
-          date: '10 May 2016'
-        },
-        {
-          title: 'Style works',
-          date: '14 April 2018'
-        }
-      ]
 
       FreelanceUser.findById(req.params.id, (err, foundFreelancer) => {
         if(err){
@@ -138,33 +134,40 @@ router.post('/:id/createprofile', (req, res) => {
       })
     });
 
+// =====================
+// Add Project to user
+// =====================
+
         
     router.get('/:id/profile/project', (req, res) => {
-      res.render('./freelancer/addProject');
+
+      FreelanceUser.findById(req.params.id, (err, freelancer) => {
+        if(err){
+          console.log(err);
+        } else 
+        res.render('./freelancer/addProject', {freelancer: freelancer});
+        console.log(freelancer)
+      })
     });
 
     router.post('/:id/profile/project', (req, res) => {
-      var currentUser = req.user;
-      var projectTitle = req.body.projectTitle;
-      var projectDateAdded = req.body.projectDateAdded;
-      var projects = {
-        projects:{
-          title: projectTitle,
-          date: projectDateAdded
-        }
-      }
-
-      FreelanceUser.findOneAndUpdate({_id: currentUser._id}, 
-        projects,
-         (err, updatedFreelancer) => {
+      FreelanceUser.findById(req.params.id, (err, freelancer) => {
         if(err){
           console.log(err);
+          res.redirect('/')
         } else {
-          projectsArr.push(projects)
-          res.render('./services', {projects: updatedFreelancer});
+
+          // Creating duplicate
+          
+          // Project.create(req.body.project, (err, project) =>{
+          //   if(err){
+          //     console.log(err);
+          //   } else {
+          //     console.log(project);
+          //   }
+          // })
         }
-      });
-      console.log(projects)
+      })
     });
     
 
