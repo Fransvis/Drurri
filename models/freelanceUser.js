@@ -18,8 +18,8 @@ var mongoose              = require('mongoose'),
         link2: String,
         projects: [
           {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: 'Projects'
+          type: Schema.Types.ObjectId,
+          ref: 'Project'
         }
       ]
       }

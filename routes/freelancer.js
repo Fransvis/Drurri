@@ -1,13 +1,13 @@
-const e = require('express');
-
 var express       = require('express'),
     router        = express.Router(),
+    // mongoose      = require('mongoose'),
     passportLocalMongoose = require('passport-local-mongoose'),
     LocalStrategy = require('passport-local'),
     bodyParser    = require('body-parser'),
     passport      = require('passport'),
-    FreelanceUser = require('../models/freelanceUser'),
-    Project       = require('../models/projects')
+    Project       = require('../models/projects'),
+    FreelanceUser = require('../models/freelanceUser')
+
 
 
 function isLoggedIn(req, res, next){
@@ -123,15 +123,17 @@ router.post('/:id/createprofile', (req, res) => {
     
     router.get('/:id/profile', (req, res) => {
       var currentUser = req.user;
-      console.log(currentUser);
+      // console.log(currentUser);
+      
 
-      FreelanceUser.findById(req.params.id, (err, foundFreelancer) => {
+      FreelanceUser.findById(req.params.id).populate('projects').exec(function(err, foundFreelancer) {
         if(err){
           console.log(err);
         } else {
+          console.log(foundFreelancer)
           res.render('./freelancer/profile', {freelancer: foundFreelancer, currentUser: req.user});
         }
-      })
+      });
     });
 
 // =====================
@@ -159,15 +161,20 @@ router.post('/:id/createprofile', (req, res) => {
 
           // Creating duplicate
           
-          // Project.create(req.body.project, (err, project) =>{
-          //   if(err){
-          //     console.log(err);
-          //   } else {
-          //     console.log(project);
-          //   }
-          // })
+          Project.create(req.body.project, (err, project) =>{
+            if(err){
+              console.log(err);
+            } else {
+              freelancer.projects.push(project)
+              freelancer.save();
+              res.redirect('/freelancer/' + freelancer._id + '/profile')
+              console.log(project);
+            }
+          })
         }
-      })
+      });
+
+      
     });
     
 

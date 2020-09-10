@@ -19,6 +19,8 @@ window.onscroll = function() {
 
 
 
+
+
 // Modal Logic 
 
 const section = document.querySelector('.color-top');

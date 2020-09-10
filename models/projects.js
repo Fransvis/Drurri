@@ -5,7 +5,8 @@ var mongoose = require('mongoose'),
     var ProjectSchema = new Schema (
       {
       title: String,
-      date: String
+      date: String,
+      image: String
     }
     )
 
