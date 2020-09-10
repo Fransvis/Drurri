@@ -48,8 +48,8 @@ app.use(function(req, res, next){
 
 app.use(require('express-session')({
     secret: 'This is my secret',
-    resave: false,
-    saveUninitialized: false
+    resave: true,
+    saveUninitialized: true
 }));
 
 app.use(passport.initialize());

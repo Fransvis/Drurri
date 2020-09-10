@@ -1,12 +1,35 @@
 <%- include ('../partials/header') %>
 
-<form action="/freelancer/<%= freelancer._id %>/profile/project" method='POST'>
+<div class='addProject'>
+
+
+  <form action="/freelancer/<%= freelancer._id %>/profile/project" method="POST">
+    <div class='addProjectContent'>
+      <h3 id='addProjectHeader'>Create a new Project</h3>
+        <div class='addProjectInputs'>
+          <input class='addProjectInput' type='text' name='project[title]' placeholder="Project title">
+          <input class='addProjectInput' type='text' name='project[date]' placeholder="Date">
+        </div>
+        <div class='addProjectInputs'>
+          <input class='addProjectInput' type='text' name='project[image]' placeholder="image">
+          <!-- <input class='addProjectInput' type='text' name='project[location]' placeholder="location"> -->
+        </div>
+        <div class='addProjectInputs'>
+        <button class='btn btn-light btn-sm' id='freelancerSignUpButton'>Create!</button>
+        </div>
+    </div>
+  </form> 
+  
+  </div>
+
+<!-- <form action="/freelancer/<%= freelancer._id %>/profile/project" method='POST'>
   <div class='addProjectInputForm'>
     <input type="text" name='project[title]' placeholder='Project Title'>
     <input type="text" name='project[date]' placeholder='Date Added'>
-    <input type="file"  name='project[image]' placeholder='image'>
+    <input type="text"  name='project[image]' placeholder='image'>
     <Button id='submit'>Submit</Button>
   </div>
-</form>
+</form> -->
+
 
 <%- include ('../partials/footer') %>

@@ -156,7 +156,7 @@ background: #000;
   
   .content {
     background: var(--white)
-      url('https://p1.pxfuel.com/preview/767/1006/567/star-wars-science-fiction-storm-trooper-space-helm-fighter.jpg')
+      url('https://teamdarwin.files.wordpress.com/2012/01/stormtrooper-tributes-david-eger-elvis-presley.jpg')
       100% / cover no-repeat;
     border-radius: 3rem;
     cursor: pointer;
@@ -274,32 +274,49 @@ background: #000;
     opacity: 1;
     transform: translateX(0);
     color: #B2967D;
-    width: 27em;
-    margin-left: 3em;
+    width: 18em;
+    /* margin-left: 1em; */
+    font-weight: 200;
+    /* margin-top: 16%; */
+    margin-bottom: 4%;
   }
 
   #prideRenderedServices{
-    margin-left: 65%;
+    margin-left: -48%;
   }
 
   .radio:checked + .content > .prideServices{
     opacity: 1;
     transform: translateX(0);
     color: #B2967D;
-    margin-left: 29em;
+    margin-left: -21em;
     /* line-height: 14px; */
     font-weight: 200;
     font-size: larger;
+    margin-top: -7%;
   }
 
   .radio:checked + .content > .gold{
     opacity: 1;
     transform: translateX(0);
     color: #B2967D;
-    width: 36em;
+    width: 18em;
     margin-left: 0em;
-    line-height: 14px;
+    /* line-height: 14px; */
+    font-weight: 200;
   }
+
+  .radio:checked + .content > .gold1{
+    opacity: 1;
+    transform: translateX(0);
+    color: #B2967D;
+    width: 18em;
+    margin-left: 15em;
+    margin-top: -14%;
+    /* line-height: 14px; */
+    font-weight: 200;
+  }
+
 
   /* #goldRenderedServices{
 
@@ -309,15 +326,15 @@ background: #000;
     opacity: 1;
     transform: translateX(0);
     color: #B2967D;
-    width: 23em;
-    margin-left: 18em;
+    width: 14em;
+    margin-left: 22em;
     font-weight: 200;
     font-size: larger;
   }
 
-  .radio:checked + .content > .goldServices:hover{
+  /* .radio:checked + .content > .goldServices:hover{
     color: red;
-  }
+  } */
 
   .radio:checked + .content > .platinum{
     opacity: 1;
@@ -325,6 +342,7 @@ background: #000;
     color: #B2967D;
     width: 23em;
     margin-left: 8em;
+    font-weight: 200;
   }
 
   .radio:checked + .content > .retainer{
@@ -333,6 +351,7 @@ background: #000;
     color: #B2967D;
     width: 14em;
     margin-left: 20em;
+    font-weight: 200;
   }
 
 
@@ -622,7 +641,7 @@ background: #000;
 
     .profile-page .projects{
       text-align: center;
-      margin-top: -20%;
+      margin-top: -22%;
       width: 61%;
       margin-left: 29em;
     }
@@ -685,6 +704,39 @@ background: #000;
 .addProjectInputForm{
   margin-top: 5%;
 }
+
+.addProject {
+  background-image: url('/stylesheets/imgs/cool.jpg');
+  background-repeat: no-repeat;
+  height: 40em;
+  background-position-x: 34%;
+}
+
+.addProjectContent{
+  padding-top: 16%;
+}
+
+#addProjectHeader{
+  color: #fff;
+  text-align: center;
+  margin-left: 17em;
+}
+
+.addProjectInputs{
+  text-align: center;
+  margin-left: 34%;
+  margin-top: 2%;
+}
+
+.addProjectInput{
+  background: #000;
+  border: none;
+  color: red;
+  border-bottom: 1px solid red;
+  margin-left: 2%;
+}
+
+
 
   
 
@@ -899,7 +951,7 @@ margin-top: 5px;
 
 .about-intro2 h1{
   color: #B2967D;
-  margin-left: 8%;
+  margin-left: 3%;
 }
 
 .about-intro2 .row{
@@ -938,6 +990,11 @@ margin-top: 5px;
 
 .about-intro4 .row{
   margin-top: 7%;
+  margin-left: 5%;
+}
+
+.objectives-img7{
+  margin-left: -1%;
 }
 
 
@@ -953,7 +1010,7 @@ margin-top: 5px;
 }
 
 .objectives-img2{
-  margin-left: 6%;
+  margin-left: -4%;
 }
 
 .about .objectives-img3{
@@ -964,6 +1021,14 @@ margin-top: 5px;
   margin-left: 2%;
 }
 
+.about .objectives-img6{
+  margin-left: -12%;
+}
+
+.objectives-img8{
+  margin-left: 30%;
+  margin-top: -12%;
+}
 
 .objectives h1{
   color: #B2967D;
@@ -994,7 +1059,7 @@ margin-top: 5px;
 
 .contactUs {
   color: #B2967D;
-  margin-top: -21%;
+  margin-top: -8%;
   margin-left: 1%;
 }
 
