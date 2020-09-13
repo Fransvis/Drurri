@@ -32,7 +32,7 @@
 				</a>
 			</div>
 			<% }); %>
-			<% if(currentUser){ %>
+			<% if(currentUser && freelancer._id.equals(currentUser._id)){ %>
 			<a href='/freelancer/<%= freelancer._id %>/profile/project'>
 				<Button>Add Project!</Button>
 			</a>

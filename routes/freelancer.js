@@ -130,7 +130,7 @@ router.post('/:id/createprofile', (req, res) => {
         if(err){
           console.log(err);
         } else {
-          console.log(foundFreelancer)
+          // console.log(foundFreelancer)
           res.render('./freelancer/profile', {freelancer: foundFreelancer, currentUser: req.user});
         }
       });
@@ -140,16 +140,32 @@ router.post('/:id/createprofile', (req, res) => {
 // Add Project to user
 // =====================
 
-        
-    router.get('/:id/profile/project', isLoggedIn,  (req, res) => {
+        // go and check for currentUser middleware on app.js (campground auth part 2 vid)
+        // write checkprofileOwnership middleware
+    router.get('/:id/profile/project',  (req, res) => {
+      if(req.isAuthenticated()){
+        FreelanceUser.findById(req.params.id, (err, freelancer) => {
+          if(err){
+            console.log(err);
+          } else {
+            if(freelancer._id.equals(req.user._id)) {
+              res.render('./freelancer/addProject', {freelancer: freelancer});
+            } else {
+              res.send("You do not have permission")
+            }
+          }
+        });
+      } else{
+        res.send("You are not authenitcated")
+      }
 
-      FreelanceUser.findById(req.params.id, (err, freelancer) => {
-        if(err){
-          console.log(err);
-        } else 
-        res.render('./freelancer/addProject', {freelancer: freelancer});
-        console.log(freelancer)
-      })
+      // FreelanceUser.findById(req.params.id, (err, freelancer) => {
+      //   if(err){
+      //     console.log(err);
+      //   } else 
+      //   res.render('./freelancer/addProject', {freelancer: freelancer});
+      //   console.log(freelancer)
+      // });
     });
 
     router.post('/:id/profile/project', (req, res) => {
