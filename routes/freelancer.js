@@ -141,7 +141,7 @@ router.post('/:id/createprofile', (req, res) => {
 // =====================
 
         
-    router.get('/:id/profile/project', (req, res) => {
+    router.get('/:id/profile/project', isLoggedIn,  (req, res) => {
 
       FreelanceUser.findById(req.params.id, (err, freelancer) => {
         if(err){

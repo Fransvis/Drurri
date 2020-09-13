@@ -1,6 +1,7 @@
 var express               = require("express"),
     app                   = express(),
     mongoose              = require("mongoose"),
+    session               = require('express-session'),
     bodyParser            = require('body-parser'),
     passport              = require('passport'),
     LocalStrategy         = require('passport-local'),
@@ -46,11 +47,13 @@ app.use(function(req, res, next){
 // PASSPORT CONFIGURATION
 // ========================
 
-app.use(require('express-session')({
-    secret: 'This is my secret',
+app.use(session({
+    secret: 'cookie_secret',
+    name: 'cookie_name',
     resave: true,
-    saveUninitialized: true
-}));
+    saveUninitialized: true,
+    cookie: { maxAge: 5400000 },
+  }));
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -73,12 +76,6 @@ passport.serializeUser(function(user, done) {
     if(user!=null)
       done(null,user);
   });
-
-// passport.serializeUser(FreelanceUser.serializeUser());
-// passport.deserializeUser(FreelanceUser.deserializeUser());
-
-
-
 
 
 // 
@@ -103,14 +100,6 @@ passport.serializeUser(function(user, done) {
 
 
 
-
-
-
-
-
-
-
-
 // ===================
 // Landing Page 
 // ===================
@@ -124,6 +113,8 @@ app.get("/", function(req, res){
 // ==============
 
 app.get("/about", function(req, res){
+    var currentUser = req.user
+    console.log(currentUser)
     res.render("about", {currentUser: req.user});
 });
 
@@ -152,7 +143,7 @@ app.get('/login', (req, res) => {
 app.post('/login', passport.authenticate(['freelancer', 'business', 'personal'], 
             {
                successRedirect: '/',
-               failureRedirect: '/login',
+               failureRedirect: '/login'
             })
          );
 
