@@ -27,7 +27,7 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 mongoose.set('useUnifiedTopology', true);
 mongoose.set('useFindAndModify', false);
-mongoose.connect('mongodb+srv://francoisvis:207878Av@drurri.s3eh4.mongodb.net/localhost:27017/drurri_app?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://francoisvis:207878Av@drurri.s3eh4.mongodb.net/localhost:27017?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true
