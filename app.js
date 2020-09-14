@@ -27,15 +27,10 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 mongoose.set('useUnifiedTopology', true);
 mongoose.set('useFindAndModify', false);
-mongoose.connect('mongodb+srv://francoisvis:207878Av@drurri.s3eh4.mongodb.net/localhost:27017/Drurri?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://FransVis:207878Av@@drurri.wzwr6.mongodb.net/drurri?retryWrites=true&w=majority', {
   useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true
-}).then(() => {
-    console.log('Connected to DB');
-}).catch(err => {
-    console.log('ERROR', err.message)
-})
+  useUnifiedTopology: true
+});
 mongoose.set('useCreateIndex', true);
 
 
