@@ -184,5 +184,5 @@ app.use('/personal', personalRoutes)
 app.use('/services', serviceRoutes);
 
 app.listen(process.env.PORT || 3000, function(){
-    console.log("WorkbitApp running");
+    console.log("Drurri is running");
 }); 
