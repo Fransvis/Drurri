@@ -59,10 +59,10 @@ background: #000;
 
 .packages .container-fluid{
   /* height: 650px; */
-  padding-right: 0;
-  padding-left: 0;
-  margin-right: 0;
-  margin-left: 0;  
+  padding-right: auto;
+  padding-left: auto;
+  margin-right: auto;
+  margin-left: auto;  
 }
 
 
@@ -75,9 +75,9 @@ background: #000;
 .packages .column div {
 	position: relative;
 	float: left;
-	width: 400px;
+	width: 30%;
 	height: 300px;
-	margin: 0 0 0 40px;
+	margin: 0 0 0 3vw;
   padding: 0;
 }
 
