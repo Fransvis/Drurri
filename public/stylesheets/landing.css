@@ -49,7 +49,9 @@ body {
     top: 0;
   }
 
-  /* First Section  */
+/* =============================== */
+       /* Landing Container */
+/* =============================== */
 
   .landing--container {
     position: relative;
@@ -77,17 +79,17 @@ body {
     font-family: Roboto;
     text-transform: uppercase;
     color: #fff;
-    font-size: 3em;
+    font-size: 3.5vw;
     letter-spacing: 0.5em;
     font-weight: 700;
     text-shadow: 2px 2px 2px rgba(#513D3A, .4);
  }
 
  .landing--title h1 {
-    margin-top: -20px;
+    margin-top: -1%;
     font-family: Noto Serif TC;
     color: #000;
-    font-size: 2.4em;
+    font-size: 2.4vw;
     text-shadow: 2px 2px 2px rgba(#513D3A, .4);
  }
 
@@ -123,7 +125,9 @@ body {
     position: absolute;
   }
 
-  /* Second Section  */
+/* =============================== */
+       /* About Section */
+/* =============================== */
 
 section {
     width: 100%;
@@ -176,7 +180,9 @@ section {
   color: #151022;
 }
 
-  /* Third Section  */
+/* =============================== */
+        /* Icon Section */
+/* =============================== */
 
   .visible{
     display: none;
@@ -201,28 +207,11 @@ section {
   }
 
 
-  /* .section-3 h3{
-    transform-origin: left;
-    transform: scaleX(1);
-    transition: 0.5s;
-  } */
-
-  /* .section-3 h3:before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: red;
-    transform-origin: right;
-    transition: 3s;
-  } */
 
 
-
-
-  /* FOOTER */
+/* =============================== */
+    /* Last Section - copyright */
+/* =============================== */
 
 
   footer {

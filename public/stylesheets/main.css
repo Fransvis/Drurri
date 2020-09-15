@@ -1,5 +1,6 @@
 body {
   background: #000;
+
 }
 
 
@@ -48,14 +49,20 @@ a:hover{
 
 
 
-/* Packages Page */
+/* =============================== */
+    /* different user packages */
+/* =============================== */
 
 .packages {
 background: #000;
 }
 
 .packages .container-fluid{
-  height: 650px;
+  /* height: 650px; */
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: 0;
+  margin-left: 0;  
 }
 
 
@@ -135,10 +142,12 @@ background: #000;
 
 
 
-/* business Packages */
+/* =============================== */
+      /* Business Packages */
+/* =============================== */
 
 .business{
-  margin-top: 7%;
+  margin-top: 7vw;
   /* background: #000; */
 }
   
@@ -147,7 +156,7 @@ background: #000;
     height: 30rem;
     margin: 0 auto;
     max-width: 100%;
-    width: 70rem;
+    width: 83%;
   }
 
   .radio {
@@ -201,7 +210,7 @@ background: #000;
   }
   
   .content:nth-of-type(4) {
-    background-image: url('/stylesheets/imgs/gold.JPG');
+    background-image: url('/stylesheets/imgs/retainer.JPG');
 
   }
   
@@ -355,9 +364,6 @@ background: #000;
   }
 
 
-
-
-
   .business a{
     text-decoration: none;
     color: #B2967D;
@@ -372,33 +378,39 @@ background: #000;
 
 
 
-  /* register forms */
+/* =============================== */
+      /* Registration */
+/* =============================== */
 
   .pride-register{
     background: url(https://cdn.pixabay.com/photo/2018/08/23/17/01/batman-3626211__340.jpg);
-    background-size: inherit;
     background-repeat: no-repeat;
-    height: 25em;
-    margin-left: 10%;
+    background-size: contain;
+    height: 22vw;
+    margin-left: 9%;
     margin-top: 15%;
-    width: 27%;
+  }
+
+  .prideRegisterContent{
+    padding-top: 30vw;
+    margin-left: -34%;
   }
 
   .prideHeader{
     color: #fff;
     text-align: center;
-    margin-left: 29%;
-    margin-top: -35%;
+    margin-left: 44vw;
+    margin-top: -34vw;
   }
 
   .prideInputs{
     text-align: center;
-    margin-left: 23%;
-    margin-top: 4%;
+    margin-left: 34%;
+    margin-top: 2%;
   }
 
   .prideInput{
-    background: #000;
+    background: none;
     border: none;
     color: red;
     border-bottom: 1px solid red;
@@ -406,20 +418,21 @@ background: #000;
   }
 
   #prideSignUpButton{
-    margin-left: 8%;
+    margin-left: 7%;
   }
 
 
-
-  /* freelancer SignUpPage */
+/* =============================== */
+      /* Freelancer Sign Up */
+/* =============================== */
 
   .freelancerSignUp{
     background: url(https://steamuserimages-a.akamaihd.net/ugc/498028597174109429/682A125E7068573AA178B126A7CCD1C60A2088C5/);
     background-repeat: no-repeat;
     background-size: contain;
-    height: 33em;
-    margin-left: -10%;
-    margin-top: 5%;
+    height: 38vw;
+    margin-left: -4vw;
+    margin-top: 6vw;
   }
 
   .freelancerSignUpContent{
@@ -429,7 +442,7 @@ background: #000;
   #freelancerSignUpHeader{
     color: #fff;
     text-align: center;
-    margin-left: 19em;
+    margin-left: 32vw;
   }
 
   .freelancerInputs{
@@ -439,27 +452,23 @@ background: #000;
   }
 
   .freelancerInput{
-    background: #000;
+    background: none;
     border: none;
     color: red;
     border-bottom: 1px solid red;
     margin-left: 2%;
   }
 
-  /* #freelancerSignUpButton{
-  } */
 
 
 
+/* =============================== */
+      /* Create Profile Page */
+/* =============================== */
 
-
-
-
-
-
-    /* Create Profile page  */
-
-
+/* =============================== */
+     /* Create Profile modal */
+/* =============================== */
 
     .createProfile {
       background: url(https://cdn.pixabay.com/photo/2016/04/21/16/38/stormtrooper-1343877_960_720.jpg);
@@ -484,14 +493,14 @@ background: #000;
       /* display: none; */
       background: url(https://images.unsplash.com/photo-1472457847783-3d10540b03d7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
       background-repeat: no-repeat;
-      height: 28em;
-      width: 49%;
+      height: 33vw;
+      width: 49vw;
       /* opacity: 88%; */
       border: 1px solid aliceblue;
-      margin-left: 21em;
-      margin-top: 7%;
-      padding: 20px;
-      background-size: contain;
+      margin-left: 28vw;
+      margin-top: 7vw;
+      padding: 3vw;
+      background-size: cover;
       /* box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2); */
       /* animation-name: modalopen; */
       animation-duration: 1s;
@@ -503,25 +512,28 @@ background: #000;
 
     .welcomeModal-body{
       text-align: center;
-      margin-top: 8em;
+      margin-top: 8vw;
       filter: brightness(2%);
     }
 
     .modal-footer{
       display: block;
-      margin-left: 25%;
+      margin-left: 8vw;
+      margin-right: 8vw;
     }
 
     #create-profile-button{
-      margin-left: 20%;
+      margin-left: 8vw;
     }
 
     #createProfileContent{
       display: none;
-      /* background: url(https://cdn.pixabay.com/photo/2016/04/21/16/38/stormtrooper-1343877_960_720.jpg) */
     }
 
 
+/* =============================== */
+      /* Create Profile info */
+/* =============================== */
 
 
     #createProfileTitle{
