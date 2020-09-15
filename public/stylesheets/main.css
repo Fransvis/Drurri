@@ -153,7 +153,7 @@ background: #000;
   
   .general-container {
     display: flex;
-    height: 30rem;
+    height: 35vw;
     margin: 0 auto;
     max-width: 100%;
     width: 83%;
@@ -283,7 +283,7 @@ background: #000;
     opacity: 1;
     transform: translateX(0);
     color: #B2967D;
-    width: 18em;
+    width: 32vw;
     /* margin-left: 1em; */
     font-weight: 200;
     /* margin-top: 16%; */
@@ -298,7 +298,7 @@ background: #000;
     opacity: 1;
     transform: translateX(0);
     color: #B2967D;
-    margin-left: -21em;
+    margin-left: -30vw;
     /* line-height: 14px; */
     font-weight: 200;
     font-size: larger;
@@ -358,8 +358,8 @@ background: #000;
     opacity: 1;
     transform: translateX(0);
     color: #B2967D;
-    width: 14em;
-    margin-left: 20em;
+    width: 23vw;
+    margin-left: 35vw;
     font-weight: 200;
   }
 
@@ -458,6 +458,87 @@ background: #000;
     border-bottom: 1px solid red;
     margin-left: 2%;
   }
+
+
+  /* =============================== */
+      /* Personal SignUp */
+/* =============================== */
+  
+
+.personalSignUp{
+  background: url(https://cdn.pixabay.com/photo/2017/08/10/06/24/batteries-2619017_960_720.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 33em;
+  margin-left: -1%;
+  margin-top: 5%;
+}
+
+.personalSignUpContent{
+  padding-top: 7%;
+}
+
+#personalSignUpHeader{
+  color: #fff;
+  text-align: center;
+  margin-left: 19em;
+}
+
+.personalInputs{
+  text-align: center;
+  margin-left: 37%;
+  margin-top: 2%;
+}
+
+.personalInput{
+  background: #000;
+  border: none;
+  color: red;
+  border-bottom: 1px solid red;
+  margin-left: 2%;
+}
+
+
+/* =============================== */
+      /* Personal SignUp */
+/* =============================== */
+  
+
+.personalSignUp{
+  background: url(https://cdn.pixabay.com/photo/2017/08/10/06/24/batteries-2619017_960_720.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 40vw;
+  margin-left: -1%;
+  margin-top: 5%;
+}
+
+.personalSignUpContent{
+  padding-top: 7%;
+}
+
+#personalSignUpHeader{
+  color: #fff;
+  text-align: center;
+  margin-left: 19em;
+}
+
+.personalInputs{
+  text-align: center;
+  margin-left: 37%;
+  margin-top: 2%;
+}
+
+.personalInput{
+  background: none;
+  border: none;
+  color: red;
+  border-bottom: 1px solid red;
+  margin-left: 2%;
+}
+
+
+
 
 
 
@@ -585,7 +666,9 @@ background: #000;
 
 
 
-    /* profile page  */
+ /* =============================== */
+      /* Profile Page */
+/* =============================== */
 
     .profile-page{
       background-color: #000;
@@ -617,7 +700,7 @@ background: #000;
       width: 122px;
       height: 122px;
       border-radius: 50%;
-      margin-left: 28%;
+      margin-left: 6vw;
       margin-bottom: 7%;
       object-fit: cover;
     }
@@ -627,12 +710,12 @@ background: #000;
     }
 
     .profile-card-job-description{
-      margin-left: 16%;
+      text-align: center;
     }
 
     .profile-card-residence{
       margin-top: 2%;
-      margin-left: 15%;
+      text-align: center;
       color: #bdc1c7;
     }
 
@@ -640,6 +723,8 @@ background: #000;
       text-align: center;
       margin-top: 2%;
       font-size: 0.8em;
+      width: 14vw;
+      margin-left: 4vw;
     }
 
     .profile-card-website{
@@ -648,6 +733,10 @@ background: #000;
     }
 
     .profile-card-insta{
+      text-align: center;
+    }
+
+    .profileCardDivider{
       text-align: center;
     }
 
@@ -687,8 +776,8 @@ background: #000;
     .col-lg-6:hover .text{
       opacity: 70%;
       background: #000;
-      width: 27rem;
-      height: 4rem;
+      width: 31vw;
+      height: 5vw;
     }
 
     .col-lg-6:hover .projectCaption{
@@ -746,61 +835,14 @@ background: #000;
   color: red;
   border-bottom: 1px solid red;
   margin-left: 2%;
-}
-
-
-
-  
-
-    .personalSignUp{
-      background: url(https://cdn.pixabay.com/photo/2017/08/10/06/24/batteries-2619017_960_720.jpg);
-      background-repeat: no-repeat;
-      background-size: contain;
-      height: 33em;
-      margin-left: -1%;
-      margin-top: 5%;
-    }
-
-    .personalSignUpContent{
-      padding-top: 7%;
-    }
-
-    #personalSignUpHeader{
-      color: #fff;
-      text-align: center;
-      margin-left: 19em;
-    }
-
-    .personalInputs{
-      text-align: center;
-      margin-left: 37%;
-      margin-top: 2%;
-    }
-
-    .personalInput{
-      background: #000;
-      border: none;
-      color: red;
-      border-bottom: 1px solid red;
-      margin-left: 2%;
-    }
-
-
-
-
-
-
-
-  
-
-
-
-  
+}  
 
 
   
  
-  /* Services Page */
+/* =============================== */
+          /* Services*/
+/* =============================== */
 
   .services{
     background: #fff;

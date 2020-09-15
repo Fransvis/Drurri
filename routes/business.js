@@ -158,8 +158,41 @@ router.get('/retainer', function(req, res){
   res.render('./packages/retainer');
 });
 
-router.get('/:id/profile', (req, res) => {
-  res.send('This will be the profile page for businesses')
+router.post('/retainer', (req, res) => {
+  const businessName = req.body.businessName;
+  const businessIndustry = req.body.businessIndustry;
+  const businessAddress = req.body.businessAddress;
+  const businessContact = req.body.businessContact;
+  const username        = req.body.username;
+
+  var newBusinessUser = new BusinessUser(
+    {
+      username: username,
+      retainer: {
+      businessName: businessName,
+      businessIndustry: businessIndustry,
+      businessAddress: businessAddress,
+      businessContact: businessContact,
+      }
+    }
+  )
+
+  BusinessUser.register(newBusinessUser, req.body.password, function(err, newlyCreatedBusinessUser){
+    if(err){
+      console.log(err);
+      res.render('./packages/retainer')
+    }
+    passport.authenticate('local')(req, res, function(){
+      console.log(businessName);
+    });
+    req.login(newBusinessUser, (err) => {
+      if(err){
+        console.log(err);
+      } else {
+        return res.redirect('/services')
+      }
+    });
+  });
 })
 
 

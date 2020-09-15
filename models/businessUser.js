@@ -26,6 +26,13 @@ var mongoose              = require('mongoose'),
           businessIndustry: String,
           businessAddress: String,
           businessContact: Number
+        },
+
+        retainer: {
+          businessName: String,
+          businessIndustry: String,
+          businessAddress: String,
+          businessContact: Number
         }
       }
     )
