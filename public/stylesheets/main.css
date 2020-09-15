@@ -619,21 +619,23 @@ background: #000;
 
     #createProfileTitle{
       color: aliceblue;
-      font-size: 3em;
+      font-size: 3.5vw;
       text-align: end;
-      margin-right: 2em;
+      margin-right: 7vw;
       margin-top: 3%;
     }
 
     .createProfileInputs{
-      text-align: end;
-      margin-top: 2em;
+      /* text-align: end; */
+      margin-top: 4vw;
+      display: flex;
+      margin-left: 56vw;
     }
 
     .createProfileInput{
-      margin-right: 107px;
+      margin-right: 3vw;
       border: none;
-      background: #000;
+      background: none;
       border-bottom: 1px solid red;
       color: red;
     }
@@ -652,9 +654,9 @@ background: #000;
       margin-top: 2%;
     }
 
-    #profilePic{
+    /* #profilePic{
       width: 15%;
-    }
+    } */
 
     .toolsUsed{
       text-align: center;
@@ -1000,7 +1002,7 @@ margin-top: 5px;
 }
 
 .about-intro1 h1{
-  margin-left: 15%;
+  margin-left: 7vw;
 }
 
 .about-intro2 h1{
@@ -1068,7 +1070,7 @@ margin-top: 5px;
 }
 
 .about .objectives-img3{
-  margin-left: -8%;
+  margin-left: -2vw;
 }
 
 .about .objectives-img5{
@@ -1131,7 +1133,7 @@ margin-top: 5px;
 .signIn {
   background-image: url('https://www.aardvark3ddesign.co.uk/wp-content/uploads/2019/03/StromtrooperWIP_02b.jpg');
   background-repeat: no-repeat;
-  height: 40em;
+  height: 47vw;
 }
 
 .signInContent{
