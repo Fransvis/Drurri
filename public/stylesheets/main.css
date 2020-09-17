@@ -597,6 +597,10 @@ background: #000;
       filter: brightness(2%);
     }
 
+    .welcomeModal-body h6{
+      color: red;
+    }
+
     .modal-footer{
       display: block;
       margin-left: 8vw;
@@ -604,7 +608,13 @@ background: #000;
     }
 
     #create-profile-button{
-      margin-left: 8vw;
+      margin-left: 7vw;
+      color: #B2967D;
+      border-radius: 1vw;
+      width: 11vw;
+      height: 3vw;
+      background: black;
+      border: none;
     }
 
     #createProfileContent{

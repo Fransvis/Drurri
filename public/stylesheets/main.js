@@ -34,12 +34,12 @@ const createProfileContent     = document.getElementById('createProfileContent')
 const createProfileModalButton = document.getElementById('create-profile-button');
 
 
-function shutItDown() {
+function shutItDoooooown() {
   welcomeModal.style.display = 'none';
   createProfileContent.style.display = 'block';
 }
 
-createProfileModalButton.addEventListener('click', shutItDown);
+createProfileModalButton.addEventListener('click', shutItDoooooown);
 
 
 
