@@ -1141,7 +1141,7 @@ margin-top: 5px;
 /* SignIn Page  */
 
 .signIn {
-  background-image: url('stylesheets/imgs/SignIn.jpg');
+  background-image: url('/stylesheets/imgs/SignIn.jpg');
   background-repeat: no-repeat;
   height: 47vw;
 }
