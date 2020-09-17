@@ -26,7 +26,7 @@ function isLoggedIn(req, res, next){
 // ==============
 
 router.get("/", function(req, res){
-  res.render("./packages/freelance", {currentUser: req.user});
+  res.render("./freelancer/freelance", {currentUser: req.user});
 });
 
 

@@ -111,7 +111,7 @@ passport.serializeUser(function(user, done) {
 // ===================
 
 app.get("/", function(req, res){
-    res.render("landing", {currentUser: req.user});
+    res.render("./index/landing", {currentUser: req.user});
 });
 
 // ==============
@@ -121,7 +121,7 @@ app.get("/", function(req, res){
 app.get("/about", function(req, res){
     var currentUser = req.user
     console.log(currentUser)
-    res.render("about", {currentUser: req.user});
+    res.render("./index/about", {currentUser: req.user});
 });
 
 
@@ -138,7 +138,7 @@ app.get('/packages', function(req, res){
 // ==============
 
 app.get('/login', (req, res) => {
-    res.render('sign-in');
+    res.render('./index/sign-in');
 })
 
 // ==============

@@ -13,7 +13,7 @@ var express = require('express'),
 // ===============================
 
 router.get('/', function(req, res){
-  res.render('./packages/business');
+  res.render('./business/business');
 });
 
 // ===============================
@@ -21,7 +21,7 @@ router.get('/', function(req, res){
 // ===============================
 
 router.get('/pride', function(req, res){
-  res.render('./packages/pride');
+  res.render('./business/pride');
 });
 
 
@@ -67,7 +67,7 @@ router.post('/pride', (req, res) => {
 // ===============================
 
 router.get('/gold', function(req, res){
-  res.render('./packages/gold');
+  res.render('./business/gold');
 });
 
 router.post('/gold', (req, res) => {
@@ -114,7 +114,7 @@ router.post('/gold', (req, res) => {
 
 
 router.get('/platinum', function(req, res){
-  res.render('./packages/platinum');
+  res.render('./business/platinum');
 });
 
 router.post('/platinum', (req, res) => {
@@ -155,7 +155,7 @@ router.post('/platinum', (req, res) => {
 });
 
 router.get('/retainer', function(req, res){
-  res.render('./packages/retainer');
+  res.render('./business/retainer');
 });
 
 router.post('/retainer', (req, res) => {

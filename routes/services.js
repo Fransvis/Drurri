@@ -3,7 +3,7 @@ var express       = require('express'),
     FreelanceUser = require('../models/freelanceUser')
 
 router.get("/", function(req, res){
-  res.render("services", {currentUser: req.user});
+  res.render("./services/services", {currentUser: req.user});
 });
 
 router.get("/photography", function(req, res){
@@ -11,7 +11,7 @@ router.get("/photography", function(req, res){
     if(err){
       console.log(err);
     } else {
-      res.render("photography", {freelancers: freelancers, currentUser: req.user});
+      res.render("./services/photography", {freelancers: freelancers, currentUser: req.user});
     }
   })
 });
@@ -21,7 +21,7 @@ router.get('/graphic-design', (req, res) => {
     if(err){
       console.log(err);
     } else {
-      res.render("graphicDesign", {freelancers: freelancers, currentUser: req.user});
+      res.render("./services/graphicDesign", {freelancers: freelancers, currentUser: req.user});
     }
   })
 });
@@ -31,7 +31,7 @@ router.get('/contentCreation', (req, res) => {
     if(err){
       console.log(err);
     } else {
-      res.render("contentCreation", {freelancers: freelancers, currentUser: req.user});
+      res.render("./services/contentCreation", {freelancers: freelancers, currentUser: req.user});
     }
   })
 });
@@ -41,7 +41,7 @@ router.get('/webDesign', (req, res) => {
     if(err){
       console.log(err);
     } else {
-      res.render("webDesign", {freelancers: freelancers, currentUser: req.user});
+      res.render("./services/webDesign", {freelancers: freelancers, currentUser: req.user});
     }
   })
 });
