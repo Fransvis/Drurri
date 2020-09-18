@@ -291,7 +291,10 @@ background: #000;
   }
 
   #prideRenderedServices{
-    margin-left: -48%;
+    margin-left: 3vw;
+    /* display: flex; */
+    width: 25vw;
+    margin-bottom: 8vw;
   }
 
   .radio:checked + .content > .prideServices{
@@ -309,8 +312,8 @@ background: #000;
     opacity: 1;
     transform: translateX(0);
     color: #B2967D;
-    width: 18em;
-    margin-left: 0em;
+    width: 27vw;
+    margin-left: 28vw;
     /* line-height: 14px; */
     font-weight: 200;
   }
@@ -335,8 +338,8 @@ background: #000;
     opacity: 1;
     transform: translateX(0);
     color: #B2967D;
-    width: 14em;
-    margin-left: 22em;
+    width: 22vw;
+    margin-left: 30vw;
     font-weight: 200;
     font-size: larger;
   }
@@ -875,6 +878,11 @@ background: #000;
 
   .container-fluid h2{
     text-align: center;;
+  }
+
+  .services .influencer-img img{
+    max-width: 52vw;
+    margin-left: -5%;
   }
 
 

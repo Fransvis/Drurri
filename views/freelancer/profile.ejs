@@ -25,7 +25,7 @@
 		<div class='row'>
 			<% freelancer.projects.forEach(function(project){ %>
 				<div class='col-lg-6'>
-				<a href='/'><img class='img-fluid' id='projectImage' src='<%= project.image %>'>
+				<a href='/freelancer/<%= project._id %>/profile/showProject'><img class='img-fluid' id='projectImage' src='<%= project.image %>'>
 					<div class='text'>
 						<p class='projectCaption'><%= project.title %></p>
 						<p class='projectDateAdded'><%= project.date %></p>
@@ -34,7 +34,7 @@
 			</div>
 			<% }); %>
 			<% if(currentUser && freelancer._id.equals(currentUser._id)){ %>
-			<a href='/freelancer/<%= freelancer._id %>/profile/project'>
+			<a href='/freelancer/<%= freelancer._id %>/profile/addProject'>
 				<Button>Add Project!</Button>
 			</a>
 			<% } %>

@@ -142,7 +142,7 @@ router.post('/:id/createprofile', (req, res) => {
 
         // go and check for currentUser middleware on app.js (campground auth part 2 vid)
         // write checkprofileOwnership middleware
-    router.get('/:id/profile/project',  (req, res) => {
+    router.get('/:id/profile/addProject',  (req, res) => {
       if(req.isAuthenticated()){
         FreelanceUser.findById(req.params.id, (err, freelancer) => {
           if(err){
@@ -168,7 +168,7 @@ router.post('/:id/createprofile', (req, res) => {
       // });
     });
 
-    router.post('/:id/profile/project', (req, res) => {
+    router.post('/:id/profile/addProject', (req, res) => {
       FreelanceUser.findById(req.params.id, (err, freelancer) => {
         if(err){
           console.log(err);
@@ -191,6 +191,19 @@ router.post('/:id/createprofile', (req, res) => {
       });
 
       
+    });
+
+    router.get('/:id/profile/showProject', (req, res) => {
+
+      Project.findById(req.params.id, (err, foundProject) => {
+        if(err){
+          console.log(err);
+          res.redirect('./freelancer/:id/profile')
+        } else {
+          console.log(foundProject)
+          res.render('./freelancer/project', {project: foundProject})
+        }
+      })
     });
     
 
