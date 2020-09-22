@@ -16,6 +16,17 @@ window.onscroll = function() {
     }
   }
 
+  // const input = document.querySelector('input[type="file"]');
+  // input.addEventListener('change', function(e) {
+  //   console.log(input.files);
+  //   const reader = new FileReader
+  // }, false)
+
+  // var loadFile = function(event) {
+  //   var image = document.getElementById('projectImage');
+  //   image.src = URL.createObjectURL(event.target.files[0]);
+  // };
+
 
 
 /* =============================== */
@@ -59,14 +70,14 @@ function inputFile() {
 
 
 
-  const editProfileButton = document.getElementById('editProfile');
-  const editProfile       = document.getElementById('editProfileModal');
-  const profilePage       = document.querySelector('.profile-page');
+  // const editProfileButton = document.getElementById('editProfile');
+  // const editProfile       = document.getElementById('editProfileModal');
+  // const profilePage       = document.querySelector('.profile-page');
   
   
-  function updateProfile() {
-    profilePage.style.display = 'none'
-  }
+  // function updateProfile() {
+  //   profilePage.style.display = 'none'
+  // }
   
 
  
@@ -93,7 +104,7 @@ function shutItDoooooown() {
 
 
 inpFile.addEventListener('change', inputFile);
-editProfileButton.addEventListener('click', updateProfile);
+// editProfileButton.addEventListener('click', updateProfile);
 createProfileModalButton.addEventListener('click', shutItDoooooown);
 
 
