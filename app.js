@@ -5,6 +5,7 @@ var express               = require("express"),
     bodyParser            = require('body-parser'),
     passport              = require('passport'),
     LocalStrategy         = require('passport-local'),
+    methodOverride        = require('method-override'),
     passportLocalMongoose = require('passport-local-mongoose'),
 
     businessRoutes        = require('./routes/business'),
@@ -36,6 +37,7 @@ mongoose.connect('mongodb+srv://FransVis:207878Av@@drurri.wzwr6.mongodb.net/drur
 //   useUnifiedTopology: true
 // });
 mongoose.set('useCreateIndex', true);
+app.use(methodOverride('_method'));
 
 
 

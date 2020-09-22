@@ -136,6 +136,15 @@ router.post('/:id/createprofile', (req, res) => {
       });
     });
 
+// ======================
+// Edit User profile 
+// ======================
+
+router.get('/:id/profile/edit', (req, res) => {
+  // if(edit is req){
+  //   render an edit page
+  // }
+})
 // =====================
 // Add Project to user
 // =====================
@@ -166,9 +175,12 @@ router.post('/:id/createprofile', (req, res) => {
       //   res.render('./freelancer/addProject', {freelancer: freelancer});
       //   console.log(freelancer)
       // });
+      
     });
 
     router.post('/:id/profile/addProject', (req, res) => {
+      
+
       FreelanceUser.findById(req.params.id, (err, freelancer) => {
         if(err){
           console.log(err);
@@ -193,14 +205,18 @@ router.post('/:id/createprofile', (req, res) => {
       
     });
 
-    router.get('/:id/profile/showProject', (req, res) => {
+// =====================
+// Project show page
+// =====================
 
+    router.get('/:id/profile/showProject', (req, res) => {
+      
       Project.findById(req.params.id, (err, foundProject) => {
         if(err){
           console.log(err);
           res.redirect('./freelancer/:id/profile')
         } else {
-          console.log(foundProject)
+          // console.log(foundProject)
           res.render('./freelancer/project', {project: foundProject})
         }
       })

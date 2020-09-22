@@ -1,4 +1,6 @@
-window.onload=function(){
+// document.addEventListener("DOMContentLoaded", theDomHasLoaded, false);
+
+
 window.onscroll = function() {
     stickyFunction();
   };
@@ -14,32 +16,105 @@ window.onscroll = function() {
     }
   }
 
-}
+
+
+/* =============================== */
+      /* addProjectInputFile */
+/* =============================== */
+
+
+
+const inpFile = document.getElementById('inpFile');
+const previewContainer = document.getElementById('imagePreview');
+const previewImage = document.querySelector('.image-preview__image');
+const previewDefaultText = document.querySelector('.image-preview__default-text')
+
+
+function inputFile() {
+  const file = this.files[0];
+
+  if(file){
+    const reader = new FileReader();
+
+    previewDefaultText.style.display = 'none';
+    previewImage.style.display = 'block';
+
+    reader.addEventListener('load', function() {
+      console.log(this)
+      previewImage.setAttribute('src', this.result);
+    });
+
+    reader.readAsDataURL(file);
+  } else {
+    previewDefaultText.style.display = null;
+    previewImage.style.display = null;
+    previewImage.setAttribute('src', '')
+  }
+};
 
 
 
 
 
 
-// Modal Logic 
-
-const section = document.querySelector('.color-top');
 
 
+  const editProfileButton = document.getElementById('editProfile');
+  const editProfile       = document.getElementById('editProfileModal');
+  const profilePage       = document.querySelector('.profile-page');
+  
+  
+  function updateProfile() {
+    profilePage.style.display = 'none'
+  }
+  
+
+ 
+
+
+ /* =============================== */
+      /* Create profile Modal */
+/* =============================== */
 
 
 
+  
 const welcomeModal             = document.getElementById('welcomeModal');
 const createProfileContent     = document.getElementById('createProfileContent');
 const createProfileModalButton = document.getElementById('create-profile-button');
-
 
 function shutItDoooooown() {
   welcomeModal.style.display = 'none';
   createProfileContent.style.display = 'block';
 }
 
+
+
+
+
+inpFile.addEventListener('change', inputFile);
+editProfileButton.addEventListener('click', updateProfile);
 createProfileModalButton.addEventListener('click', shutItDoooooown);
+
+
+
+
+
+ /* =============================== */
+      /* Edit Profile Modal*/
+/* =============================== */
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -6,7 +6,8 @@ var mongoose = require('mongoose'),
       {
       title: String,
       date: String,
-      image: String
+      image: String,
+      image1: String
     }
     )
 
