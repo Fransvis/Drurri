@@ -1,4 +1,4 @@
-// document.addEventListener("DOMContentLoaded", theDomHasLoaded, false);
+
 
 
 window.onscroll = function() {
