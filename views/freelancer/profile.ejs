@@ -34,7 +34,7 @@
 		<div class='row'>
 			<% freelancer.projects.forEach(function(project){ %>
 				<div class='col-lg-6'>
-				<a href='/freelancer/<%= project._id %>/profile/showProject'><img class='img-fluid' id='projectImage' src='/stylesheets/imgs/<%= project.image %>'>
+				<a href='/freelancer/<%= project._id %>/profile/showProject'><img class='img-fluid' id='projectImage' src='<%= project.image %>'>
 					<div class='text'>
 						<p class='projectCaption'><%= project.title %></p>
 						<p class='projectDateAdded'><%= project.date %></p>

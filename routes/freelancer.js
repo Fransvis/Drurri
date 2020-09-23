@@ -187,9 +187,19 @@ router.get('/:id/profile/edit', (req, res) => {
           res.redirect('/')
         } else {
 
+          const title = req.body.title;
+          const date  = req.body.date
+          const image = req.body.image;
+          const newProject = {
+            title: title,
+            date: date,
+            image: image
+          }
+
+
           // Creating duplicate
           
-          Project.create(req.body.project, (err, project) =>{
+          Project.create(newProject, (err, project) =>{
             if(err){
               console.log(err);
             } else {
