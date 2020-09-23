@@ -1,3 +1,3 @@
-# WorkbitApp
+# DRURRI
 Demonstration of drurri freelancer website
 
