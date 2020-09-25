@@ -142,10 +142,9 @@ router.post('/:id/createprofile', (req, res) => {
 // ======================
 
 router.get('/:id/profile/edit', (req, res) => {
-  res.send("Edit your profile");
-  // if(edit is req){
-  //   render an edit page
-  // }
+
+
+  res.render("./freelancer/edit");
 });
 
 
