@@ -142,10 +142,13 @@ router.post('/:id/createprofile', (req, res) => {
 // ======================
 
 router.get('/:id/profile/edit', (req, res) => {
+  res.send("Edit your profile");
   // if(edit is req){
   //   render an edit page
   // }
-})
+});
+
+
 // =====================
 // Add Project to user
 // =====================
@@ -168,38 +171,10 @@ router.get('/:id/profile/edit', (req, res) => {
       } else{
         res.send("You are not authenitcated")
       }
-
-      // FreelanceUser.findById(req.params.id, (err, freelancer) => {
-      //   if(err){
-      //     console.log(err);
-      //   } else 
-      //   res.render('./freelancer/addProject', {freelancer: freelancer});
-      //   console.log(freelancer)
-      // });
-      
     });
 
-    router.post('/:id/profile/addProject', (req, res) => {
 
-      // let upload = multer({ storage: storage, fileFilter: helpers.imageFilter }).single('picture');
-
-      // upload(req, res, function(err) {
-      //   if (req.fileValidationError) {
-      //     return res.send(req.fileValidationError);
-      // }
-      // else if (!req.file) {
-      //   return res.send('Please select an image')
-      // }
-      // else if(err instanceof multer.MulterError) {
-      //   return res.send(err);
-      // } 
-      // else if(err) {
-      //   return res.send(err);
-      // }
-
-      // res.send(`You have uploaded this image: <hr/><img src="${req.file.path}" width="500"><hr/><a href="./">Upload another image<a/>`)
-      // });
-      
+router.post('/:id/profile/addProject', (req, res) => {      
 
       FreelanceUser.findById(req.params.id, (err, freelancer) => {
         if(err){
@@ -234,6 +209,8 @@ router.get('/:id/profile/edit', (req, res) => {
 
       
     });
+
+
 
 // =====================
 // Project show page
