@@ -1,37 +1,40 @@
 <%- include('../partials/header') %>
 
-<div class='createProfile'>
+<div class='editProfile'>
 
 
   <form action='/freelancer/:id/createprofile' method='post'>
   <div id='editProfile'>
-    <h3 id='createProfileTitle'>Tell us a bit about yourself</h3>
-    <div class='createProfileInputs'>
-      <!-- <input class='createProfileInput' type='text' name='industry' placeholder='Job industry'> -->
-      <select class='createProfileInput' name="industry" id="industry">
-      <option id='profession-select' value="">What is your profession</option>
-      <option value="Photographer">Photographer</option>
-      <option value="Graphic Designer">Graphic Designer</option>
-      <option value="Content Creator">Content Creator</option>
-      <option value="Web Designer">Web Designer</option>
-  </select>
-      <input class='createProfileInput' type='text' name='location' placeholder='Where are you based?'>
+    <h3 id='editProfileTitle'>Update your profile</h3>
+
+    <div class='editProfileInputs'>
+      <input class='createProfileInput' type='text' name='specialty' placeholder='Name'>
+      <input class='createProfileInput' id='profilePic' type='text' name='picture' placeholder='Surname'>
     </div>
 
-    <div class='createProfileInputs'>
-      <input class='createProfileInput' type='text' name='specialty' placeholder='What is your specialty?'>
-      <input class='createProfileInput' id='profilePic' type='text' name='picture' placeholder='Add a profile picture'>
+    <div class='editProfileInputs'>
+      <input class='createProfileInput' type='text' name='specialty' placeholder='location'>
+      <input class='createProfileInput' id='profilePic' type='text' name='picture' placeholder='picture'>
     </div>
 
-    <div class='createProfileInputs'>
-      <input class='createProfileInput' type='text' name='link1' placeholder='personal website/linkedIn'>
-      <input class='createProfileInput' type='text' name='link2' placeholder='instagram/facebook'>
+    <div class='editProfileInputs'>
+      <input class='createProfileInput' type='text' name='specialty' placeholder='industry'>
+      <input class='createProfileInput' id='profilePic' type='text' name='picture' placeholder='specialty'>
     </div>
 
-    <div class='createProfileInputs'>
-      <textarea class='createProfileInput' id='createProfileAboutYou' type='text' name='about' placeholder='Tell us about you'></textarea>
-      <textarea class='createProfileInput' id='createProfileTools' type='text' name='tools' placeholder='What are some of the tools that you use?'></textarea>
+    <div class='editProfileInputs'>
+      <input class='createProfileInput' type='text' name='specialty' placeholder='Website'>
+      <input class='createProfileInput' id='profilePic' type='text' name='picture' placeholder='instagram'>
     </div>
+
+    <div class='editProfileInputs'>
+      <textarea class='createProfileInput' type='text' name='specialty' placeholder='Name'></textarea>
+      <textarea class='createProfileInput' id='profilePic' type='text' name='picture' placeholder='Surname'></textarea>
+    </div>
+
+
+
+
 
     <div class='freelancerExtraInputs'>
     <a href='/'><button class='btn btn-light btn-sm'>Sign Up!</button></a>

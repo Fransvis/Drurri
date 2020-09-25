@@ -831,6 +831,49 @@ background: #000;
     /* EDIT PROFILE PAGE  */
 /* -----------------------------*/
 
+.editProfile {
+  /* background: url(https://cdn.wallpaperjam.com/content/images/d9/ed/d9ed8356e84e844531025fadd09ace933bf56f00.jpg); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 40em;
+}
+
+#editProfileTitle{
+  color: aliceblue;
+  font-size: 3.5vw;
+  text-align: end;
+  margin-right: 7vw;
+  margin-top: 3%;
+}
+
+.editProfileInputs{
+  /* text-align: end; */
+  margin-top: 4vw;
+  display: flex;
+  margin-left: 56vw;
+}
+
+.editProfileInput{
+  margin-right: 3vw;
+  border: none;
+  background: none;
+  border-bottom: 1px solid red;
+  color: red;
+}
+
+#editProfileAboutYou{
+  height: 100px;
+}
+
+#editProfileTools{
+  height: 100px;
+}
+
+
+.freelancerExtraInputs button{
+  margin-left: 70%;
+  margin-top: 2%;
+}
 
  
 
