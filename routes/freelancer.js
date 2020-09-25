@@ -1,12 +1,13 @@
-var express       = require('express'),
-    router        = express.Router(),
+var express                  = require('express'),
+    router                   = express.Router(),
     // mongoose      = require('mongoose'),
-    passportLocalMongoose = require('passport-local-mongoose'),
-    LocalStrategy = require('passport-local'),
-    bodyParser    = require('body-parser'),
-    passport      = require('passport'),
-    Project       = require('../models/projects'),
-    FreelanceUser = require('../models/freelanceUser')
+    passportLocalMongoose    = require('passport-local-mongoose'),
+    LocalStrategy            = require('passport-local'),
+    bodyParser               = require('body-parser'),
+    passport                 = require('passport'),
+    Project                  = require('../models/projects'),
+    FreelanceUser            = require('../models/freelanceUser')
+    // multer                   = require('multer')
 
 
 
@@ -179,6 +180,25 @@ router.get('/:id/profile/edit', (req, res) => {
     });
 
     router.post('/:id/profile/addProject', (req, res) => {
+
+      // let upload = multer({ storage: storage, fileFilter: helpers.imageFilter }).single('picture');
+
+      // upload(req, res, function(err) {
+      //   if (req.fileValidationError) {
+      //     return res.send(req.fileValidationError);
+      // }
+      // else if (!req.file) {
+      //   return res.send('Please select an image')
+      // }
+      // else if(err instanceof multer.MulterError) {
+      //   return res.send(err);
+      // } 
+      // else if(err) {
+      //   return res.send(err);
+      // }
+
+      // res.send(`You have uploaded this image: <hr/><img src="${req.file.path}" width="500"><hr/><a href="./">Upload another image<a/>`)
+      // });
       
 
       FreelanceUser.findById(req.params.id, (err, freelancer) => {

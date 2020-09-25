@@ -932,6 +932,7 @@ background: #000;
 
  #pic1{
   max-width: 100%;
+  /* border: 1px solid red; */
 }
 
 #pic2{

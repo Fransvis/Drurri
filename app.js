@@ -7,6 +7,9 @@ var express               = require("express"),
     LocalStrategy         = require('passport-local'),
     methodOverride        = require('method-override'),
     passportLocalMongoose = require('passport-local-mongoose'),
+    // multer                = require('multer'),
+    // path                  = require('path'),
+    // helpers               = require('./helpers'),
 
     businessRoutes        = require('./routes/business'),
     serviceRoutes         = require('./routes/services'),
@@ -84,6 +87,21 @@ passport.serializeUser(function(user, done) {
     if(user!=null)
       done(null,user);
   });
+
+
+// ========================
+//      STORAGE 
+// ========================
+
+// const storage = multer.diskStorage({
+//     destination: function(req, file, cb) {
+//         cb(null, 'uploads/');
+//     }, 
+
+//     filename: function(req, file, cb) {
+//         cb(null, file.fieldname + '-' + Date.now + path.extname(file.originalname));
+//     }
+// });
 
 
 // 
@@ -171,6 +189,7 @@ app.get('/logout', (req, res) => {
 app.get('/secret', isLoggedIn, (req, res) => {
     res.render('secret', {currentUser: req.user});
 });
+
 
 
 

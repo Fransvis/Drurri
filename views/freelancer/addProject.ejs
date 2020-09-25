@@ -11,19 +11,31 @@
           <input class='addProjectInput' type='text' name='date' placeholder="Date">
         </div>
         <div class='addProjectInputs'>
-          <input class='addProjectInput' type='file'  accept="image/*" id='inpFile' name='image'>
+          <input class='addProjectInput' type='text'  accept="image/*" id='inpFile' name='image'>
           <div class="image-preview" id='imagePreview'>
             <img src="" alt="image-preview" class="image-preview__image">
             <span class="image-preview__default-text">Image preview</span>
-          </div> -->
-          <!-- <input class='addProjectInput' type='text' name='project[image1]' placeholder="image"> -->
-          <!-- <input class='addProjectInput' type='text' name='project[location]' placeholder="location"> -->
-        <!-- </div>
-        <div class='addProjectInputs'>
+          </div> 
+          <input class='addProjectInput' type='text' name='project[image1]' placeholder="image">
+          <input class='addProjectInput' type='text' name='project[location]' placeholder="location">
+          </div>
+ 
+       <div class='addProjectInputs'>
         <button class='btn btn-light btn-sm' id='freelancerSignUpButton'>Create!</button>
         </div>
     </div>
   </form> 
+  
+
+  <!-- <form action="/freelancer/<%= freelancer._id %>/profile/addProject" method="POST" enctype="multipart/form-data">
+    <div>
+      <label for="picture"></label>
+        <input type="file" name='picture'>
+    </div>
+    <div>
+      <input type="submit" name="btn_picture_upload" value='Upload'>
+    </div>
+  </form> -->
   
 
 
