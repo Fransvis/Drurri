@@ -152,6 +152,18 @@ router.get('/:id/profile/edit', (req, res) => {
   })
 });
 
+router.put('/:id/profile', (req, res) => {
+// console.log(req.params.id);
+// console.log(req.body.freelancer);
+  FreelanceUser.findByIdAndUpdate(req.params.id, req.body.freelancer, (err, updatedFreelancer) => {
+    if(err) {
+      res.redirect('/');
+    } else {
+      console.log(updatedFreelancer);
+    }
+  });
+});
+
 
 // =====================
 // Add Project to user
