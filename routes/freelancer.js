@@ -143,8 +143,13 @@ router.post('/:id/createprofile', (req, res) => {
 
 router.get('/:id/profile/edit', (req, res) => {
 
-
-  res.render("./freelancer/edit");
+  FreelanceUser.findById(req.params.id, (err, foundFreelancer) => {
+    if (err){
+      res.redirect('/');
+    } else {
+      res.render("./freelancer/edit", {freelancer: foundFreelancer});
+    }
+  })
 });
 
 
