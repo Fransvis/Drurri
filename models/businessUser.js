@@ -37,6 +37,6 @@ var mongoose              = require('mongoose'),
       }
     )
 
-    businessUserSchema.plugin(passportLocalMongoose);
+businessUserSchema.plugin(passportLocalMongoose);
 
-    module.exports = mongoose.model('BusinessUser', businessUserSchema);
+module.exports = mongoose.model('BusinessUser', businessUserSchema);

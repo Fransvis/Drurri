@@ -26,6 +26,6 @@ var mongoose              = require('mongoose'),
       }
     )
 
-    freelanceUserSchema.plugin(passportLocalMongoose);
+freelanceUserSchema.plugin(passportLocalMongoose);
 
-    module.exports = mongoose.model('FreelanceUser', freelanceUserSchema)
+module.exports = mongoose.model('FreelanceUser', freelanceUserSchema)
