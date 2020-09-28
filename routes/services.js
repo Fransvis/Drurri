@@ -21,7 +21,7 @@ router.get("/photography", function(req, res){
     } else {
       res.render("./services/photography", {freelancers: freelancers, currentUser: req.user});
     }
-  })
+  });
 });
 
 // =======================
@@ -35,7 +35,7 @@ router.get('/graphic-design', (req, res) => {
     } else {
       res.render("./services/graphicDesign", {freelancers: freelancers, currentUser: req.user});
     }
-  })
+  });
 });
 
 // ==========================
@@ -49,7 +49,7 @@ router.get('/contentCreation', (req, res) => {
     } else {
       res.render("./services/contentCreation", {freelancers: freelancers, currentUser: req.user});
     }
-  })
+  });
 });
 
 // ===========================
@@ -63,7 +63,7 @@ router.get('/webDesign', (req, res) => {
     } else {
       res.render("./services/webDesign", {freelancers: freelancers, currentUser: req.user});
     }
-  })
+  });
 });
 
 module.exports = router;
