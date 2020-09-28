@@ -9,7 +9,7 @@ var express = require('express'),
     router  = express.Router();
 
 // ===============================
-// Business Packages
+//      BUSINESS PACKAGES
 // ===============================
 
 router.get('/', function(req, res){
@@ -17,7 +17,7 @@ router.get('/', function(req, res){
 });
 
 // ===============================
-// pride package
+//        PRIDE PACKAGE
 // ===============================
 
 router.get('/pride', function(req, res){
@@ -26,11 +26,11 @@ router.get('/pride', function(req, res){
 
 
 router.post('/pride', (req, res) => {
-  const businessName = req.body.businessName;
+  const businessName     = req.body.businessName;
   const businessIndustry = req.body.businessIndustry;
-  const businessAddress = req.body.businessAddress;
-  const businessContact = req.body.businessContact;
-  const username        = req.body.username;
+  const businessAddress  = req.body.businessAddress;
+  const businessContact  = req.body.businessContact;
+  const username         = req.body.username;
   
   var newBusinessUser = new BusinessUser(
     {
@@ -63,7 +63,7 @@ router.post('/pride', (req, res) => {
 });
 
 // ===============================
-// Gold Package
+//        GOLD PACKAGE
 // ===============================
 
 router.get('/gold', function(req, res){
@@ -71,11 +71,11 @@ router.get('/gold', function(req, res){
 });
 
 router.post('/gold', (req, res) => {
-  const businessName = req.body.businessName;
+  const businessName     = req.body.businessName;
   const businessIndustry = req.body.businessIndustry;
-  const businessAddress = req.body.businessAddress;
-  const businessContact = req.body.businessContact;
-  const username        = req.body.username;
+  const businessAddress  = req.body.businessAddress;
+  const businessContact  = req.body.businessContact;
+  const username         = req.body.username;
 
    
   var newBusinessUser = new BusinessUser(
@@ -109,7 +109,7 @@ router.post('/gold', (req, res) => {
 });
 
 // ===============================
-// Platinum Package
+//       PLATINUM PACKAGE
 // ===============================
 
 
@@ -118,11 +118,11 @@ router.get('/platinum', function(req, res){
 });
 
 router.post('/platinum', (req, res) => {
-  const businessName = req.body.businessName;
+  const businessName     = req.body.businessName;
   const businessIndustry = req.body.businessIndustry;
-  const businessAddress = req.body.businessAddress;
-  const businessContact = req.body.businessContact;
-  const username        = req.body.username;
+  const businessAddress  = req.body.businessAddress;
+  const businessContact  = req.body.businessContact;
+  const username         = req.body.username;
 
   var newBusinessUser = new BusinessUser(
     {
@@ -154,16 +154,21 @@ router.post('/platinum', (req, res) => {
   });
 });
 
+
+// ===============================
+//      RETAINER PACKAGE
+// ===============================
+
 router.get('/retainer', function(req, res){
   res.render('./business/retainer');
 });
 
 router.post('/retainer', (req, res) => {
-  const businessName = req.body.businessName;
+  const businessName     = req.body.businessName;
   const businessIndustry = req.body.businessIndustry;
-  const businessAddress = req.body.businessAddress;
-  const businessContact = req.body.businessContact;
-  const username        = req.body.username;
+  const businessAddress  = req.body.businessAddress;
+  const businessContact  = req.body.businessContact;
+  const username         = req.body.username;
 
   var newBusinessUser = new BusinessUser(
     {

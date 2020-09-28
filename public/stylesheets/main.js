@@ -1,5 +1,6 @@
-
-
+/* =============================== */
+      /* Navbar stick */
+/* =============================== */
 
 window.onscroll = function() {
     stickyFunction();
@@ -16,24 +17,10 @@ window.onscroll = function() {
     }
   }
 
-  // const input = document.querySelector('input[type="file"]');
-  // input.addEventListener('change', function(e) {
-  //   console.log(input.files);
-  //   const reader = new FileReader
-  // }, false)
-
-  // var loadFile = function(event) {
-  //   var image = document.getElementById('projectImage');
-  //   image.src = URL.createObjectURL(event.target.files[0]);
-  // };
-
-
 
 /* =============================== */
       /* addProjectInputFile */
 /* =============================== */
-
-
 
 const inpFile = document.getElementById('inpFile');
 const previewContainer = document.getElementById('imagePreview');
@@ -64,10 +51,9 @@ function inputFile() {
 };
 
 
-
-
-
-
+/* =============================== */
+  /* EDIT PROFILE ON PROFILE PAGE */
+/* =============================== */
 
 
   // const editProfileButton = document.getElementById('editProfile');
@@ -80,15 +66,9 @@ function inputFile() {
   // }
   
 
- 
-
-
  /* =============================== */
       /* Create profile Modal */
 /* =============================== */
-
-
-
   
 const welcomeModal             = document.getElementById('welcomeModal');
 const createProfileContent     = document.getElementById('createProfileContent');
@@ -100,7 +80,9 @@ function shutItDoooooown() {
 }
 
 
-
+/* ============================ */
+      /* EVENT HANDLER */
+/* ============================ */
 
 
 inpFile.addEventListener('change', inputFile);
@@ -108,12 +90,6 @@ inpFile.addEventListener('change', inputFile);
 createProfileModalButton.addEventListener('click', shutItDoooooown);
 
 
-
-
-
- /* =============================== */
-      /* Edit Profile Modal*/
-/* =============================== */
 
 
 
