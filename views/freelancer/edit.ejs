@@ -10,8 +10,8 @@
     <form action='/freelancer/<%= freelancer._id %>/profile?_method=PUT' method='POST'>
 
     <div class='editProfileInputs'>
-      <input class='createProfileInput' type='text' name='freelancer[name]' value='<%= freelancer.freelancerName %>'>
-      <input class='createProfileInput' id='profilePic' type='freelancer[surName]' name='picture' value='<%= freelancer.freelancerSurname %>'>
+      <input class='createProfileInput' type='text' name='freelancer[freelancerName]' value='<%= freelancer.freelancerName %>'>
+      <input class='createProfileInput' type='text' name='freelancer[freelancerSurname]' value='<%= freelancer.freelancerSurname %>'>
     </div>
 
     <div class='editProfileInputs'>
@@ -29,10 +29,10 @@
       <input class='createProfileInput' id='profilePic' type='freelancer[link2]' name='picture' value='<%= freelancer.link2 %>'>
     </div>
 
-    <!-- <div class='editProfileInputs'>
+    <div class='editProfileInputs'>
       <textarea class='createProfileInput' type='text' name='freelancer[about]' value='<%= freelancer.about %>'></textarea>
       <textarea class='createProfileInput' id='profilePic' type='text' name='freelancer[tools]' value='<%= freelancer.tools %>'></textarea>
-    </div> -->
+    </div>
 
 
 

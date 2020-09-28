@@ -143,7 +143,7 @@ router.post('/:id/createprofile', (req, res) => {
 
 router.get('/:id/profile/edit', (req, res) => {
 
-  FreelanceUser.findById(req.params.id, (err, foundFreelancer) => {
+ FreelanceUser.findById(req.params.id, (err, foundFreelancer) => {
     if (err){
       res.redirect('/');
     } else {
@@ -155,10 +155,12 @@ router.get('/:id/profile/edit', (req, res) => {
 router.put('/:id/profile', (req, res) => {
 // console.log(req.params.id);
 // console.log(req.body.freelancer);
-  FreelanceUser.findByIdAndUpdate(req.params.id, req.body.freelancer, (err, updatedFreelancer) => {
+
+   FreelanceUser.findByIdAndUpdate(req.params.id, req.body.freelancer, (err, updatedFreelancer) => {
     if(err) {
       res.redirect('/');
     } else {
+      res.redirect('/freelancer/' + req.params.id + '/profile');
       console.log(updatedFreelancer);
     }
   });

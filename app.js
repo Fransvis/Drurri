@@ -7,6 +7,7 @@ var express               = require("express"),
     LocalStrategy         = require('passport-local'),
     methodOverride        = require('method-override'),
     passportLocalMongoose = require('passport-local-mongoose'),
+    
     // multer                = require('multer'),
     // path                  = require('path'),
     // helpers               = require('./helpers'),
@@ -26,6 +27,7 @@ var express               = require("express"),
 // set view engine, mongoose connection
 // ========================================
 
+app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -40,7 +42,8 @@ mongoose.connect('mongodb+srv://FransVis:207878Av@@drurri.wzwr6.mongodb.net/drur
 //   useUnifiedTopology: true
 // });
 mongoose.set('useCreateIndex', true);
-app.use(methodOverride('_method'));
+
+
 
 
 
@@ -87,6 +90,8 @@ passport.serializeUser(function(user, done) {
     if(user!=null)
       done(null,user);
   });
+
+
 
 
 // ========================
