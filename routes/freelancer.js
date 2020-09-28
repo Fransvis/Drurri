@@ -231,7 +231,7 @@ router.post('/:id/profile/addProject', (req, res) => {
 
 
 // =====================
-// Project show page
+// PROJECT SHOW PAGE
 // =====================
 
     router.get('/:id/profile/showProject', (req, res) => {
@@ -246,6 +246,11 @@ router.post('/:id/profile/addProject', (req, res) => {
         }
       })
     });
+
+
+// =====================
+// PROJECT EDIT PAGE
+// =====================
     
 
 
