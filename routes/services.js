@@ -1,10 +1,18 @@
 var express       = require('express'),
     router        = express.Router(),
-    FreelanceUser = require('../models/freelanceUser')
+    FreelanceUser = require('../models/freelanceUser');
+
+// =====================
+//   SERVICES PAGE
+// =====================
 
 router.get("/", function(req, res){
   res.render("./services/services", {currentUser: req.user});
 });
+
+// =====================
+//    PHOTOGRAPHY
+// =====================
 
 router.get("/photography", function(req, res){
   FreelanceUser.find({industry: 'Photographer'}, (err, freelancers) => {
@@ -16,6 +24,10 @@ router.get("/photography", function(req, res){
   })
 });
 
+// =======================
+//    GRAPHIC DESIGN
+// =======================
+
 router.get('/graphic-design', (req, res) => {
   FreelanceUser.find({industry: 'Graphic Designer'}, (err, freelancers) => {
     if(err){
@@ -26,6 +38,10 @@ router.get('/graphic-design', (req, res) => {
   })
 });
 
+// ==========================
+//    CONTENT CREATION
+// ==========================
+
 router.get('/contentCreation', (req, res) => {
   FreelanceUser.find({industry: 'Content Creator'}, (err, freelancers) => {
     if(err){
@@ -35,6 +51,10 @@ router.get('/contentCreation', (req, res) => {
     }
   })
 });
+
+// ===========================
+//       WEB DESIGN
+// ===========================
 
 router.get('/webDesign', (req, res) => {
   FreelanceUser.find({industry: 'web designer'}, (err, freelancers) => {

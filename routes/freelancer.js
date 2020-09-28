@@ -181,6 +181,7 @@ router.post('/:id/profile/addProject', (req, res) => {
       const title = req.body.title;
       const date  = req.body.date
       const image = req.body.image;
+
       const newProject = {
         title: title,
         date: date,
@@ -230,4 +231,4 @@ router.get('/:id/profile/showProject', (req, res) => {
 
 
 
-    module.exports = router;
+module.exports = router;
