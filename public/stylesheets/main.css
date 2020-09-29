@@ -610,6 +610,7 @@ background: #000;
       width: 25vw;
       margin-top: -10vw;
       margin-left: 6vw;
+      position: absolute;
     }
 
     .profile-page .card-body{
@@ -678,10 +679,11 @@ background: #000;
     } */
 
     .profile-page .projects{
-      text-align: center;
-      margin-top: -22%;
+      /* text-align: center; */
+      margin-top: 5%;
       width: 61%;
       margin-left: 29em;
+      position: absolute;
     }
 
     .projects img{
