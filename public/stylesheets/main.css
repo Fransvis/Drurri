@@ -668,6 +668,13 @@ background: #000;
       text-align: center;
     }
 
+    #editProfileButton{
+      background: #000;
+      color: #fff;
+      width: 7vw;
+      margin-left: 7vw;
+    }
+
     /* .editProfileModal{
       color: red;
       margin-top: -22vw;
@@ -751,7 +758,7 @@ background: #000;
   color: aliceblue;
   font-size: 3.5vw;
   text-align: end;
-  margin-right: 7vw;
+  margin-right: 13.5vw;
   margin-top: 3%;
 }
 
