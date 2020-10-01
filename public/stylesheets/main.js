@@ -18,9 +18,34 @@ window.onscroll = function() {
   }
 
 
+  // const colorTop = document.querySelector('.color-top');
+  // const info = document.querySelector('.icons');
+ 
+
+ 
+
+  // function show() {
+  //   info.style.display = 'block';
+  // }
+
+  // colorTop.addEventListener('scroll', show);
+
+//   $(document).scroll(function () {
+//     var y = $(this).scrollTop();
+//     if (y > 20) {
+//         $('.icons').fadeIn();
+//     } else {
+//         $('.icons').fadeOut();
+//     }
+
+// });
+
+
 /* =============================== */
       /* addProjectInputFile */
 /* =============================== */
+
+window.onload= function() {
 
 const inpFile = document.getElementById('inpFile');
 const previewContainer = document.getElementById('imagePreview');
@@ -50,6 +75,9 @@ function inputFile() {
   }
 };
 
+inpFile.addEventListener('change', inputFile);
+
+}
 
 /* =============================== */
   /* EDIT PROFILE ON PROFILE PAGE */
@@ -85,7 +113,7 @@ function shutItDoooooown() {
 /* ============================ */
 
 
-inpFile.addEventListener('change', inputFile);
+
 // editProfileButton.addEventListener('click', updateProfile);
 createProfileModalButton.addEventListener('click', shutItDoooooown);
 
