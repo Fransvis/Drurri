@@ -2,8 +2,10 @@
       /* Navbar stick */
 /* =============================== */
 
+
 window.onscroll = function() {
     stickyFunction();
+    infoDisplay();
   };
   
   let navbar = document.getElementById("navbar");
@@ -18,27 +20,45 @@ window.onscroll = function() {
   }
 
 
-  // const colorTop = document.querySelector('.color-top');
-  // const info = document.querySelector('.icons');
- 
+const colorTop = document.querySelector('.color-top');
+const faders = document.querySelectorAll('.fader');
 
- 
+const appearOptions = {
+  threshold: 0,
+  rootMargin: '0px 0px -100px 0px'
+};
 
-  // function show() {
-  //   info.style.display = 'block';
+const appearOnScroll = new IntersectionObserver 
+(function(
+  entries, 
+  appearOnScroll
+) {
+  entries.forEach(entry => {
+    if(!entry.isIntersecting) {
+      return;
+    } else {
+      entry.target.classList.add('appear');
+      appearOnScroll.unobserve(entry.target);
+    }
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
+
+// function infoDisplay (){
+//   if (document.body.scrollTop > 1100 || document.documentElement.scrollTop > 1100) {
+//     document.getElementById("icons").id = "test";
+//   }
+  // } else {
+  //   document.getElementById("icons").id = "";
   // }
+// }
 
-  // colorTop.addEventListener('scroll', show);
 
-//   $(document).scroll(function () {
-//     var y = $(this).scrollTop();
-//     if (y > 20) {
-//         $('.icons').fadeIn();
-//     } else {
-//         $('.icons').fadeOut();
-//     }
 
-// });
+// colorTop.addEventListener('mouseenter', infoDisplay);
 
 
 /* =============================== */
