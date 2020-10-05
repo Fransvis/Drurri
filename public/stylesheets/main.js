@@ -37,7 +37,7 @@ const appearOnScroll = new IntersectionObserver
     if(!entry.isIntersecting) {
       return;
     } else {
-      entry.target.classList.add('appear');
+      entry.target.classList.toggle('appear');
       appearOnScroll.unobserve(entry.target);
     }
   });

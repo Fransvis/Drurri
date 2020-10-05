@@ -1,0 +1,30 @@
+<%- include ('../partials/header') %>
+
+<div class='editProfile'>
+
+
+
+  <div id='editProfile'>
+    <h3 id='editProfileTitle'>Update your profile</h3>
+
+    <form action='/freelancer/<%= project._id %>/profile/showProject?_method=PUT' method='POST'>
+
+    <div class='editProfileInputs'>
+      <input class='createProfileInput' type='text' name='project[title]' value='<%= project.title %>'>
+      <input class='createProfileInput' type='text' name='project[image]' value='<%= project.image %>'>
+    </div>
+
+
+    <div class='freelancerExtraInputs'>
+    <button class='btn btn-light btn-sm'>Submit!</button>
+  </div>
+
+  </div>
+</form>
+
+
+
+
+</div>
+
+<%- include ('../partials/footer') %>

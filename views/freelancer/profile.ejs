@@ -18,7 +18,9 @@
 			<p class='profileCardDivider'> ---------------------------------------</p>
 			<pre class='toolsUsed'><%= freelancer.tools %></pre>
 			<!-- <label for="editProfile"></label> -->
+			<% if(currentUser && freelancer._id.equals(currentUser._id)){ %>
 			<a href='/freelancer/<%= freelancer._id %>/profile/edit'><button class='btn btn-sm' id='editProfileButton'>EDIT</button></a>
+			<% } %>
 		</div>
 	</div>
 

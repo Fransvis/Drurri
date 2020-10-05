@@ -1,3 +1,5 @@
+const { render } = require('ejs');
+
 var express                  = require('express'),
     router                   = express.Router(),
     passportLocalMongoose    = require('passport-local-mongoose'),
@@ -206,7 +208,6 @@ router.post('/:id/profile/addProject', (req, res) => {
 });
 
 
-
 // ==========================
 //     PROJECT SHOW PAGE
 // ==========================
@@ -227,6 +228,27 @@ router.get('/:id/profile/showProject', (req, res) => {
 // =====================
 // PROJECT EDIT PAGE
 // =====================
+
+router.get('/:id/profile/showProject/edit', (req, res) => {
+  
+  Project.findById(req.params.id, (err, foundProject) => {
+    if(err){
+      res.redirect('/freelancer/:id/profile/showProject')
+    } else {
+      res.render('./freelancer/project-edit', {project: foundProject});
+    }
+  });
+});
+
+router.put('/:id/profile/showProject', (req, res) => {
+  Project.findByIdAndUpdate(req.params.id, req.body.project, (err, updatedProject) => {
+    if(err){
+      console.log(err);
+    } else {
+      res.redirect('/freelancer/' + req.params.id + '/profile/showProject');
+    }
+  });
+});
     
 
 
