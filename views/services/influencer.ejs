@@ -1,0 +1,30 @@
+<%- include ('../partials/header') %>
+
+<div class="photography">
+  <div class="row">
+
+
+    <div class="box">
+
+      <% freelancers.forEach(function(influencer){ %>
+         <a href='/freelancer/<%= influencer._id %>/profile'>
+            <div class="card">
+              <div class="imgBx">
+                  <img src="<%= influencer.picture %>" alt="images">
+              </div>
+              <div class="details">
+                  <h2><%= influencer.freelancerName %> <%= influencer.freelancerSurname %><br><span><%= influencer.location %></span></h2>
+                  <p>Speciality: <%= influencer.specialty %></p>
+              </div>
+            </div>
+            </a>
+      <% }); %>
+ 
+  </div>
+
+
+
+  </div>
+</div>
+
+<%- include ('../partials/footer') %>

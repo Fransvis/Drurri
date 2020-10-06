@@ -981,11 +981,13 @@ background: #000;
 
   .container-fluid h2{
     text-align: center;;
+    width: 45vw;
   }
 
   .services .influencer-img img{
     max-width: 52vw;
     margin-left: -5%;
+    width: 52vw;
   }
 
 

@@ -131,7 +131,7 @@ router.get('/:id/profile/edit', (req, res) => {
     if (err){
       res.redirect('/');
     } else {
-      res.render("./freelancer/edit", {freelancer: foundFreelancer});
+      res.render("./freelancer/edit", {freelancer: foundFreelancer, currentUser: req.user});
     }
   })
 });
@@ -160,7 +160,7 @@ router.get('/:id/profile/addProject',  (req, res) => {
         console.log(err);
       } else {
         if(freelancer._id.equals(req.user._id)) {
-          res.render('./freelancer/addProject', {freelancer: freelancer});
+          res.render('./freelancer/addProject', {freelancer: freelancer, currentUser: req.user});
         } else {
           res.send("You do not have permission")
         }
@@ -219,7 +219,7 @@ router.get('/:id/profile/showProject', (req, res) => {
       console.log(err);
       res.redirect('./freelancer/:id/profile')
     } else {
-      res.render('./freelancer/project', {project: foundProject});
+      res.render('./freelancer/project', {project: foundProject, currentUser: req.user});
     }
   });
 });
@@ -235,7 +235,7 @@ router.get('/:id/profile/showProject/edit', (req, res) => {
     if(err){
       res.redirect('/freelancer/:id/profile/showProject')
     } else {
-      res.render('./freelancer/project-edit', {project: foundProject});
+      res.render('./freelancer/project-edit', {project: foundProject, currentUser: req.user});
     }
   });
 });

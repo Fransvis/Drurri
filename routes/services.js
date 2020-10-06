@@ -57,11 +57,21 @@ router.get('/contentCreation', (req, res) => {
 // ===========================
 
 router.get('/webDesign', (req, res) => {
-  FreelanceUser.find({industry: 'web designer'}, (err, freelancers) => {
+  FreelanceUser.find({industry: 'Web Designer'}, (err, freelancers) => {
     if(err){
       console.log(err);
     } else {
       res.render("./services/webDesign", {freelancers: freelancers, currentUser: req.user});
+    }
+  });
+});
+
+router.get('/influencer', (req, res) => {
+  FreelanceUser.find({industry: 'Influencer'}, (err, freelancers) => {
+    if(err){
+      console.log(err);
+    } else {
+      res.render('./services/influencer', {freelancers: freelancers, currentUser: req.user});
     }
   });
 });
