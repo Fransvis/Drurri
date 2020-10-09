@@ -37,10 +37,10 @@ mongoose.connect('mongodb+srv://FransVis:207878Av@@drurri.wzwr6.mongodb.net/drur
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
-mongoose.connect('mongodb://localhost:27017/drurri_app', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+// mongoose.connect('mongodb://localhost:27017/drurri_app', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true
+// });
 mongoose.set('useCreateIndex', true);
 
 
@@ -218,3 +218,4 @@ app.use('/services', serviceRoutes);
 app.listen(process.env.PORT || 3000, function(){
     console.log("Drurri is running");
 }); 
+

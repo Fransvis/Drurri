@@ -23,9 +23,10 @@
 * save 2.4.0
 
 # Launch
-* require all packages 
+* Require all packages 
 <img src='/public/stylesheets/imgs/packages.png'>
-* create a database (local or cloud based) and connect to it
+* Create a database (local or cloud based) and connect to it
 <img src='/public/stylesheets/imgs/database.png'>
-* setup PORT address
+* Setup PORT address
 <img src='/public/stylesheets/imgs/port.png'>
+* Run with command : node app.js
