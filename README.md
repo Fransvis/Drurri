@@ -25,5 +25,7 @@
 # Launch
 * require all packages 
 <img src='/public/stylesheets/imgs/packages.png'>
-
-
+* create a database (local or cloud based) and connect to it
+<img src='/public/stylesheets/imgs/database.png'>
+* setup PORT address
+<img src='/public/stylesheets/imgs/port.png'>
