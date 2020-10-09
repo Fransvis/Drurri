@@ -24,9 +24,13 @@
 
 # Launch
 * Require all packages 
-<img src='/public/stylesheets/imgs/packages.png'>
+<img src='/public/stylesheets/imgs/packages.png'> 
+
 * Create a database (local or cloud based) and connect to it
 <img src='/public/stylesheets/imgs/database.png'>
+
 * Setup PORT address
+
 <img src='/public/stylesheets/imgs/port.png'>
+
 * Run with command : node app.js
