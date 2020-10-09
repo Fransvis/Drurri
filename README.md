@@ -27,7 +27,7 @@
 <img src='/public/stylesheets/imgs/packages.png'> 
 
 * create a route (below is a simple landing page)
-<img src='/public/stylesheets/imgs/landind.png'>
+<img src='/public/stylesheets/imgs/landing.png'>
 
 * Create a database (local or cloud based) and connect to it
 <img src='/public/stylesheets/imgs/database.png'>
