@@ -249,6 +249,20 @@ router.put('/:id/profile/showProject', (req, res) => {
     }
   });
 });
+
+// =====================
+// PROJECT DELETE PAGE
+// =====================
+
+router.delete('/:id/profile/showProject', (req, res) => {
+  Project.findByIdAndDelete(req.params.id, (err) => {
+    if(err){
+      res.redirect('/freelancer/:id/profile/showProject');
+    } else {
+      res.redirect('/freelancer/:id/profile');
+    }
+  });
+});
     
 
 

@@ -10,6 +10,10 @@
       <a href='/freelancer/<%= project._id %>/profile/showProject/edit'>
         <button class='test'>Edit</button>
       </a>
+      <form action="/freelancer/<%= project._id %>/profile/showProject?_method=DELETE" method="POST">
+        <button>Delete</button>
+      </form>
+
 
     </section>
     <section  class='projectMainPictureSection'>
