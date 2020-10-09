@@ -23,8 +23,11 @@
 * save 2.4.0
 
 # Launch
-* Require all packages 
+* Require all packages and set app to use express for your  routes
 <img src='/public/stylesheets/imgs/packages.png'> 
+
+* create a route (below is a simple landing page)
+<img src='/public/stylesheets/imgs/landind.png'>
 
 * Create a database (local or cloud based) and connect to it
 <img src='/public/stylesheets/imgs/database.png'>
@@ -33,4 +36,30 @@
 
 <img src='/public/stylesheets/imgs/port.png'>
 
-* Run with command : node app.js
+* (In your terminal) Run with command : node app.js
+
+# Further usage
+
+* Create a public directory file to hold your stylesheets, images, scripts and more
+* Set your app to use a static method on the public directory
+
+<img src='/public/stylesheets/imgs/public.png'>
+<img src='/public/stylesheets/imgs/static.png'>
+
+* Set your app to use method-override in order to update or delete items from your database
+
+<img src='/public/stylesheets/imgs/methodoverride.png'>
+
+* Set your view engine to use ejs (this allows you to render an external folder)
+
+
+<img src='/public/stylesheets/imgs/methodoverride.png'>
+
+* Set up an express session and choose secret key to store those sessions  
+
+<img src='/public/stylesheets/imgs/session.png'>
+
+* You can also create models for an object(such as a customer) and simply create a localStrategy based on the model
+
+<img src='/public/stylesheets/imgs/passport.png'>
+
