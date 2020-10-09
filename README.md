@@ -24,6 +24,6 @@
 
 # Launch
 * require all packages 
-* <img src='public/stylesheets/imgs/packages.png'>
+<img src='/public/stylesheets/imgs/packages.png'>
 
 
