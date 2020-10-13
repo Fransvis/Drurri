@@ -30,7 +30,7 @@
 2. Require all packages and set app to use express for your routes
 
 ```javascript
-var express               = require("express"),
+var express           = require("express"),
 app                   = express(),
 mongoose              = require("mongoose"),
 session               = require('express-session'),
@@ -76,22 +76,63 @@ app.listen(process.env.PORT || 5000, function(){
 * Set your app to use a static method on the public directory
 
 <img src='/public/stylesheets/imgs/public.png'>
-<img src='/public/stylesheets/imgs/static.png'>
+
+`app.use(express.static(__dirname + "/public"))`
 
 * Set your app to use method-override in order to update or delete items from your database
 
-<img src='/public/stylesheets/imgs/methodoverride.png'>
+`app.use(methodOverride('_method'))`
 
-* Set your view engine to use ejs (this allows you to render an external folder)
+* Set your view engine to use ejs (this allows you to render an external html folder with embededed Javascript - https://ejs.co/)
 
+`app.set("view engine", "ejs");`
 
-<img src='/public/stylesheets/imgs/methodoverride.png'>
+* Set up an express session and choose a secret key to store those sessions  
 
-* Set up an express session and choose secret key to store those sessions  
-
-<img src='/public/stylesheets/imgs/session.png'>
+```JavaScript
+app.use(session({
+    secret: 'cookie_secret',
+    name: 'cookie_name',
+    resave: true,
+    saveUninitialized: true,
+    cookie: { maxAge: 5400000 },
+  }));
+  ```
 
 * You can also create models for an object(such as a customer) and simply create a localStrategy based on the model
 
-<img src='/public/stylesheets/imgs/passport.png'>
+```Javascript
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy('<yourstrategyname>', <'yourmodelname'>.authenticate()));
+passport.serializeUser(function(user, done) { 
+    done(null, user);
+  });
+  passport.deserializeUser(function(user, done) {
+    if(user!=null)
+      done(null,user);
+  });
+
+```
+
+* a simple example of a userModel that you might use
+
+```Javascript
+var mongoose              = require('mongoose'),
+    passportLocalMongoose = require('passport-local-mongoose'),
+    Schema                = mongoose.Schema;
+
+    var UserSchema = new Schema (
+        {
+          firstName: String,
+          lastName: String,
+          username: String,
+          password: String
+        }
+      )
+
+UserSchema.plugin(passportLocalMongoose);
+
+module.exports = mongoose.model("User", UserSchema);
+```
 

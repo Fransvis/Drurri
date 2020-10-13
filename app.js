@@ -62,8 +62,8 @@ app.use(function(req, res, next){
 // ========================
 
 app.use(session({
-    secret: 'cookie_secret',
-    name: 'cookie_name',
+    secret: 'mysecretcode',
+    name: 'drurri_com',
     resave: true,
     saveUninitialized: true,
     cookie: { maxAge: 5400000 },
