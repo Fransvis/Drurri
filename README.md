@@ -20,23 +20,55 @@
 * passport 0.4.1
 * passport-local 1.0.0
 * passport-local-mongoose" 6.0.1
-* save 2.4.0
 
 # Launch
-* Require all packages and set app to use express for your  routes
-<img src='/public/stylesheets/imgs/packages.png'> 
 
-* create a route (below is a simple landing page)
-<img src='/public/stylesheets/imgs/landing.png'>
+* Be sure to install nodejs on your system(https://nodejs.org/en/download/)
 
-* Create a database (local or cloud based) and connect to it
-<img src='/public/stylesheets/imgs/database.png'>
+1. Run command: `npm init` and set up your project (you can choose your own starting point. This project's starting point is declared as: app.js)
 
-* Setup PORT address
+2. Require all packages and set app to use express for your routes
 
-<img src='/public/stylesheets/imgs/port.png'>
+```javascript
+var express               = require("express"),
+app                   = express(),
+mongoose              = require("mongoose"),
+session               = require('express-session'),
+bodyParser            = require('body-parser'),
+passport              = require('passport'),
+LocalStrategy         = require('passport-local'),
+methodOverride        = require('method-override'),
+passportLocalMongoose = require('passport-local-mongoose'),
+```
 
-* (In your terminal) Run with command : node app.js
+3. Create a starting route (usually a simple landing page)
+
+``` javascript
+app.get("/", function(req, res){
+	res.render("landing");
+});
+```
+
+4. Create a database (local or cloud based) and connect to it
+``` Javascript
+mongoose.connect('mongodb://localhost:27017/<yourdatabasename>', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+```
+
+5. Set up PORT address
+```Javascript
+app.listen(process.env.PORT || 5000, function(){
+	console.log("Server is running");
+});
+```
+
+6.  Run with command `node app.js` or with the starting point that you specified in your npm init setup
+
+
+* Alternatively you can simply pull this entire project and run it in your terminal with the command:
+ `node app.js` (remember to have nodejs installed on your system - https://nodejs.org/en/download/)
 
 # Further usage
 
