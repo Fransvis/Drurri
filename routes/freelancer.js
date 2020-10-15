@@ -84,6 +84,7 @@ router.post('/:id/createprofile', (req, res) => {
     const picture    = req.body.picture;
     const link2      = req.body.link2;
     const tools      = req.body.tools;
+    const cover      = req.body.cover;
 
     FreelanceUser.findOneAndUpdate({_id: currentUser._id}, 
       {
@@ -94,7 +95,8 @@ router.post('/:id/createprofile', (req, res) => {
         picture: picture,
         link1: link1,
         link2: link2,
-        tools: tools
+        tools: tools,
+        coverPhoto: cover
       }, function(err, updatedFreelancer){
       if(err){
         console.log(err);

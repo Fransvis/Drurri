@@ -14,7 +14,7 @@ var mongoose              = require('mongoose'),
         specialty: String,
         tools: String,
         picture: String,
-        coverPhot: String,
+        coverPhoto: String,
         link1: String,
         link2: String,
         projects: [
