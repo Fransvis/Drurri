@@ -33,14 +33,14 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 mongoose.set('useUnifiedTopology', true);
 mongoose.set('useFindAndModify', false);
-// mongoose.connect('mongodb+srv://FransVis:207878Av@@drurri.wzwr6.mongodb.net/drurri?retryWrites=true&w=majority', {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true
-// });
-mongoose.connect('mongodb://localhost:27017/drurri_app', {
+mongoose.connect('mongodb+srv://FransVis:207878Av@@drurri.wzwr6.mongodb.net/drurri?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
+// mongoose.connect('mongodb://localhost:27017/drurri_app', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true
+// });
 mongoose.set('useCreateIndex', true);
 
 
