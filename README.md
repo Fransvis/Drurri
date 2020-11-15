@@ -131,8 +131,6 @@ passport.serializeUser(function(user, done) {
 
 -   a simple example of a userModel that you might use
 
-<img src='./public/stylesheets.imgs/ejs.png'>
-
 ```Javascript
 var mongoose              = require('mongoose'),
     passportLocalMongoose = require('passport-local-mongoose'),
