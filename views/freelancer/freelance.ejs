@@ -1,8 +1,6 @@
 <%- include ('../partials/header')  %>
 
-<div class='freelancerSignUp'>
-
-  
+<!-- <div class='freelancerSignUp'>
 
   <form action="/freelancer" method="post">
   <div class='freelancerSignUpContent'>
@@ -22,10 +20,22 @@
       </div>
   </div>
 
+</div> -->
 
+<div class='freelancerSignUp'>
 
-
+  <form action="/freelancer" method="post">
+  <div class='freelancerSignUpContent'>
+    <h3 id='freelancerSignUpHeader'>Interested in our Freelancer Package?</h3>
+    <h6 id='freelance-extra'>Download our presentation and sign up to keep updated with our developments</h6>
+      <div class='freelancerInputs'>
+         <a href='/freelancer/:id/createprofile'></a> <button class='btn btn-light btn-sm' id='freelancerSignUpButton'>Sign Up!</button>
+          </a>
+      </div>
+  </div>
 
 </div>
+
+
 
 <%- include ('../partials/footer')  %>
