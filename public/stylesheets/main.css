@@ -14,16 +14,18 @@ body {
 #navbar {
 	background: #000;
 	opacity: 100%;
-	width: 100%;
 	height: 20px;
 	padding: 35px 45px;
-	overflow: hidden;
-	text-align: center;
 	z-index: 3;
+	display: flex;
+	flex-direction: column;
 }
 
 .navbar-align {
-	margin-left: 11%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	position: relative;
 }
 
 a {
@@ -40,15 +42,23 @@ a:hover {
 	font-family: Roboto;
 	letter-spacing: 3px;
 	font-size: 0.7em;
-	padding-right: 10%;
+	padding: 0 4%;
 	text-transform: uppercase;
 }
 
 .bottom {
-	position: sticky;
+	/* position: sticky; */
 	bottom: 0;
 	z-index: 1;
 	margin: -8px;
+	white-space: nowrap;
+	/* padding: 0px 9px; */
+}
+
+@media only screen and (max-width: 500px) {
+	.bottom a {
+		padding: 0 9px;
+	}
 }
 
 /* ============================== */
@@ -352,9 +362,6 @@ a:hover {
 /* =============================== */
 
 .pride-register {
-	/* background: url(https://cdn.pixabay.com/photo/2018/08/23/17/01/batman-3626211__340.jpg);
-	background-repeat: no-repeat;
-  height: 100%; */
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -363,11 +370,16 @@ a:hover {
 	left: -69px;
 }
 
+#pride-img {
+	max-width: 550px;
+}
+
 .pride-content {
 	text-align: center;
 	color: #fff;
 	display: flex;
 	flex-direction: column;
+	padding: 20px;
 }
 
 #pride-btn {
